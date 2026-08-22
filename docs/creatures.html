@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creature add-ons — The Script Library</title>
+<meta name="description" content="Monstergirl, Pokégirl, and Alien Extra Instruction Blocks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body>
+<header class="top">
+<div class="row">
+<a class="logo" href="index.html">THE SCRIPT LIBRARY</a>
+<nav><a href="index.html">Pick a look</a>
+<a href="start.html">First time</a>
+<a href="writing.html">Story voice</a>
+<a href="extras.html">Extra writing</a>
+<a href="bodies.html">Bodies</a>
+<a href="creatures.html">Creatures</a>
+<a href="frame.html">Picture frame</a>
+<a href="dont.html">Never mix</a></nav>
+</div>
+</header>
+<main class="wrap">
+
+<p class="bubble">CREATURE ADD-ONS</p>
+<h1>Not-human people.</h1>
+<p class="lede">Each numbered part is its own Extra Instruction Block. If you want monstergirls, paste 1, 2, and 3. Same idea for Pokégirl and Alien.</p>
+<h2>monstergirl plugin 1/3</h2><p>Monstergirl part 1 of 3. Paste all three.</p><p>Name it exactly: <strong>monstergirl plugin 1/3</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: monstergirl plugin 1/3</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1"># MONSTERGIRL PROMPT ENHANCEMENT — STANDALONE PLUGIN
+### Self-contained — no additional documents required
+### Compatible with: Positional Director Script · Manga Script
+### Compatible with: Player/NPC Appearance and Relationship Tracker/Update frameworks
+### Output targets: illustrAppearance · illustrClothes
+
+---
+
+## BEHAVIOR
+
+When generating an image prompt, scan `illustrSubject`, `illustrAppearance`, and tracked items Player Appearance / NPC Appearance for monstergirl keywords. Identify the body plan section below and append the corrective formula to `illustrAppearance` before sending to Flux 2 Pro.
+
+**Combination body plans:** Apply the most complex/difficult body plan formula first. Append simpler corrections as additive features. When instructions conflict, the more complex body plan takes priority.
+
+**No match found:** Apply universal rules only and flag for review.
+
+**Novel body plan:** Apply universal rules, use closest analogous formula, flag for review.
+
+---
+
+## UNIVERSAL RULES — apply to all monstergirl prompts
+
+- **Face:** Fully human in structure. Animal features are modifications, not replacements. "Human face with a slightly broad flat nose" not "bear snout."
+- **Skin — pale:** Never use "pale" alone. Use: porcelain, ivory, alabaster, moonlit, cream, milk-white, or material comparisons ("skin like old candle wax," "skin like moonlit marble").
+- **Adjectives:** Never use the animal name as an adjective for non-human features. Use the proper adjectival form — e.g., canine (dog/wolf), feline (cat), bovine (cow/bull), equine (horse), lupine (wolf), vulpine (fox), lepurine (rabbit/hare), ophidian (snake), avian (bird), piscine (fish), ursine (bear), cervine (deer), caprine (goat), murine (rat/mouse), chelonian (turtle/tortoise), draconic (dragon). For species without a standard adjectival form, describe the feature anatomically rather than by species name.
+- **Tail:** Always specify shape, length, base position, texture (fur/scale/chitin), and current state (raised/lowered/curled). Never assume from species.
+- **Wings:** Always specify type (avian, bat, moth, fairy, draconic, angelic, demonic, dragonfly, butterfly) and current position. Default to folded. Folded wings are difficult — regenerate if rendered outstretched when folded is required.
+- **Surface coverage (fur, scales, plating, feathers, bark, or similar):** Describe by specific body locations as additions to a human base — never as coverage with exceptions. "Scales on back, arms, and legs" not "scales covering body except face and torso." Inverse framing anchors the base form as human regardless of coverage extent. Never use "covered in [covering]" — unlocated fur, scales, issues, etc renders the entire figure as animal. Describe hair separately from body fur — hair is a distinct human feature on the head, not an extension of body fur.
+- **Horns:** Always specify shape (curved, straight, spiral, branching, swept back), material (bone-white, obsidian, ivory, keratin), number, and skull position. Never rely on species name.
+- **Antlers:** Specify cervine, elk-like, moose-like, or palmated. Specify point count if important.
+- **Tusks:** Specify origin (lower jaw), direction (jutting upward over upper lip / curving outward), material, length. Place in facial description, not body description.
+- **Eyes:** Specify iris color, pupil shape (round, slit, none), sclera color. Pupil-less: "solid [color] eyes with no visible pupil or iris, glowing faintly."
+- **No pronouns:** Use character IDs throughout.
+
+---
+
+## SECTION 1 — KEMONOMIMI
+**Keywords:** catgirl, foxgirl, wolfgirl, doggirl, bunny girl, rabbit girl, mouse girl, bear girl, tanuki, kitsune (humanoid), kemonomimi, nekomimi, inumimi, usagimimi
+
+Describe full human body first. Then append:
+`Non-human features include [animal] ears positioned on the top of the skull rather than the sides — [ear shape: upright and pointed / long and drooping / large and rounded], [ear fur color and texture], [ear size relative to head]. [Tail: shape, length, base position at the base of the spine, fur color and texture, current state — raised/lowered/curled/wagging].`
+
+- Specify ear and tail fur color separately from hair.
+- **Kitsune:** Specify number of tails. One to three renders reliably. Beyond three becomes inconsistent.
+- **Tanuki:** Specify raccoon-dog ears (rounded, darker markings), ringed raccoon-dog tail.
+
+---
+
+## SECTION 2 — BIPEDAL WITH MAJOR ANIMAL FEATURES
+**Keywords:** holstaur (bipedal), minotaur girl, lizardgirl, salamander girl, dragonewt, kobold (lizard type), harpy (arms present wings separate), bearkin, tigerkin, leopard girl, hyena girl, shark girl (bipedal), crocodile girl, turtle girl, kappa (bipedal)
+
+`Human female upper body with [specify non-human features as additions]. Non-human features include [complete list]. [If digitigrade legs:] legs that bend backward at the ankle, with [paws / clawed feet / hooves] rather than human feet, covered in [fur / scales] from the knee down — [number] legs visible, [position].`
+
+- **Digitigrade legs:** "Legs that bend backward at the ankle" is more reliable than "digitigrade."
+- **Hooves:** Use animal adjective — "unguligrade legs ending in [equine / bovine / cervine / caprine] hooves."
+- **Scales:** Specify coverage locations, color, and pattern separately from skin.
+- **Shark girls:** "Skin with the texture and blue-grey coloring of shark hide, gill slits at the neck, dorsal fin at the spine [specify size], sharp multiple-row teeth."
+
+---
+
+## SECTION 3 — FANTASY RACES
+**Keywords:** elf, dark elf, drow, wood elf, sea elf, high elf, half-elf, dwarf, halfling, gnome, giant, orc, half-orc, goblin, tiefling, dragonborn, lizardfolk, half-dragon, aasimar
+
+Always describe specific features — never rely on race name alone.
+
+**Elves:** `Elf female, [height], [build]. Ears [slightly pointed / dramatically elongated / swept back / upward-pointing], [length], on the sides of the skull. Skin [specify — any tone: dark as obsidian / green-tinged / golden / bark-brown]. Eyes [almond / upward-tilted / larger than human — specify color].`
+- Drow: specify deep purple, charcoal, or blue-black skin explicitly.
+- Sea elf: specify blue-green skin tints, gill markings, finger webbing if desired.
+
+**Dwarves:** `Dwarf female, [height relative to human — roughly half to two-thirds], broad-shouldered, barrel-chested. [Bearded or clean-shaven — specify explicitly]. Strong jaw, broad nose, heavy brow.`
+
+**Halflings/Gnomes:** `[Halfling/Gnome] female, approximately half the height of a human adult, [scaled-down adult proportions / childlike proportions — specify]. [Halfling: large heavily hair-covered bare feet if desired].` Avoid "hobbit."
+
+**Giants:** Specify scale relative to environment ("towering above the treeline"). Specify whether proportions are human-normal scaled up or distorted.
+
+**Orcs:** Default is Warcraft — green, massive, tusked. For non-standard: `Orc female, skin [grey / brown / olive / dark green — specify]. [Tusk description per universal rules]. Build [specify].` For subtle orcs: "orcish features subtly expressed — slightly greenish skin, small upward-jutting lower canines, heavier brow ridge, broad flat nose."
+
+**Goblins:** `Goblin female, [size: child-height / rat-sized — specify]. Ears [large and pointed / bat-like / drooping]. Nose [hooked / broad and flat / upturned]. Eyes [large and round / narrow]. Skin [green / grey / yellow-green / brown].` For monstergirl goblins: specify "ugly-cute rather than monstrous."
+
+**Tieflings:** `Tiefling female, skin [red / purple / deep blue / grey]. [Horn description per universal rules]. Tail [length, tip shape: arrowhead / spade / barbed / rounded]. Eyes [solid gold / solid silver / solid black / glowing].`
+
+**Dragonborn/Lizardfolk:** `[Dragonborn/Lizardfolk] female, scales [color and pattern]. [Snout: fully draconic / slightly elongated jaw / humanoid face with reptilian scaling — specify]. Slit pupils, [iris color]. Tail [length and thickness]. [Crest or frill — presence, position, color].`
+
+---
+
+## SECTION 4 — SUPERNATURAL CREATURES
+**Keywords:** succubus, incubus, imp, devil girl, demon girl, angel, fallen angel, seraphim, cherubim, ophanim, hayyot, valkyrie, erinyes, fury, celestial
+
+**Succubi:** `Succubus female. Skin [deep crimson / midnight blue / ash grey / specify]. Horns [specify shape per universal rules]. Bat wings [specify size and fold]. Tail [pointed tip: arrowhead / spade / barbed / rounded]. Eyes [specify color].`
+
+**Imps:** `Imp female, small — [knee-height to waist-height on a human]. Large head relative to body, large eyes, spindly limbs. Small horns [specify type]. Small bat or insect wings. Thin whip-like tail. Skin [specify].`
+
+**Standard angels:** `Angel female, large feathered avian wings [color — specify]. [Two wings: reliable. Four to six: inconsistent — specify each pair's position and state separately]. [Halo: solid ring / glowing disc / crown of light]. [Fallen: dark or iridescent feathers, broken or partially missing wings, extinguished or inverted halo].`
+
+**Valkyries:** `Valkyrie female, [armor style]. [Own wings / winged horse — specify which]. [Spear / sword]. Skin [specify].`
+
+**Erinyes:** `Erinyes female, [snake hair: hair formed from living serpents, [color], coiling / conventional hair with snakes wound through — latter renders more reliably]. Large dark feathered wings [corvid / vulture — not dove]. [Whip / torch]. Expression wrathful. Skin [specify].`
+
+**Seraphim (biblically accurate) — DIFFICULT:** `Humanoid female, six large feathered wings — upper pair folded across the face, lower pair folded downward covering feet and lower legs, middle pair [partially extended / folded at back]. Intense luminosity, [color].` Regenerate if wing count or position is incorrect.
+
+**Ophanim — CURRENTLY UNSOLVABLE:** `Humanoid female at the center of a large luminous ring of golden fire, the ring covered in multiple open eyes of varying sizes. The wheel is part of her body, not a separate object. [Number] pairs of wings.` Regenerate repeatedly.
+
+**For all supernatural creatures — luminosity:** Specify light source and color — "warm golden radiance emanating from within the figure" rather than "glowing." For multiple wings beyond two: specify each pair's position and state separately. For divine/infernal skin tones: use material comparisons — "skin the color of burnished bronze," "skin like cooling volcanic rock."
+
+---
+
+## SECTION 5 — FAE AND FAIRY-TALE SUPERNATURAL
+**Keywords:** fairy, faerie, fae, pixie, sprite, sidhe, seelie, unseelie, changeling, dullahan, kelpie, banshee, will-o-wisp, selkie, nixie, undine, rusalka, puca, pooka, redcap, leprechaun, baba yaga, tsukumogami, chochin-obake, kasa-obake, lantern girl, object spirit
+
+**Fae beauty rule:** Append to all fae: "beauty with an unsettling quality — features slightly too symmetrical, too perfect, too still, the kind of beautiful that takes a moment to recognize as not quite human."
+**Fae eyes:** Always specify — "solid [color] with no visible pupil," "iris filling entire eye," "eyes with faint internal luminescence," "pupils shaped like [horizontal bar / four-pointed star / void]."
+**Fae ears:** Always specify — "dramatically pointed and upswept," "long and tapered angled backward," "small and pointed," "large and mobile like an animal's."
+**Fae skin:** Use material comparisons — "skin like moonlit birchbark," "skin with the faint iridescence of a dragonfly wing," "skin the color of deep forest shadow."
+
+**Tiny fairies — INCONSISTENT:** `Fairy female, palm-sized [specify], hovering at eye level with a [flower / leaf / human hand] for scale. [Pixie-scale proportions: large head, large eyes / scaled-down adult proportions — specify]. Wings [type and position]. [Clothing of flower petals / leaves / seed pods if desired].` For predatory tiny fae: specify sharp teeth, claws, predatory expression.
+
+**Human-sized fae — RELIABLE:**
+- Seelie: "warm luminosity to the skin, hair [moves as though in a breeze that isn't there], clothing of [woven light / flower petals / living leaves / spider silk]."
+- Unseelie: "cold quality to the skin, shadows gathering at edges, clothing of [dark silk / shadow-stuff / midnight velvet]."
+
+**Sidhe:** `Sidhe female, tall [specify], lean and aristocratic, features fine and slightly sharp. Skin [specify]. Hair [dramatically colored or unnaturally lustrous]. Eyes [green / gold / silver]. Ears dramatically pointed.`
+
+**Changelings — INCONSISTENT:** `Changeling female, appearing fully human except for [one or two tells: eyes slightly wrong / fingers slightly too long / teeth slightly too sharp / hair that moves independently / shadow that does not match the pose]. Expression [wistful / predatory / lost / calculating].`
+
+**Dullahan — DIFFICULT:** `Headless female figure, neck ending cleanly — [cauterized / simply absent / wreathed in cold light]. Figure carries her own head [in the crook of her arm / raised aloft / held by the hair], detached head's expression [specify]. Dressed in [dark armor / riding clothes / funeral attire].` Specify head position in both `illustrAppearance` and `illustrExpressionPosition`. Regenerate if head is attached.
+
+**Kelpie (human form):** `Kelpie female, skin with a wet sheen, hair dark and streaming, tangled with river-weed and small stones. Eyes [solid dark / reflecting like deep water]. Slight webbing between fingers. Clothing [waterlogged and clinging / simply absent].`
+
+**Banshee:** `Banshee female, [ancient and withered / young and beautiful with grief-ravaged features]. Clothing of [grey funeral shrouds / white grave-clothes / tattered finery]. Hair wild, unbound, streaming. Expression [grief / rage / terrible emptiness]. Skin [ashen — use universal pale alternatives]. Eyes [red from weeping / solid white / specify].` Specify whether mid-wail or silent.
+
+**Will-o-wisp — INCONSISTENT:** `Will-o-wisp female, small [palm-sized to knee-height], body formed from [cold blue-green light / foxfire / bioluminescent glow]. Features [suggestion of a face within the light / more solid features — specify]. Hovering above [water / marsh / ground].`
+
+**Selkie:** `Selkie female, recently shed from seal form. Skin [warm human tone / slightly grey-tinged at extremities]. Hair dark, still damp, seal-sleek. Eyes large and dark, deeply liquid. Seal skin [draped over one arm / folded nearby / clutched protectively].`
+
+**Nixie/Undine:** `Nixie female, human lower body with legs [distinguish from mermaid explicitly]. Skin [blue-tinged / pale with blue undertones]. Hair flowing as though submerged. Eyes [solid water-blue / specify]. Slight webbing between fingers.`
+
+**Rusalka:** `Rusalka female, drowned fae. Skin [pale blue-white, the color of drowned flesh but beautiful rather than decayed]. Hair long, streaming, green-tinged, tangled with river-weed. Eyes [solid pale green / glowing]. Expression sorrowful and dangerous simultaneously. Partially translucent in places.`
+
+**Puca/Pooka — INCONSISTENT:** Specify current form. For humanoid: "humanoid female with [horse ears and tail / hare ears / goat horns and slit pupils / fox features] overlaid on otherwise human appearance." Use appropriate section for specified animal features.
+
+**Redcap:** `Redcap female, roughly dwarf height [specify], stout and powerfully built. Features weathered, fierce, predatory. Red cap [blood-soaked — fresh or dried, specify style]. Iron-shod boots. Expression ferocious, cunning, hungry. Claws long and dark [specify].`
+
+**Baba Yaga type — INCONSISTENT:** `Ancient female, witch-supernatural rather than human witch. Features [ancient and gnarled / ageless and unsettling]. Skin [deeply weathered / bark-like / the color and texture of old wood]. Eyes unnaturally bright for apparent age [specify color]. Clothing [layered, dark, organic — feathers, bones, dried herbs, iron]. [Iron teeth / one hand replaced by a chicken's foot — specify if desired].`
+
+**Tsukumogami/Object Spirits — INCONSISTENT to DIFFICULT:** `Humanoid female figure, the spirit of a [object type]. [Object features integrated into humanoid form — specify exactly: object form visible as part of the body / object worn or carried / object's material reflected in skin or hair texture]. Face fully human in structure.`
+- Chochin-obake (lantern girl): "skin with a warm luminous quality as though light glows from within, hair the color of candlelight, one eye visible and one concealed by a torn paper panel. The lantern's frame suggested in the figure's silhouette or worn as a crown."
+- Kasa-obake (umbrella girl): "one arm formed from or integrated with an umbrella structure [paper and bamboo, specify color], one large eye as primary facial feature, one leg ending in a sandal or wooden geta, hopping stance." DIFFICULT.
+
+---
+</pre></div><h2>Monstergirl plug-in 2/3</h2><p>Monstergirl part 2 of 3.</p><p>Name it exactly: <strong>Monstergirl plug-in 2/3</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Monstergirl plug-in 2/3</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">## SECTION 6 — CORPOREAL UNDEAD
+**Keywords:** vampire, lich, zombie, mummy, ghoul, revenant, draugr, wight, undead, corporeal undead, skeletal
+
+**Decay level rule:** Always specify — "no visible decay / slight decay at [locations] / moderate decay — [specific features] / heavy decay — [specific features] exposed or missing."
+**Skin tone rule:** Use material comparisons — "skin the color of old candle wax," "skin like waterlogged parchment," "skin the blue-grey of deep bruising." Never use "dead skin" or "corpse skin" alone.
+**Eye condition rule:** Always specify — "eyes intact [color]," "eyes milky and glazed," "eyes fully white," "eye sockets empty," "eyes replaced by [pinpricks of light / cold flame / solid darkness]."
+**Decay description rule:** Never use "rotting" alone. Specify locations and degree.
+
+**Vampires — RELIABLE:** `Vampire female. Skin [alabaster / blue-white / ash-pale / or specify non-pale with "skin [tone] with an unnatural cool undertone"]. Fangs [subtle / prominent / exaggerated — length, upper canines only or full set, retracted or extended]. Eyes [color, whether they shift]. [Additional: bat wings / pointed ears / claws / dark mist curling at feet and hands — specify].`
+
+**Liches:**
+- Glamorous: "appearance of a living woman preserved by magic — skin [pallor], eyes [solid color, glowing faintly], [visible undeath signs: translucency / hair with unnatural stillness / fingers slightly too long]. Elaborate robes or armor. Phylactery visible as [jewelry / staff component]."
+- Skeletal: "partially skeletal — [specify which areas show bone]. Remaining flesh [pallor and decay]. Eyes [glowing pinpricks / solid glowing color]. Elaborate robes. Crown or headpiece."
+
+**Mummies — RELIABLE:** `Mummy female. [Fully wrapped in ancient linen bandages, [color], with [face partially unwrapped revealing [features] / hands unwrapped — specify] / partially wrapped, bandages trailing]. Skin beneath [dried and darkened, preserved, the color of old leather / specify]. Eyes [intact [color] / wrapped / replaced by glowing hieroglyph-light].`
+
+**Zombies — DIFFICULT (monstergirl register):**
+- Minimal: "recently turned — skin slightly grey, eyes glazed or milky, otherwise nearly living."
+- Moderate: "moderate decay — [specific features: one cheek slightly sunken / fingertips darkened / a wound at [location] that does not bleed]."
+- Heavy: Specify which features remain attractive and frame around the intact features. Specify animation source if special zombie type.
+
+**Ghouls — INCONSISTENT:** `Ghoul female, predatory rather than shambling — skin [grey-brown / ashen / the color of old meat], slightly elongated limbs, claws [length and color], teeth [prominent / multiple rows / jagged], eyes [solid pale color / reflective]. Lean and hungry build.`
+
+**Revenants:** "humanoid female returned from death by [purpose] — appears nearly living but with [cold blue undertone / eyes glowing faintly / wounds visible but not bleeding / aura of cold]."
+
+**Draugr:** "undead Norse warrior woman — heavily built, skin [blue-black, the color of deep bruising and cold], eyes [glowing pale blue or green], frost forming at breath and fingertips, [specify armor and weapons]."
+
+**Wights/Spectral Corporeal:** "partially corporeal — [solid portions: specify] appear [description], [incorporeal portions: specify] trail into [wisps of cold mist / dark smoke / silver light]. Edges slightly diffuse. Eyes [solid glowing color]."
+
+---
+
+## SECTION 7 — INCORPOREAL, ELEMENTAL, AND SLIME-TYPE
+**Keywords:** slimegirl, water elemental, fire elemental, air elemental, earth elemental, ghost, spirit, wraith, shade, incorporeal, living flame, smoke girl, void girl, shadow girl
+
+Always specify what the figure is made of. Never assume from species name.
+**Pupil-less eyes:** "solid [color] eyes, no pupil, no iris, [glowing / matte]."
+
+**Slimegirls — INCONSISTENT:** "humanoid figure with a body formed from [color] translucent slime or gel — skin has a wet, glossy, semi-transparent quality, suggestion of form visible through the substance. [Specify consistency: thick and viscous / thin and flowing / firm and jelly-like]."
+
+**Water elementals — INCONSISTENT:** "humanoid figure with skin formed from moving water — translucent, light refracting through the body, wet sheen across all surfaces, hair flowing as if submerged. [Specify water color]."
+ 
+**Fire elementals — INCONSISTENT:** "humanoid figure with [dark / ashen / ember-colored] skin, hair flowing upward as living flame [specify flame color], eyes glowing [color] with no visible pupil."
+ 
+**Ghost/Incorporeal — INCONSISTENT:** "semi-transparent humanoid figure, slightly luminous, edges softly diffuse, slight motion blur suggesting insubstantiality. [Specify luminosity color and degree of transparency]."
+ 
+**Shadow/Void — DIFFICULT:** "humanoid figure formed from [living shadow / void darkness] — body absorbs light rather than reflecting it, edges undefined and shifting, eyes visible as the only distinct feature [specify color and glow]."
+ 
+---
+ 
+## SECTION 8 — INSECT AND ARACHNID TYPES (BIPEDAL)
+**Keywords:** beegirl, antgirl, waspgirl, mothgirl, butterfly girl, dragonfly girl, mantis girl, centipede girl (bipedal), scarab girl, firefly girl, mosquito girl
+ 
+**Abdomen-as-tail rule:** Describe insect/arachnid abdomens as "a large bulbous [insect/arachnid] abdomen-tail protruding behind."
+**Four arms:** "four arms: upper pair [description], lower pair [description]." Reliable up to four. Six or more becomes inconsistent.
+**Arm replacement (claws/mantis limbs) — CURRENTLY UNSOLVABLE:** Use partial substitute: "hands with chitinous plating and elongated fingers suggesting claws" / "forearms with chitinous plating, elongated and slightly curved, suggesting raptorial limbs."
+ 
+**Beegirls, Antgirls, Waspgirls — RELIABLE (bipedal four-armed):** `[Bee/Ant/Wasp] girl female, bipedal. Four arms: upper pair [description], lower pair [description]. Large bulbous [species] abdomen-tail protruding behind, [color], [with stinger / no stinger — specify shape and length]. Wings [type and position]. Antennae [two, segmented, [color], emerging from forehead or top of skull]. Eyes [compound: large, multifaceted, [color] / human — specify]. Exoskeleton coloring [specify] on [body locations].`
+ 
+**Mothgirls and Butterfly Girls — RELIABLE:** `[Moth/Butterfly] girl female, bipedal. Wings [moth: large, feathered or dusty texture, [pattern and color] / butterfly: large, [pattern and color] — specify both pairs, position]. Antennae [moth: feathered / butterfly: slender with clubbed tips], [color], emerging from top of skull. Eyes [large compound [color] / human — specify].`
+ 
+**Mantis Girls — DIFFICULT:** `Mantis girl female, bipedal. [Four arms with raptorial forearm partial substitute — specify / two arms with conventional hands]. Large bulbous mantis abdomen-tail protruding behind. [Wings if desired]. Eyes [large compound, triangular head shape suggested]. Coloring [green / brown / flower mantis pattern].`
+ 
+**Firefly Girls — INCONSISTENT:** "bioluminescent abdomen-tail [specify glow color], glowing softly. Two pairs of translucent wings, hindwings larger. [Bioluminescent markings on skin at specified locations if desired]."
+ 
+---
+
+## UNIVERSAL NON-BIPED LOWER BODY RULES
+### Apply to all Section 9 body plans and Section 10 rooted plantgirls
+ 
+These rules govern field architecture when the lower body is non-bipedal. They apply in addition to the standard non-human character rules (human anchoring, garment accommodation). Species-specific vocabulary is provided in each section — these rules govern the structural approach across all non-biped types.
+ 
+### Two sub-categories:
+ 
+**TAIL/TRUNK LOWER BODY** (lamia, naga, mermaid/siren, rooted plantgirl, slug/snail, scylla/tentacle):
+Full suppression of bipedal lower body language. Standing, stepping, walking, kneeling never apply.
+ 
+**MULTI-LEG LOWER BODY** (centaur/taur-types, drider/Arachne/jorogumo, scorpion-girl):
+Suppress human leg language in the animal body region only. Quadrupedal/multi-leg stance language applies — standing, rearing, crouching are valid. Never describe human legs where the animal body is.
+ 
+---
+ 
+### illustrAppearance — non-biped lower body protocol
+ 
+**Tail/trunk types:**
+Replace ALL hip, rear, and lower-body tier descriptors with species-appropriate lower body description. Specify merger point explicitly — where human anatomy ends and non-human anatomy begins. Describe the non-human lower body completely enough that no anatomical gap exists for the image generator to fill with human legs. Waist tier remains as the transition point descriptor.
+ 
+**Multi-leg types:**
+Describe animal lower body using the core formula from the relevant section. Never describe human legs where the animal body is. Specify leg count, position, and what they end in. Merger point at waist/hip junction — human torso rises from animal body at that point.
+ 
+---
+ 
+### illustrClothes — non-biped lower body protocol
+ 
+**Tail/trunk types:**
+Suppress all standard lower-body clothing anchoring — no waist fit, hip fit, seat fit, or rear anchoring below the merger point. Replace with species-appropriate lower body description: scales, bark, coils, roots, or tentacle surface as applicable. Suppress all footwear — state "no footwear — no feet exist" or equivalent. Clothing exists only above the merger point.
+ 
+**Multi-leg types:**
+Clothing exists only on the human upper body. Animal lower body has no clothing unless species-specifically modified garments are described (saddlecloth, barding, etc.). Never describe standard human lower body garment fit on the animal body.
+ 
+---
+ 
+### illustrExpressionPosition — non-biped lower body protocol
+ 
+**Tail/trunk types:**
+Position language must never imply bipedal stance. Use species-appropriate support language:
+- Lamia/naga: coiled, coils supporting, tail pooled beneath, upper body rising from coils
+- Mermaid: tail extended, tail curved, floating, resting on surface, tail breaking water
+- Rooted plantgirl: rooted, anchored, emerging from ground, trunk planted
+- Tentacle types: tentacles anchoring, suspended by tentacles, tentacles supporting
+Never: standing, stepping, walking, kneeling on legs, feet planted.
+ 
+**Multi-leg types:**
+Standing, rearing, crouching, galloping are valid. Never: bipedal leg references for the animal body. Human upper body pose described separately from animal lower body stance.
+ 
+---
+ 
+### Sex scene positioning — non-biped protocol
+ 
+Suppress all leg-implying primitives. Use species-appropriate vocabulary — see individual species sections below for specific vocabulary.
+ 
+**Universal banned primitives for tail/trunk types:**
+Any position implying legs: spread, kneeling on knees, straddling with knees, feet planted, legs wrapped — all banned.
+ 
+**Universal banned primitives for multi-leg types:**
+Any bipedal leg reference for the animal body. Human upper body positions remain valid.
+ 
+---
+ 
+### Escalation protocol (all non-biped types)
+ 
+If human legs still generate despite complete positive lower body description:
+1. Add to illustrSetting Layer 3: "no human legs visible in frame" as negative reinforcement — note that negative reinforcement may worsen results before improving them.
+2. If failure persists: add "completely legless below [merger point]" to illustrAppearance immediately after merger point description.
+3. Regenerate up to three times before considering the composition unsolvable for this turn.
+
+---
+ 
+## SECTION 9 — ABNORMAL LOWER BODY
+**Keywords:** lamia, naga, snakegirl, medusa (serpentine), mermaid, fishgirl, siren (mermaid type), sirenette (mermaid-type), centaur, centauress, mare-girl, holstaur-taur, cervitaur, cat-taur, lion-taur, sphinx, lamassu, drider, spidergirl, arachnegirl, arachne, jorogumo, scorpion girl, octopus girl, squid girl, scylla, slug girl, snail girl
+ 
+**Critical rules:**
+- Never use species name as primary descriptor — lead with body plan description.
+- Always specify the merger point explicitly.
+- "Spider" and "spidergirl" trigger Spider-Man associations — use "arachnid" instead.
+
+**Mermaids — RELIABLE:** 
+Apply universal non-biped tail/trunk rules above.
+ 
+**illustrAppearance — replacement lower body description:**
+`Human female upper body from the waist up, merging at the hips into a single large [decorative / powerful piscine — specify] fish tail. Scales [color and pattern]. [Fin at tail end: shape and size]. [Additional fins along tail if desired]. The entire lower body accounted for by fish tail anatomy from hip merger point to fin tip.`
+ 
+**illustrClothes — lower body replacement:**
+`Lower body: no clothing below hip merger point — [scale color and pattern] fish tail visible from hips down, [fin description]. No footwear — no feet exist.`
+ 
+**illustrExpressionPosition — position replacement:**
+`[Subject] upper body [pose], lower body fish tail [extended / curved / breaking surface / resting on surface — specify], weight supported by [tail / surface / water].`
+ 
+**Sex scene positioning vocabulary:**
+BANNED: spread, kneeling, straddling with knees, feet planted
+USE: "tail curved alongside partner" / "tail extended behind" / "tail fin breaking surface" / "hips at merger point meeting partner's hips at point of penetration — tail extending and curving away"
+ 
+**Lamia/Naga — INCONSISTENT:** 
+Apply universal non-biped tail/trunk rules above.
+ 
+**illustrAppearance — replacement lower body description:**
+`Human female upper body from the waist up, merging at the waist into a long serpentine lower body — one single massive serpent tail where both legs would be, NOT two separate snake limbs, one continuous undivided serpentine body extending from the hips like a mermaid tail but scaled and serpentine. [Tail length: approximately three times torso height]. Scales [color and pattern — specify]. Tail coiled [position]. The entire lower body accounted for by serpentine anatomy from merger point to tail tip.`
+ 
+**illustrClothes — lower body replacement:**
+`Lower body: no clothing below waist — one single undivided scaled serpent body visible from hips down, belly scales [lighter color] along underside, dorsal scales [darker color] along spine. Tail coiled [position]. No footwear — no feet exist.`
+ 
+**illustrExpressionPosition — position replacement:**
+`[Subject] upper body [pose], lower body one single unified serpent tail coiled [position], weight supported entirely by coils, body transitions from human torso directly into one undivided serpentine body at the waist.`
+ 
+**Sex scene positioning vocabulary:**
+BANNED: spread, kneeling, straddling with knees, feet planted, legs wrapped
+USE: "coils supporting partner's weight" / "tail coiled around partner" / "upper body arched above coils" / "coils flanking partner" / "hips at merger point meeting partner's hips at point of penetration — serpentine lower body coiling around and beneath"
+ 
+**Centaur and Taur-Types — INCONSISTENT (RELIABLE with correct formula):**
+Never use "centaur" or "[species]-taur" as primary descriptor.
+
+Apply universal non-biped multi-leg rules above.
+
+**illustrAppearance:**
+`Hybrid female figure: human female upper body from the waist up, merging at the waist into the body of a [animal] from the neck and shoulder junction downward. Non-human features include complete [animal] body below the waist, with four [unguligrade / digitigrade] legs ending in [hooves / paws / claws]. [Animal] body has [fur/hide color and texture]. [Number] legs visible, [position]. Human waist joins at the animal's neck and shoulder junction — not a human riding or standing beside the animal.` Describe animal lower body completely — the entire lower body accounted for by animal anatomy from merger point to hooves/paws.
+ 
+Species substitutions:
+- Equine: "equine body, four unguligrade legs ending in equine hooves, flowing [color] tail, [coat color]."
+- Bovine: "bovine body, cloven bovine hooves, long tufted bovine tail, [hide color]."
+- Feline: "leonine/feline body, four digitigrade legs ending in lion/cat paws with retractable claws, long tufted tail."
+- Cervine: "cervine body, four unguligrade legs ending in deer hooves, [antlers if desired — use antler instructions], short [color] tail."
+- Sphinx: use leonine formula. Specify "face is human female, not lion-headed."
+- Lamassu: use bovine formula and append wing instructions.
+
+**illustrClothes:**
+`Clothing on human upper body only — [garment description]. Animal lower body unclothed unless species-modified garment specified [saddlecloth / barding — specify if desired]. No footwear — [hooves / paws] not human feet.`
+ 
+**illustrExpressionPosition:**
+`[Subject] human upper body [pose], animal lower body [standing / rearing / crouching / galloping — specify], [number] legs [position]. Human torso orientation [toward/away from camera].`
+ 
+**Sex scene positioning vocabulary:**
+BANNED: bipedal leg references for animal body
+USE: "animal lower body [standing / crouching], human torso lowered toward partner" / "human hip level meeting partner at point of penetration, animal body positioned behind" / "forelegs [position], hindlegs [position], human torso [orientation and action]"
+
+**Driders/Arachnid-Taur — DIFFICULT:**
+Apply universal non-biped multi-leg rules above.
+
+**illustrAppearance:**
+`Hybrid female figure: human female upper body, rising from the front and top of a large arachnid lower body. Non-human features include complete arachnid body below the waist — eight arachnid legs emerging from the arachnid body, the human torso rising from the front and top of the leg cluster, not the rear. Large bulbous arachnid abdomen-tail protruding behind. Human torso faces forward, above and in front of the leg cluster. The entire lower body accounted for by arachnid anatomy from merger point to leg tips and abdomen-tail.`
+Never use "spider" — use "arachnid." Regenerate if human torso is positioned behind legs rather than above and in front.
+
+**illustrClothes:**
+`Clothing on human upper body only. Arachnid lower body unclothed. No footwear — arachnid legs end in [claws / pads — specify], not human feet.`
+ 
+**illustrExpressionPosition:**
+`[Subject] human upper body [pose], arachnid lower body [positioned / crouching / legs spread for stability — specify], eight arachnid legs [position].`
+ 
+**Sex scene positioning vocabulary:**
+BANNED: bipedal leg references
+USE: "arachnid legs anchoring around partner" / "arachnid body positioned above partner" / "human torso lowered toward partner" / "eight arachnid legs flanking partner's position"
+ 
+**Scorpion Girls — DIFFICULT:** Same as drider with: "eight arachnid legs. Large bulbous scorpion abdomen behind, with segmented scorpion tail curving upward from behind the abdomen, ending in a stinger visible above the figure." Pincer hands: CURRENTLY UNSOLVABLE — use "hands with chitinous plating and elongated fingers suggesting claws."
+ 
+**Scylla/Octopus/Squid — CURRENTLY UNSOLVABLE:** "Tentacles emerging from the hips and upper thighs downward, replacing legs. [Number] tentacles, [color], [texture: smooth / suckers visible / bioluminescent]. No human legs visible below the hip." Regenerate repeatedly.
+
+**Sex scene positioning vocabulary (for when renders succeed):**
+"Tentacles anchoring to surface around partner" / "tentacles wrapped around partner's [body part]" / "tentacles supporting partner's weight" / "multiple tentacle contact points — [tentacle] at [partner body part], [tentacle] at [partner body part]" / "partner suspended by tentacles at [position]" / "tentacle penetration at [contact point]"
+ 
+**Slug/Snail (pseudopod) — CURRENTLY UNSOLVABLE:** "Human female upper body from waist up, lower body merging into a large [slug / snail] muscular pseudopod — no legs, the figure gliding from a soft muscular base. [Snail: large shell on back, specify color and pattern]." Regenerate repeatedly.
+ 
+---
+ 
+</pre></div><h2>Monstergirl Plugin 3/3</h2><p>Monstergirl part 3 of 3.</p><p>Name it exactly: <strong>Monstergirl Plugin 3/3</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Monstergirl Plugin 3/3</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">## SECTION 10 — PLANTGIRLS, FUNGUS-GIRLS, AND NATURE SPIRITS
+**Keywords:** plantgirl, dryad, nymph, treegirl, fungus girl, mushroom girl, spore girl, vine girl, cactus girl, seaweed girl, coral girl, moss girl
+ 
+**Bipedal Plantgirls — RELIABLE:** `Human female figure with plant features added at [specify locations]: vines wrapped around the forearms / flower blooms in the hair / leaf-pattern skin markings / bark-textured patches along the shoulders and spine / moss covering the back and upper arms. Hair [formed from leaves, vines, or flowers / conventional hair with plant elements woven through]. Eyes [solid green / floral iris / specify]. Skin [earthy / bark-brown / deep green / standard tone with plant markings].`
+ 
+**Fungus Girls — RELIABLE:** `Human female figure with fungal features added: [large mushroom cap growing from the head / gills visible at the neck and forearms / spore clouds drifting from the figure / mycelium threading visible at skin surface / bioluminescent patches at specified locations]. Skin [pale / earthy / specify]. [Cap color and pattern].`
+ 
+**Rooted/Legless Plantgirls — DIFFICULT:** 
+Apply universal non-biped tail/trunk rules above.
+ 
+**illustrAppearance — replacement lower body description:**
+ 
+For dryad/trunk type:
+`Human female upper body from the waist up, merging at the waist into a broad fleshy green calyx structure flaring at the hips, bulbous rounded receptacle shape wider than the waist like the cup of a flower, smooth chlorophyll-green skin with visible plant-cell patterning, below the calyx the body converges and narrows into one single cylindrical green pedicel stem entering the earth at ground level. One thick smooth plant stem below the calyx — single unified botanical lower body. The entire lower body accounted for by botanical anatomy from merger point to ground.`
+ 
+For root type:
+`Human female upper body from the waist up, merging at the waist into a spreading root system emerging from the earth — roots extending outward from the merger point in multiple directions, [bark-textured / smooth — specify], [color]. The entire lower body accounted for by root system anatomy below the merger point.`
+ 
+**illustrClothes — lower body replacement:**
+`Lower body: no clothing below waist — [botanical lower body: broad calyx structure at hip level narrowing into single pedicel stem / root system spreading from merger point — specify]. No footwear — no feet exist.`
+ 
+**illustrExpressionPosition — position replacement:**
+`[Subject] upper body [pose], lower body rooted in place, [trunk/pedicel anchored at ground level / root system spreading outward and downward — specify], weight supported by [trunk / roots], emerging from ground at merger point.`
+ 
+**Sex scene positioning vocabulary:**
+BANNED: spread, kneeling, straddling with knees, feet planted, walking toward
+USE: "rooted in place, partner approaching" / "trunk anchored, upper body arched toward partner" / "vines or tendrils extending toward or around partner if applicable" / "upper body leaning toward partner, lower body stationary and rooted"
+ 
+**Difficulty note:** Remains DIFFICULT — human legs still appear frequently. Apply escalation protocol. Multiple regenerations expected.
+ 
+---
+ 
+## REGIONAL AND MYTHOLOGICAL CREATURES
+ 
+For creatures not listed above: identify the closest analogous body plan section, apply that formula as lead, then append species-specific descriptors. Describe by appearance rather than name where the name may be obscure.
+ 
+- **Oni:** Use Section 3 (Orc) as lead. Append: "skin [red / blue / specify], [kanabō club], [horn description per universal rules], [tusks if desired]."
+- **Jorogumo:** Use Section 9 (Drider) as lead. Append: "Japanese aesthetic, kimono on human upper body, silk thread trailing from fingers."
+- **Tengu:** Use Section 2 as lead with avian features. Append: "[crow / hawk] wings at back [position], [long nose / beak — specify degree of modification], traditional Japanese mountain attire."
+- **Wendigo:** Describe by appearance — "gaunt, towering humanoid female, [antler instructions], skin [grey / bone-pale / frost-covered], elongated limbs, [glowing eyes / exposed ribs / frost breath — specify]."
+- **Lung/Eastern Dragon:** Use Section 4 as base. Append: "Eastern dragon features — [serpentine lower body if desired / bipedal], long whiskers, deer antlers, fish scales. No wings unless specified — Eastern dragons are typically wingless."
+For creatures with no close analogue: apply universal rules, use the general corrective principles, and flag as a novel body plan requiring multiple regenerations.
+ 
+---
+ 
+## POST-GENERATION CHECKLIST
+ 
+Evaluate every monstergirl output before accepting:
+- Face is human in structure with specified modifications only
+- Body plan merger point is correct
+- No unintended human lower body where animal lower body is specified
+- Tail/abdomen is in correct position
+- Wings are in specified position and fold state
+- Fur is localized correctly
+- Eyes match specification
+- Decay level matches specification (undead only)
+- Tail count matches specification — regenerate if multiple tails where one specified
+- Limb count matches specification — regenerate if four arms render as two, or eight legs render as four
+- Scale/fur/chitin coverage localized correctly — regenerate if covering entire figure when localized coverage was specified
+- Animal adjectival form used throughout — canine not wolf, bovine not cow, feline not cat, etc.
+
+For every non-bipedal monstergirl, in addition to the above, evaluate before accepting: 
+- No human legs visible where tail/trunk/tentacle/root lower body specified
+- No feet or footwear visible where no feet exist
+- Merger point at correct anatomical location — waist for tail/trunk types, hip/shoulder junction for taur types
+- Lower body clothing anchoring suppressed below merger point
+- Position language species-appropriate — no bipedal stance for tail/trunk types
+- Sex positioning language species-appropriate — no leg-implying primitives used
+- Genitalia: Not visible unless sex scene. When visible, use human anatomical language — vulva, labia, vagina, clitoris. Never cloaca or animal-analogue equivalents — monstergirl humanoid clade biology applies regardless of lower body type. &lt;#Exception: ovipositor permitted for ovipositing species (waspgirl, beegirl, antgirl, and similar) — describe as "ovipositor extending from abdomen-tail" rather than replacing standard anatomy.#&gt;
+
+
+Regenerate on any critical failure.
+
+</pre></div><h2>Pokegirl plug in 1/2</h2><p>Pokégirl part 1 of 2. Paste both.</p><p>Name it exactly: <strong>Pokegirl plug in 1/2</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Pokegirl plug in 1/2</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4"># POKÉGIRL IMAGE PROMPT ENHANCEMENT — STANDALONE PLUGIN
+### Self-contained — no additional documents required
+### Compatible with: Positional Director Script · Manga Image Script
+### Compatible with: Player/NPC Appearance and Relationship Tracker/Update frameworks
+### Output targets: illustrAppearance · illustrClothes
+ 
+*Credit: KaapstadMK · Base framework: Monstergirl Image Prompt Enhancement — Standalone Plugin*
+ 
+---
+ 
+## BEHAVIOR
+ 
+When generating an image prompt, scan `illustrSubject`, `illustrAppearance`, and tracked items Player Appearance/ NPC Appearance for Pokémon species names (English names only — never Japanese name translations). Identify the species, apply the relevant type rules and body plan formula, and append corrective instructions to `illustrAppearance` before sending to Flux 2 Pro.
+ 
+**Combination types:** Apply both type formulas as additive features. When type features conflict, the rarer or more visually distinctive type takes priority.
+ 
+**Unrecognized species:** Apply universal rules, use closest analogous type formula, and flag result for review.
+ 
+**Recognition priority:** Key species features must always be present — either as literal physical features or as stylized human-adjacent equivalents (hairstyle, markings, accessories, clothing details). A Pokégirl must be recognizable as her species. Attractiveness and recognizability are both required — neither overrides the other.
+ 
+---
+ 
+## §1 — UNIVERSAL RULES
+ 
+Apply to all Pokégirl prompts regardless of species or type.
+ 
+- **Base form:** All Pokégirls are bipedal humanoid unless §4 (Body Plan Variants) specifies otherwise. Describe the full human body first, then append species features as additions.
+- **Face:** Always fully human in structure — symmetrical, expressive, with human eyes, nose, and mouth — unless the species has a canonically non-humanoid skull (see §2). Animal facial features are modifications to a human face, not replacements. "Human face with a slightly broad flat nose" not "bear snout."
+- **Ears:** Always specify ear type, shape, size, position on skull, and color separately from hair. Never assume ear type from species name alone. Pokégirl ears are always species-specific — never default to generic Pikachu ears (triangular yellow with black tips) or Eevee ears (large brown pointed) unless the character IS Pikachu or Eevee.
+- **Skin tone:** Specify explicitly, drawn from species color palette. Use material comparisons for unusual tones — never "pale" alone.
+- **Markings:** Always specify species-characteristic markings — patches, stripes, spots, color gradients — their exact location on the body, color, and whether they appear on skin, hair, or as clothing/accessory details. Markings are primary recognition features and must appear in every render.
+- **Tail:** Always specify shape, length, base position, texture, and current state. Never assume from species alone.
+- **Wings:** Always specify type (avian, bat, moth, fairy, draconic, membrane, insectoid) and current position (folded against back, partially spread, fully extended). Default to folded unless action requires otherwise.
+- **Surface coverage (fur, scales, plating, feathers, bark, or similar):** Describe by specific body locations as additions to a human base — never as coverage with exceptions. "Scales on back, arms, and legs" not "scales covering body except face and torso." Inverse framing anchors the base form as human regardless of coverage extent. Never use "covered in [covering]" — unlocated fur, scales, issues, etc renders the entire figure as animal.
+- **Hair:** Describe hair separately from body fur — hair is a distinct human feature on the head, not an extension of body fur.
+- **Horns:** Always specify shape (curved, straight, spiral, branching, swept back), material (bone-white, obsidian, ivory, keratin), number, and base position on skull. Never rely on species name alone to determine horn shape.
+- **Antlers:** Specify cervine, elk-like, moose-like, or palmated. Specify point count if important. For Xerneas: specify jewel tip color and whether active (glowing) or dormant (grey).
+- **Tusks:** Specify origin point (lower jaw or upper jaw per species), direction, material, and approximate length. Place in facial description, not body description.
+- **Eyes:** Specify iris color, pupil shape (round, slit, none), and sclera color. Many Pokégirls have non-standard eye colors drawn from species palette. Pupil-less eyes: "solid [color] eyes with no visible pupil or iris, glowing faintly."
+- **Species palette:** Skin tone, hair, markings, and eye color all draw from the species' canonical color palette unless the game tracker specifies otherwise.
+- **Recognition requirement:** "Sexy" and "recognizable" are both mandatory outputs. Humanize enough to be attractive; retain enough species features to be identifiable.
+- **No pronouns:** Use character IDs throughout.
+---
+ 
+## §2 — UNUSUAL SKULL TYPES
+ 
+For species with canonically non-humanoid head shapes: keep the modified skull and anthropomorphize the facial features rather than fully normalizing. Skull shape is a head-level modification that applies regardless of lower body type.
+ 
+- **Elongated cranium** (Mewtwo, Alakazam): `"slightly elongated skull, wider and higher than human baseline, facial features — eyes, nose, mouth — fully human in proportion and expression, positioned lower on the face than standard."`
+- **Wide flat skull** (Ms. Mime, Jynx): `"face wider than human baseline with [species] characteristic markings, facial features human in structure and expression."`
+- **Vestigial muzzle** (Machamp, Hitmonchan, fighting types with animal faces): `"human face with slightly broadened jaw and nose, no muzzle, human eyes and mouth."`
+- **Beak remnant** (avian types in humanoid form): `"human face with slightly sharper jaw and defined cheekbones suggesting avian heritage, no actual beak."`
+---
+ 
+## §3 — TYPE RULES
+ 
+Type rules govern physical features — skin quality, hair color range, eye color, markings, and surface texture. Color palette, shading, and environmental effects map over from these physical feature rules automatically. For dual-type species, apply both type rules as additive features; when they conflict, the rarer or more visually distinctive type takes priority.
+ 
+---
+ 
+**Normal Type**
+Physical features follow human skin baseline. Ears, tail, and markings are the primary species markers — specify all precisely per species. Texture: standard human skin, no unusual surface quality. Eyes: standard human colors unless species has a distinctive eye color. Recognition comes almost entirely from ear shape, tail, hair color, and markings.
+ 
+---
+ 
+**Fire Type**
+Skin: `"skin with a warm amber undertone, as though heat radiates from beneath the surface."` For highly Fire-typed species: `"skin with a faint ember glow at the cheekbones and fingertips."` Hair: flame-colored (red, orange, gold, white-hot) or literally flame-like — `"hair that moves as though in an updraft."` Eyes: amber, gold, red, or orange iris. Markings: flame-pattern at species-characteristic locations. Texture: dry, warm — never cool or damp. Environmental effect: `"faint heat shimmer visible around the figure"` for highly Fire-typed species.
+ 
+---
+ 
+**Water Type**
+Skin: `"skin with a faint blue or teal undertone, cool to the touch in appearance."` For highly Water-typed species: `"skin with a subtle wet sheen as though recently emerged from water."` Hair: blue, teal, seafoam, or deep navy — may move as though submerged. Eyes: blue, teal, aqua, or deep water-dark iris. Markings: wave, scale, or fin-pattern at species-characteristic locations. Texture: slightly smooth, cool. Environmental effect: `"faint moisture in the air around the figure"` for highly Water-typed species.
+ 
+---
+ 
+**Grass Type**
+Skin: `"skin with a faint verdant undertone, like sunlight through leaves."` For highly Grass-typed species: `"skin with leaf-pattern markings or vine tracery at species-characteristic locations."` Hair: green, yellow-green, deep forest green, or flower-petal colors — may include literal plant elements. Eyes: green, gold, or amber iris. Markings: leaf, vine, petal, or seed-pattern at species-characteristic locations. Texture: slightly smooth, organic.
+ 
+---
+ 
+**Electric Type**
+Skin: `"skin with a faint luminous quality, as though static electricity runs just beneath the surface."` For highly Electric-typed species: `"occasional sparks or static visible at fingertips and hair ends."` Hair: yellow, gold, electric blue, or white — frequently stands slightly as though charged. Eyes: yellow, gold, electric blue, or bright white iris. Markings: lightning bolt, zigzag, or circuit-pattern at species-characteristic locations. Texture: dry, slightly charged. Environmental effect: `"hair slightly lifted by static charge"` for highly Electric-typed species.
+ 
+---
+ 
+**Ice Type**
+Skin: cool, pale — use alabaster, ivory, or blue-white rather than "pale" alone. For highly Ice-typed species: `"skin with a crystalline quality, faintly translucent at the extremities."` Hair: white, ice-blue, silver, or frost-pale — may appear crystalline or frosted at the ends. Eyes: ice blue, pale silver, or white iris. Markings: crystal, snowflake, or frost-pattern at species-characteristic locations. Texture: cool, smooth, slightly glassy. Environmental effect: `"breath visible as frost in cold air around the figure"` for highly Ice-typed species.
+ 
+---
+ 
+**Fighting Type**
+Physical features are primarily about build and expression. Specify `"powerfully built, defined musculature"` rather than standard human proportions. Skin: warm, slightly roughened, suggesting physical conditioning — human skin tone drawn from species palette. Eyes: intense, focused expression. Markings: species-characteristic at canonical locations.
+ 
+---
+ 
+**Poison Type**
+Skin: `"skin with a faint purple or green undertone, beautiful in an unsettling way."` For highly Poison-typed species: `"skin with a faint toxic sheen, slightly iridescent in certain light."` Hair: purple, deep violet, toxic green, or black — may appear slightly slicked or damp. Eyes: purple, violet, or toxic yellow-green iris. Markings: drip, splash, or toxic-pattern at species-characteristic locations. Texture: smooth, slightly glossy with unsettling beauty quality.
+ 
+---
+ 
+**Ground Type**
+Skin: `"skin with a warm ochre or sandy undertone, suggesting stone or earth."` For highly Ground-typed species: `"skin with a slightly rough, sandy texture at the elbows, knees, and shoulders."` Hair: brown, sandy, ochre, stone-grey, or deep earth tones. Eyes: brown, amber, or deep gold iris. Markings: stone, crack, or earth-pattern at species-characteristic locations. Texture: warm, slightly rough at extremities.
+ 
+---
+ 
+**Rock Type**
+Build: heavy, dense — `"powerfully built with broad shoulders and dense musculature suggesting stone-like durability."` Skin: grey, brown, or stone-toned. For highly Rock-typed species: `"skin with rocky texture patches at shoulders, knuckles, and cheekbones — smooth elsewhere."` Hair: grey, brown, stone-white, or crystalline — may incorporate literal rock or crystal elements. Eyes: grey, brown, or crystal-clear iris. Markings: crack, crystal, or stone-pattern at species-characteristic locations.
+ 
+---
+ 
+**Bug Type**
+Specify insect features as additions to human body: antennae (specify type — segmented, feathered, clubbed), chitinous patches at specified body locations, wings if applicable. Skin: varies widely — specify from species palette, may have exoskeletal patches at specified locations. Hair: often matches species wing or body color. Eyes: compound (large, multifaceted, specify color) or human eyes with insect-color iris — specify per species. Abdomen: for species with prominent insect abdomen, describe as `"bulbous [species] abdomen-tail protruding behind."` Wings: specify type and current position.
+ 
+---
+ 
+**Ghost Type**
+Skin: `"skin with a faint translucent quality at the extremities, as though not entirely solid."` For highly Ghost-typed species: `"figure with slightly diffuse edges, partially incorporeal."` Specify exact tone from species palette — pale, cool, slightly luminous. Hair: white, silver, pale purple, or deep shadow-black — may move as though in a wind that isn't there. Eyes: glowing, solid-colored, or pupil-less depending on species — specify exactly. Texture: cool, slightly insubstantial. Environmental effect: `"wisps of shadow or cold mist curling at the feet and fingertips"` for highly Ghost-typed species.
+ 
+---
+ 
+**Steel Type**
+Skin: `"skin with a metallic sheen at species-characteristic locations, as though steel-plated beneath the surface."` Specify plating locations per species. Tone: cool, slightly reflective — silver, gunmetal, or warm steel from species palette. Hair: silver, steel-grey, white, or metallic. Eyes: silver, steel-blue, or metallic iris. Markings: plate, gear, or geometric metallic markings at species-characteristic locations. Texture: cool, smooth, slightly reflective at plated locations.
+ 
+---
+ 
+**Psychic Type**
+Skin: `"skin with a faint luminous quality, as though inner light glows softly."` For highly Psychic-typed species: `"occasional psychic energy visible as floating geometric shapes or light patterns near the figure."` Tone: pale, luminous — pink, lavender, or cool white from species palette. Hair: pink, lavender, white, or deep indigo — may appear to float slightly. Eyes: large, expressive — pink, violet, gold, or solid color. Texture: smooth, almost translucent at extremities. Environmental effect: `"faint psychic shimmer or floating light motes near the figure"` for highly Psychic-typed species.
+ 
+---
+ 
+**Dark Type**
+Skin: `"skin with a cool, slightly shadowed undertone, as though light bends away from the figure."` For highly Dark-typed species: `"shadows gathering at the edges of the figure."` Tone: cool, slightly shadowed — dark tones, cool greys, or shadowed versions of species palette colors. Hair: black, deep grey, midnight blue, or dark purple — may appear to absorb light. Eyes: sharp, predatory — red, gold, dark purple, or solid black iris. Texture: cool, slightly matte. Environmental effect: `"shadows deepening around the figure"` for highly Dark-typed species.
+ 
+---
+ 
+**Dragon Type**
+Skin: `"skin with a faint scale texture at [locations], warm and slightly iridescent."` Specify scale patch locations — never "covered in scales." Tone: warm, slightly iridescent — deep jewel tones, metallics, or strong saturated colors from species palette. Hair: deep jewel tones, gold, or species-palette colors — may incorporate horn or crest elements. Eyes: slit pupils, jewel-toned iris — specify exact color from species palette. Specify scale pattern and color separately from skin tone.
+ 
+---
+ 
+**Fairy Type**
+Skin: `"beauty with an unsettling quality — features slightly too perfect, too still, the kind of beautiful that takes a moment to recognize as not quite human."` Tone: luminous, slightly iridescent — pale pinks, creams, or soft pastels from species palette. Hair: pink, white, pale gold, lavender, or species-palette colors — may move as though in a gentle breeze. Eyes: large, luminous — often solid-color or starlit quality, pink, gold, or deep violet iris. Texture: smooth, luminous with slight iridescent quality. Environmental effect: `"soft light motes or flower petals drifting near the figure"` for highly Fairy-typed species.
+ 
+---
+ 
+**Flying Type**
+Wings as additions to otherwise humanoid form — specify wing type and current position. Specify feather or membrane color per species. Lightweight, athletic build. Flying type rarely appears alone — usually paired with another type. Wing specifications take priority as the most visually distinctive Flying-type feature. Apply paired type rules for all other features.
+</pre></div><h2>Pokegirl plug in 2/2</h2><p>Pokégirl part 2 of 2.</p><p>Name it exactly: <strong>Pokegirl plug in 2/2</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Pokegirl plug in 2/2</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">---
+ 
+## §4 — BODY PLAN VARIANTS
+ 
+### Standard Bipedal (default)
+Human body base. Apply §3 type rules and §1 species feature additions. No body plan modification needed.
+ 
+---
+ 
+### Kemonomimi / Minor Animal Features
+**Applies to:** Eevee and all Eeveelutions (standard bipedal form), Pikachu, Raichu, Meowth, Persian, Growlithe, Arcanine (bipedal), Vulpix, Ninetales, Jigglypuff, Clefairy, Snubbull, and all species whose non-human features are limited to ears, tail, and minor markings.
+ 
+**Formula:** Describe full human body first. Then append:
+`Non-human features include [species] ears positioned on top of the skull — [ear shape: upright and pointed / large and rounded / long and drooping / specify], [ear color matching species palette], [ear size relative to head], [inner ear color if distinctive]. [Tail: shape, length, base position at base of spine, color and texture matching species palette, current state — raised/lowered/curled/wagging].`
+ 
+**Critical rule:** Never default to Pikachu ears or Eevee ears unless the character IS Pikachu or Eevee. Every species has distinct ear shape — specify precisely.
+ 
+**Eeveelution-specific notes:**
+- **Vaporeon:** Bipedal. Fin tail attached at base of spine — `"fin tail [blue, semi-translucent, fin-edged], not replacing legs."` Specify dorsal fin ridge along the tail. Blue fin-like ear structures. Water-type rules.
+- **Flareon:** Large fluffy rounded ears. Cream-colored mane collar at neck. Fire-red tail with cream tip. Fire-type rules.
+- **Jolteon:** Sharp spiky yellow ears. Spiky fur collar at the neck. Lightning-bolt tail. Electric-type rules.
+- **Espeon:** Slender forked tail. Smooth lavender fur-tipped ears. `"Small red gem set in the forehead."` Psychic-type rules.
+- **Umbreon:** Black ears with yellow ring markings. Smooth black tail with yellow ring markings. Yellow ring markings on skin at canonical body locations. Dark-type rules.
+- **Leafeon:** Leaf-shaped ear tips. Leaf-pattern tail with brown base and green leaf tip. Grass-type rules.
+- **Glaceon:** Smooth ice-blue ear flaps folded close to the head. Diamond-tipped tail. Ice-type rules.
+- **Sylveon:** `"Two ribbon-like feelers trailing from each ear and two from each wrist, pink and white, moving gracefully."` Fairy-type rules.
+---
+ 
+### Serpentine Lower Body
+**Applies to:** Ekans, Arbok, Seviper, Snivy line (Snivy/Servine/Serperior), Dratini/Dragonair
+ 
+**Formula:**
+`Human female upper body from the waist up, merging at the waist into a long serpentine lower body — no human legs, no human feet, only a single continuous serpentine coil from the hips downward, [length] in total, covered in [scale color and pattern per species] scales. Non-human features include complete serpentine lower body below the waist, replacing both legs entirely with a single muscular snake tail. The tail coils [around her body / pooled beneath her / extended behind].`
+ 
+- Never use "legs" anywhere in a serpentine Pokégirl prompt.
+- Specify scale pattern and color from species palette separately from skin color.
+- Regenerate if human legs are visible.
+**Species-specific notes:**
+- **Arbok:** Purple scales. `"Large hood-like scale flare at the upper coil just below the merger point, with [species] hood pattern markings."` Poison-type rules.
+- **Seviper:** Black scales with red zigzag markings. `"Tail ending in a red blade-like scale rather than a rounded tip."` Poison-type rules.
+- **Serperior line:** Smooth green scales with cream/yellow underbelly. Leaf-like scale flourishes at the merger point and tail tip. Grass-type rules.
+**Gyarados (sea serpent variant):**
+`Human female upper body from the waist up, merging at the waist into a long powerful sea-serpent lower body — blue fish scales, dorsal fins along the spine of the coil, pectoral fin-like protrusions at the merger point. Two long [blue/white] barbel whiskers trailing from the lower jaw. Tail end with large fan fin. No human legs.` Water-type rules.
+ 
+**Onix/Steelix (boulder chain variant):**
+`Human female upper body from the waist up, merging at the waist into a chain of [grey boulders / iron-grey metallic segments] forming a serpentine lower body — segments increasing in size toward the tail end, [rocky texture / metallic polished surface], the chain flexible and articulated. No human legs.` Rock/Steel type rules respectively.
+ 
+**Rayquaza:** `Human female upper body from the waist up, merging into a long sky-serpent lower body — green scales with yellow ring markings at regular intervals, very long and trailing behind. Yellow-outlined facial markings on the human face.` Dragon-type rules.
+ 
+**Zygarde (50% form basis):** `Human female upper body from the waist up, merging into a serpentine lower body formed from black and green hexagonal cell-pattern segments. No human legs. Green diamond marking on chest. Multiple small green dot markings along the serpentine body.` Dragon-type rules.
+ 
+---
+ 
+### Mermaid / Aquatic Lower Body
+**Applies to:** Milotic, Primarina, Kyogre, Wailord, Wishiwashi, and fully aquatic species requiring humanoid adaptation.
+ 
+**Standard formula:**
+`Human female upper body from the waist up, merging at the hips into a [species] tail — [scale color and pattern per species], [fin type and placement]. Human waist joins at hip level.`
+ 
+**Species-specific notes:**
+- **Milotic:** `"Elegant iridescent scaled tail — cream with pink and teal iridescence, large fan fin at the tail end, ribbon-like pink fin protrusions along the length of the tail."` Water-type rules.
+- **Primarina:** `"Large rounded pinniped-seal lower body merging from the hips, pale blue-white, with large flipper fin at the base. Pearl accessories. Long flowing hair with pearl ornaments."` Water/Fairy type rules.
+- **Kyogre:** `Human female upper body from the waist up, merging at the hips into a massive orca-cetacean lower body — deep blue with white underside markings and red curved line markings at canonical locations. Large tail flukes at the base. Pectoral fin-like protrusions at the merger point flanking the hips. Powerfully built. Red eye markings beneath human eyes.` Water-type rules.
+- **Wailord/Wishiwashi:** Cetacean/fish mermaid formula — scale to species palette and body size.
+**Note:** Vaporeon uses the Kemonomimi section — bipedal with finned tail attached, not mermaid lower body.
+ 
+---
+ 
+### Equine Taur-Type
+**Applies to:** Ponyta, Rapidash, Galarian Rapidash, Zebstrika, Blitzle, Mudsdale, Mudbray, Keldeo
+ 
+**Formula:**
+`Hybrid female figure: human female upper body from the waist up, merging at the waist into the body of a [equine species] from the neck and shoulder junction downward. Non-human features include complete equine body below the waist, with four unguligrade legs ending in [equine hooves — specify color per species]. [Equine] body has [coat color and texture per species]. Human waist joins at the equine neck and shoulder junction — not a human riding or standing beside a horse.`
+ 
+**Species-specific notes:**
+- **Ponyta:** `"Mane and tail formed from living flame, yellow-orange, equine body cream or white."` Fire-type rules.
+- **Rapidash:** Same as Ponyta plus `"single spiraling ivory horn."` Fire-type rules.
+- **Galarian Rapidash:** `"Pastel pink mane and tail, white coat, single spiraling horn."` Psychic/Fairy type rules.
+- **Zebstrika/Blitzle:** Zebra stripe pattern on equine body. Lightning-bolt tail tip. Electric-type rules.
+- **Mudsdale:** Heavily built draft horse lower body, brown with cream feathering at hooves. Ground-type rules.
+- **Keldeo:** Blue-white equine body, colored mane and horn per forme. Water/Fighting type rules.
+---
+ 
+### Arachnid Body Plan
+**Applies to:** Spinarak, Ariados, Joltik, Galvantula, Dewpider, Araquanid
+ 
+**Formula:**
+`Hybrid female figure: human female upper body, rising from the front and top of a large arachnid lower body. Non-human features include complete arachnid body below the waist — eight arachnid legs emerging from the arachnid body, human torso rising from the front and top of the leg cluster, not the rear. Large bulbous arachnid abdomen-tail protruding behind. Human torso faces forward, above and in front of the leg cluster.`
+ 
+Never use "spider" — use "arachnid." Regenerate if human torso is positioned behind the legs rather than above and in front.
+ 
+**Species-specific notes:**
+- **Ariados:** Red arachnid body with yellow markings. Silk thread trailing from the abdomen-tail. Bug/Poison type rules.
+- **Galvantula:** `"Arachnid legs covered in yellow and blue fur."` Compound eyes. Electric/Bug type rules.
+- **Araquanid:** `"Large transparent water bubble enclosing the head and upper torso, the face visible through it."` Teal arachnid lower body. Water/Bug type rules.
+- **Dewpider:** Same formula as Araquanid, smaller scale. Water/Bug type rules.
+---
+ 
+### Amorphous / Slime Body Plan
+**Applies to:** Ditto (untransformed), Grimer, Muk, Alolan Grimer/Muk, Goodra, Sliggoo, Gulpin, Swalot
+ 
+**Formula:**
+`Humanoid female figure with a body formed from [color per species] [translucent / opaque / glossy] slime or gel — skin has a [wet / glossy / viscous] quality, [specify consistency per species], with the suggestion of the figure's form visible through or within the substance.`
+ 
+**Species-specific notes:**
+- **Ditto:** `"Body formed from purple translucent slime, features simplified and slightly unformed — large dot eyes, curved smile line, the rest of the face suggested rather than defined. Body takes approximate human female shape but edges are fluid and undefined."`
+- **Grimer/Muk:** `"Body formed from dark purple-grey toxic sludge, viscous and heavy."` Muk larger and more defined. Poison-type rules.
+- **Alolan Grimer/Muk:** Same formula with `"multicolored iridescent sheen across the sludge surface."` Muk has visible crystal tooth fragments. Poison/Dark type rules.
+- **Goodra/Sliggoo:** `"Body with a wet, glossy, semi-transparent quality — purple-toned, slightly translucent, slime sheen across all surfaces. Goodra: more defined humanoid proportions, large horn nubs, antenna protrusions from the head."` Dragon-type rules.
+- **Gulpin/Swalot:** Green amorphous body, simplified features, large mouth characteristic. Poison-type rules.
+---
+ 
+### Harpy / Avian Body Plan
+**Applies to:** Articuno, Zapdos, Moltres, Ho-Oh, Lugia, Hawlucha, Talonflame line, Swellow line, Pidgeot line, Togekiss, Unfezant, Braviary, Mandibuzz, Corviknight, Rookidee line
+ 
+**Formula:**
+`Bipedal humanoid female figure with large [avian type] wings at the back — [wing color and pattern per species]. Wings [folded against back / partially spread / fully extended — specify]. Human arms present. [Specify avian features as additions: feather patches at forearms or shoulders, taloned feet if desired, crest or plumage on head].`
+ 
+**Lugia variant (dragon-adjacent option):** `"Large pale blue-white wing-fins at the back, smooth membrane rather than feathered, dorsal fin ridge along the spine."`
+ 
+**Species-specific notes:**
+- **Articuno:** `"Large elegant ice-blue feathered wings, long ribbon-like tail feathers, ice-blue crest on head."` Ice/Flying type rules.
+- **Zapdos:** `"Large jagged-edged electric yellow feathered wings, feathers spiked and charged-looking, yellow crest."` Electric/Flying type rules.
+- **Moltres:** `"Large flame-suffused wings — feathers edged in living fire, orange-gold, trailing embers. Flame crest."` Fire/Flying type rules.
+- **Ho-Oh:** `"Massive rainbow-iridescent feathered wings, white and gold body feathers, red tail feathers."` Fire/Flying type rules.
+- **Corviknight:** `"Large steel-grey armored wings with mirror-like feathers, black body, metallic sheen throughout."` Steel/Flying type rules.
+---
+ 
+### Ghost / Incorporeal Body Plan
+**Applies to:** Gastly, Haunter, Gengar, Misdreavus, Mismagius, Shuppet, Banette, Duskull, Dusclops, Dusknoir, Sableye, Spiritomb, Phantump, Trevenant, Pumpkaboo, Gourgeist
+ 
+**Formula:**
+`Humanoid female figure, [partially / fully] incorporeal — [specify degree: fully translucent and ghostly / semi-solid with diffuse edges / nearly solid with occasional transparency]. Skin [cool, pale, slightly luminous — specify exact tone from species palette]. Edges [softly diffuse / clearly defined — specify per species].`
+ 
+**Species-specific notes:**
+- **Gengar:** `"Semi-solid purple-grey figure, mouth wider than human baseline with many small teeth, eyes red with small pupils. Shadow pooling at feet."` Ghost/Poison type rules.
+- **Mismagius:** `"Purple robed ghost-girl — body suggested beneath flowing purple robe-like incorporeal form, red eye-like markings on the robe. Hat-like protrusion from head."` Ghost-type rules.
+- **Banette:** `"Grey incorporeal figure with zipper mouth — characteristic zip-mouth marking across lower face, pin accessories, hollow eyes."` Ghost-type rules.
+- **Sableye:** `"Small dark purple figure, eyes are literally gemstones — [sapphire / ruby / emerald], glittering and multifaceted. Clawed fingers."` Dark/Ghost type rules.
+---
+ 
+### Near-Human Corrections
+For species that are largely humanoid but require specific feature adjustments beyond standard type rules.
+ 
+**Jynx:** `Human female figure, face wider than human baseline per §2. Skin [purple-black] with dramatic contrast against [blonde hair]. Large expressive eyes. Red dress-body coloring may manifest as red clothing or as body coloring below the waist.` Psychic/Ice type rules.
+ 
+**Ms. Mime (Mr. Mime feminized):** `Human female figure, face slightly wider than human baseline per §2 with mime-pattern markings — pink circular cheek markings, white face panels. Curled hair. Feminine build explicitly specified.` Psychic/Fairy type rules.
+ 
+**Alakazam:** `Human female figure with elongated skull per §2 — slightly taller and wider cranium than human baseline, face positioned lower on the skull, facial features fully human. Holds two spoons. Mustache marking reinterpreted as facial marking rather than literal mustache.` Psychic-type rules.
+ 
+**Machamp:** `Human female figure with four arms — upper pair [description], lower pair [description]. Powerfully built. Blue-grey skin from species palette. Championship belt accessory.` Fighting-type rules.
+ 
+**Gardevoir:** `Human female figure. Lower body manifests as an elegant white gown form — the gown silhouette is part of the body, not clothing. Green accents. Green hair swept back. Red chest gem.` Psychic/Fairy type rules.
+ 
+---
+ 
+## §5 — LEGENDARY AND MYTHICAL SPECIAL CASES
+ 
+Key recognition features must always appear — as literal physical features or as stylized human-adjacent equivalents. When a legendary has very non-humanoid features, use the closest body plan formula from §4 and layer species-specific corrections on top.
+ 
+**Mewtwo:** `Human female figure with elongated skull per §2. Pale lavender-grey skin. Large purple tail at the base of the spine — thick, long, distinctive. Tube or armor aesthetic in clothing.` Psychic-type rules.
+ 
+**Mew:** `Small, delicate human female figure, diminutive height. Pale pink skin. Long pale pink tail. Large blue eyes. Specify as adult despite delicate build.` Psychic-type rules.
+ 
+**Celebi:** `Small, delicate human female figure. Green-tinted skin. Large red eyes. Antenna protrusions from top of head.` Psychic/Grass type rules.
+ 
+**Gardevoir:** See Near-Human Corrections in §4.
+ 
+**Arceus:** `Human female figure, white-cream skin. "A large golden halo-ring of [type-specific plates] orbiting the body at waist level." Plate coloring shifts with type held.` Normal-type base.
+ 
+**Kyurem:** `Human female figure. Pale blue-white skin, crystalline ice texture at shoulders and arms. Large jagged ice-crystal wing protrusions at the back — asymmetrical, damaged-edged aesthetic.` Ice/Dragon type rules.
+ 
+**Xerneas:** `Human female figure. Large branching deer antlers from the skull — specify per §1 antler rules: "blue jewel points at antler tips glowing when active, grey when dormant." Blue and gold color palette. Elegant, ancient quality.` Fairy-type rules.
+ 
+**Yveltal:** `Human female figure. Large dark wing-feathers at the back, red and black coloring. Claw-tipped fingers. Predatory, powerful build.` Dark/Flying type rules.
+ 
+**Zygarde:** See §4 Serpentine Lower Body section.
+ 
+**Rayquaza:** See §4 Serpentine Lower Body section.
+ 
+**Kyogre:** See §4 Mermaid/Aquatic Lower Body section.
+ 
+**Articuno / Zapdos / Moltres / Ho-Oh / Lugia:** See §4 Harpy/Avian Body Plan section.
+ 
+**Hoopa:** `Human female figure with golden ring accessories — large golden hoop rings at wrists and floating nearby. Confined forme: small, impish build. Unbound forme: larger, more imposing, with additional ring portals.` Psychic/Ghost (Confined) and Psychic/Dark (Unbound) type rules respectively.
+ 
+**Necrozma:** `Human female figure. "Skin with a [black / white / prismatic] crystalline quality, light refracting through the figure in rainbow patterns at the extremities." Prism-shard aesthetic in clothing and accessories.` Psychic-type rules.
+ 
+---
+ 
+## POST-GENERATION CHECKLIST
+ 
+Evaluate every Pokégirl output before accepting:
+- Species is recognizable from key features
+- Ears are species-specific — not generic Pikachu or Eevee ears
+- Tail is species-specific and correctly described
+- Skin tone and markings match species palette
+- Body plan merger point is correct for non-standard lower bodies
+- No unintended human lower body where serpentine/aquatic/arachnid lower body is specified
+- Type features are present and readable
+- Figure reads as both attractive and identifiable as the species
+
+Regenerate on any critical failure.
+</pre></div><h2>Alien plug-in 1/2</h2><p>Alien part 1 of 2. Paste both.</p><p>Name it exactly: <strong>Alien plug-in 1/2</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Alien plug-in 1/2</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6"># ALIEN PROMPT ENHANCEMENT — STANDALONE PLUGIN
+### Self-contained — no additional documents required
+### Compatible with: Bob Ross Script · Positional Director Script · Artist Script · Manga Image Script
+### Compatible with: Player/NPC Appearance and Relationship Tracker/Update frameworks
+### Output targets: illustrAppearance · illustrSetting
+ 
+---
+ 
+## BEHAVIOR
+ 
+When generating an image prompt, scan illustrSubject, illustrAppearance, and tracked items Player Appearance / NPC Appearance for alien keywords or descriptions. Identify the rendering strategy below and apply the appropriate approach.
+ 
+**Sentience/sapience rule:** Sapient/sentient aliens are characters — describe with full character-level attention in illustrAppearance. Alien fauna are creatures — describe with environmental detail, treat as illustrSetting midground unless they are the primary subject. Alien flora are setting elements — describe in illustrSetting only, never as illustrAppearance subjects unless explicitly established as sapient.
+ 
+**Strategy selection:** Choose the rendering strategy that best matches the alien's body plan. When uncertain, use the most conservative strategy that still captures the essential description.
+ 
+**Novel body plan:** Apply universal rules, use the closest analogous strategy and formula, flag for review.
+ 
+**No match found:** Apply universal rules only and flag for review.
+ 
+---
+ 
+## UNIVERSAL RULES — apply to all alien prompts
+ 
+- **Scale anchor (required):** Always establish size relative to a human reference point. "Twice human height," "knee-height on a human adult," "roughly human-sized but broader." Never rely on abstract size descriptors alone — Flux needs a comparison to render scale correctly.
+- **Symmetry declaration (required):** State body symmetry type before describing features. Bilateral (left-right mirror), radial (rotating symmetry around central axis), asymmetric (deliberately uneven). Describe features consistently with declared symmetry — bilateral aliens get paired features described as pairs, radial aliens get features described by position around the central axis.
+- **Body plan anchoring (required):** Establish the overall body plan before any detail description. State: locomotion type (bipedal / quadrupedal / multipedal / apedal / pseudopod), body regions (head / thorax / abdomen / or equivalent), and limb configuration (number and arrangement). This is the equivalent of the human-face rule in monstergirl prompts — anchor the body plan first, then describe modifications.
+- **Sentience markers:** Sapient aliens show intentional modification of their appearance — clothing, tools, adornment, deliberate markings. Fauna show none of these unless the narrative establishes otherwise. When in doubt, let the narrative establish sentience rather than inferring it.
+- **Surface coverage:** Describe by specific body locations as additions to the established body plan base — never as coverage with exceptions. "Chitin plating on the thorax and upper limbs" not "chitin covering the body except the face." Inverse framing anchors the base form regardless of coverage extent.
+- **Limb specification (required for any non-standard count):** State exact limb count, type, and arrangement. "Four arms arranged in two bilateral pairs — upper pair longer and heavier, lower pair shorter and more dexterous" rather than "multiple arms." Reliable rendering: up to 4 limbs. 6 limbs: inconsistent. 8+ limbs: difficult to impossible, regenerate liberally.
+- **Eyes (required):** Specify number, position on head/body, iris color or absence, pupil shape (round, slit, compound, none), sclera color, whether they glow. For compound eyes: "large compound eyes covering [position] — multifaceted surface, [color]." For eye stalks: "eyes on [number] mobile stalks extending from [position], [description]." For no eyes: state explicitly and specify how the alien perceives (if relevant to the image).
+- **Mouth/facial opening:** Always specify presence, position, shape, and any notable features (teeth type, mandibles, beak, proboscis, filtering structures). For aliens without a distinct face: state where sensory and intake structures are located.
+- **Bioluminescence:** Specify location, color, whether constant or pulsing, and intensity. "Bioluminescent patches along the dorsal spine, pulsing blue-green, dimly lit" rather than "glowing." Bioluminescence reads as external light source — specify it as emanating from the body surface.
+- **Exoskeleton vs endoskeleton vs askeleton:**
+  - Exoskeleton: describe chitin/shell color, texture, and segmentation locations. Specify articulation points (joints where flexible membrane shows between plates).
+  - Endoskeleton: describe surface covering (skin, scales, fur, etc) as primary visual element.
+  - Askeleton (soft-bodied): specify what gives the form shape — internal pressure, muscular structure, external support. Describe consistency (firm / semi-rigid / fluid / gelatinous).
+- **Wings:** Always specify type (avian, bat, insectoid — dragonfly/moth/beetle, membranous, energy-based), number and pairing, current position. Default to folded. Folded wings are difficult — regenerate if rendered outstretched when folded is required.
+- **Tails and abdomens:** Always specify shape, length, base position, surface texture, and current state. Insectoid abdomens: "large [insect type] abdomen protruding from the posterior, [color], [segmented / smooth], [with stinger / no stinger]."
+- **Antennae:** Specify number, base position (forehead / top of skull / sides of head), shape (filiform / clubbed / feathered / branched), length, color, and current state (raised / lowered / moving).
+- **Horns, crests, frills:** Specify shape, material, number, skull/body position, and whether display-relevant (raised/lowered states matter for frills and crests).
+- **No pronouns:** Use character IDs throughout.
+- **Affirmative only:** Describe what is present. Never "no [feature]" — instead describe what replaces it or is present instead.
+
+---
+
+## STRATEGY 1 — HUMAN ANCHOR WITH ALIEN MODIFICATIONS
+*Use when: bipedal, bilateral symmetry, recognizable head/torso/limb layout with non-human modifications. Most reliable rendering.*
+ 
+Establish human-readable body base first, then append alien features as additions — the same approach as monstergirl prompts. The human base gives Flux a stable foundation; alien modifications layer on top.
+ 
+`[Humanoid alien female/male/ungendered], approximately [scale anchor]. Bilateral symmetry. [Skin/surface covering: color, texture, coverage locations]. [Head: shape, size relative to body, position]. [Facial features: eyes per universal rules, mouth/facial opening, nose or equivalent, any additional sensory organs]. [Hair or equivalent head covering if present]. [Body build: equivalent human build descriptors plus alien modifications]. [Limb configuration if non-standard]. [Additional features: tails, wings, antennae, crests per universal rules].`
+ 
+**Surface coverage on human-base aliens:** Scales, chitin, fur, or other covering described as additions to the underlying humanoid form — specify locations as the MRG surface coverage rule. Never "covered in [covering]" — always "scales on back, arms, and legs."
+ 
+**Facial modifications on human-base aliens:** Describe the human facial structure first, then alien modifications as additions or replacements of specific features. "Human facial structure with [eyes replaced by compound eyes / jaw modified into mandibles / nose replaced by a sensory pit / additional eyes above the primary pair]." This prevents the Egyptian-deity failure mode (alien head on human body) by establishing the human face before modifying it.
+ 
+**Clothing and adornment on human-base aliens:** Follows standard clothing rules. Alien anatomy (extra arms, tail, wings) affects garment behavior — specify how clothing accommodates non-standard features. "Garment with [number] arm openings / tail slit at rear / wing slits at back."
+ 
+---
+
+## STRATEGY 2 — ALIEN ANCHOR WITH HUMAN-READABLE FEATURES
+*Use when: non-humanoid body plan, but has recognizable elements (eyes, limbs, mouth) that can anchor the render. Inconsistent — regenerate liberally.*
+ 
+No human base. Describe body plan from primitives up, using recognizable features as rendering anchors. Establish body plan structure before any surface detail.
+ 
+`[Body plan]: [locomotion type] body plan, approximately [scale anchor], [symmetry type] symmetry. [Primary body region description: shape, size, orientation]. [Secondary body regions if present]. [Limb configuration: number, type, arrangement, what they terminate in]. [Head or equivalent sensory cluster: position on body, features per universal rules]. [Surface covering: type, color, locations]. [Additional features per universal rules].`
+ 
+**The sensory cluster anchor:** Even for fully non-humanoid aliens, the concentration of sensory organs (eyes, olfactory organs, audio organs) functions as the "face" for rendering purposes. Describe it with the same specificity as a face, even if it bears no resemblance to one. This gives Flux a functional equivalent to the human-face anchor.
+ 
+**Limb geometry:** For non-humanoid limbs (tentacles, pseudopods, multiple jointed segments), describe: base position on body, length, how they terminate, and what they're doing in this scene. Tentacles: specify number, base position, length, texture (smooth / suckers / barbed), and current arrangement (coiled / extended / grasping). Arthropod limbs: specify segmentation, joint count if important, termination (claw / pad / specialized tool).
+ 
+**Scale reading:** Without a human body for scale comparison, establish relative proportions explicitly. "Thorax roughly the size of a human torso / head region roughly melon-sized / limbs extending two body-lengths." Give Flux multiple reference points within the body itself.
+ 
+**Currently difficult in Strategy 2:**
+- Correct limb counts above 6
+- Radial symmetry reading as intended rather than bilateral
+- Pseudopod locomotion distinct from tentacles
+- Non-bilateral head/sensory cluster arrangements
+---</pre></div><h2>Alien plug-in 2/2</h2><p>Alien part 2 of 2.</p><p>Name it exactly: <strong>Alien plug-in 2/2</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Alien plug-in 2/2</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">## STRATEGY 3 — PURE DESCRIPTION, REGENERATE LIBERALLY
+*Use when: fully non-humanoid, radial symmetry, pseudopod/apedal, nothing human-readable to anchor to. Results will vary significantly. Establish acceptable variance range before generating.*
+ 
+Describe as precisely as possible using body plan primitives. Set player/author expectations that this is high-variance territory — some renders will be wrong in interesting ways, some will be wrong in unusable ways. Regenerate until an acceptable result emerges, accepting that "acceptable" may mean "evocative rather than accurate."
+ 
+`[Body plan description from largest to smallest: overall shape → body regions → surface features → sensory organs → any appendages]. [Scale anchor against environmental element rather than human if possible — "roughly the size of a large vehicle / filling the doorframe / small enough to fit in a cupped hand"]. [Color and surface texture]. [Most visually distinctive features stated last for emphasis weight].`
+ 
+**Radial symmetry:** State explicitly. "Radial symmetry — [number] identical segments arranged around a central axis." Describe one segment in full, state it repeats [n] times. Flux will often default to bilateral — if bilateral render is acceptable for the scene, allow it. If radial is critical, regenerate until achieved or consider whether Strategy 2 with a strong central focal element is more practical.
+ 
+**Apedal/pseudopod locomotion:** "No discrete limbs — locomotion via [muscular pseudopod / ciliary motion / fluid propulsion / specify]. Lower body a continuous [shape] rather than legs." Flux will struggle to render this without defaulting to legs or a tail. Tight framing that crops the locomotion region is often more reliable than showing the full body.
+ 
+**Currently unsolvable:**
+- Consistent radial symmetry
+- True pseudopod locomotion distinct from slug/serpentine forms
+- Limb counts above 8 rendering correctly
+- Non-facial sensory organ arrangements reading as intended rather than as face-adjacent
+- Simultaneous multiple independent movement of many appendages
+For unsolvable features: describe the most important visual elements, accept that others will be approximated or absent, and note in the scene context what the image is attempting to show.
+ 
+---
+ 
+## SEXUAL CHARACTERISTICS — EDGE CASES
+ 
+Standard sexual characteristics follow standard description rules. Non-standard configurations require specific handling:
+ 
+**Multiple breasts:** Describe following the milk line (two parallel lines from armpit to groin). Even numbers: "two bilateral rows of [number per row] breasts following the ventral milk lines." Odd numbers require asymmetric or radial arrangement — specify explicitly and accept high variance. For non-human chest configurations: describe by location and shape rather than assuming breast morphology.
+ 
+**Non-standard genitalia:** Describe by visible external appearance only — shape, location, color, size relative to body. Ovipositors and similar structures: describe as body appendages — "a retractable [color] ovipositor emerging from the [location], [length], [texture]." Hemipenes: "paired structures at [location]." Cloaca: "a single multipurpose opening at [location]." Rendering reliability for all non-standard configurations is low — use compositional concealment (framing, pose, partner occlusion) as the primary strategy, explicit description as secondary.
+ 
+**Groin concealment rules apply unchanged:** Compositional strategies first, explicit description only when scene requires it.
+ 
+---
+ 
+## CLOTHING AND ADORNMENT
+ 
+Alien clothing follows the culture and technology level established in the narrative. When in doubt:
+ 
+- **Pre-industrial aliens:** natural materials, practical construction, culturally specific decoration
+- **Industrial-equivalent aliens:** manufactured materials, functional design
+- **Post-industrial aliens:** advanced materials, potentially non-standard construction
+Alien garments must accommodate alien anatomy — specify how. Standard garment vocabulary applies for human-adjacent aliens. For non-humanoid aliens with clothing: describe what the garment covers and how it attaches, not what it would be called on a human.
+ 
+**Adornment as sentience marker:** Deliberate modification of appearance (jewelry, scarification, pigment application, woven elements in hair/fur/antennae) signals sapience. Describe adornment with the same specificity as clothing.
+ 
+---
+ 
+## ENVIRONMENTAL CONTEXT
+ 
+Alien fauna and flora in the setting:
+ 
+**Fauna in illustrSetting:** Describe by body plan, size relative to environment, behavior visible in the scene, and coloration. Do not name species — describe what is seen. "A creature the size of a large dog, six-legged, [color], moving through the undergrowth" rather than "a [species name]."
+ 
+**Flora in illustrSetting:** Describe by color, growth form (upright / sprawling / hanging / emerging from water), and any notable features (bioluminescence, movement, unusual structures). Alien flora can be described with the same descriptive vocabulary as setting elements.
+ 
+**Scale relationships:** When alien subjects interact with alien environments, establish scale through relationship — "the creature's head reaches the lower branches / the figure is dwarfed by the surrounding vegetation / the alien looms over the human-scale structures."
+ 
+---
+ 
+## POST-GENERATION CHECKLIST
+ 
+Evaluate every alien output before accepting:
+ 
+- Body plan reads as intended strategy
+- Symmetry matches specification
+- Scale reads correctly relative to stated reference
+- Limb count and configuration correct
+- Head/sensory cluster in correct position
+- Eyes match specification
+- Surface covering localized correctly
+- Sentience register appropriate (character-level vs creature-level description)
+- Sexual characteristics handled correctly for the scene
+- Clothing accommodates alien anatomy correctly
+**Regenerate on critical failure:**
+- Wrong body plan (humanoid when non-humanoid specified or vice versa)
+- Wrong limb count on clearly visible limbs
+- Wrong symmetry when symmetry is visually central
+- Scale dramatically wrong relative to environment
+- Sentience register wrong (creature rendered as prop, sapient rendered as monster)
+**Accept and work with:**
+- Minor limb count errors when limbs are partially obscured
+- Approximate radial symmetry when true radial is specified
+- Simplified pseudopod locomotion
+- Bilateral rendering of radially symmetric aliens when the scene still reads correctly
+</pre></div>
+<footer>
+<p>Copy from the boxes on these pages into Infinite Worlds. A contribution from <strong>KaapstadMK</strong>, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.</p>
+<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a></p>
+</footer>
+</main>
+<script src="assets/copy.js"></script>
+</body>
+</html>

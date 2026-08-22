@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Body add-ons — The Script Library</title>
+<meta name="description" content="Expanded female, cups, male, futa, hypertrophy, Cup Sizes notebook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body>
+<header class="top">
+<div class="row">
+<a class="logo" href="index.html">THE SCRIPT LIBRARY</a>
+<nav><a href="index.html">Pick a look</a>
+<a href="start.html">First time</a>
+<a href="writing.html">Story voice</a>
+<a href="extras.html">Extra writing</a>
+<a href="bodies.html">Bodies</a>
+<a href="creatures.html">Creatures</a>
+<a href="frame.html">Picture frame</a>
+<a href="dont.html">Never mix</a></nav>
+</div>
+</header>
+<main class="wrap">
+
+<p class="bubble">BODY ADD-ONS</p>
+<h1>Bodies.</h1>
+<p class="lede">These are extra Extra Instruction Blocks. They fit the photo, painting, and manga scripts. Do not stack every body add-on at once.</p>
+<h2>Expanded female appearance</h2><p>More body-size language for women.</p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Expanded female appearance</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">Insert after illustrAppearance, in place of the female subjects block only
+
+Female subjects: If subject is female or any female-gendered non-human species — including monstergirls, kemonomimi, and any species described with female sex — Append to whichever template was used above a 1-word descriptor conveying size, shape, or physical presence for each body part, followed by the appropriate size tier:
+· bust: [1-word descriptor] + ("bust impossibly lavish, each breast far exceeding her head in size, proportions gloriously beyond mundane possibility" / "bust magnificently oversized, each breast exceeding her head in size" / "bust large enough that each breast rivals her head in size" / "bust roughly two-thirds the size of her head" / "bust slightly larger than human average" / "bust petite and neatly proportionate")
+· waist: ("narrow defined waist" / "proportionate toned waist" / "proportionate soft-toned waist")
+· hips: [1-word descriptor] + ("hips flaring extravagantly from the waist, dramatically exceeding shoulders" / "hips flaring dramatically from the waist" / "hips flaring softly from the waist, feminine and rounded" / "hips gently curved, proportionate to frame")
+· rear: [1-word descriptor] + ("rear extravagantly full and rounded, high and firm, dramatically prominent" / "rear large and rounded, high and prominent" / "rear full and rounded, high and firm" / "rear full and rounded, naturally proportionate" / "rear small and neatly rounded"). Select matching established build. The 1-word descriptor must convey size, shape, physical weight, or presence specific to this character — e.g., full, heavy, firm, rounded, high-set, pert, massive, colossal, soft, or specify. Never use generic filler (beautiful, stunning, gorgeous) alone. Use "bust"/"chest" only — never "breasts". Use "rear" only — never "ass". Omit stomach unless midsection is picture-plane-visible — add to illustrClothes as fit-adjacent detail if exposed. Magically altered figures: append "waist and stomach unchanged by the transformation." Unrealistic proportions: append "Ignore human proportions for [body part]" and repeat size descriptor twice.
+</pre></div><h2>WG's Bra Cup Sizing System</h2><p>Letter cup sizes in the picture rules.</p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: WG's Bra Cup Sizing System</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">Insert after illustrAppearance, in the female description block, in place of the bust descriptions. Leave waist/hip/rear descriptions in place
+
+Cup A: "Very small, nearly flat chest with slight gentle curves"
+Cup B: "Small breasts with visible subtle curves"
+Cup C: "Small-medium breasts, modest but noticeable"
+Cup D: "Medium, full breasts, clearly visible"
+Cup E: "Full, rounded breasts noticeably large"
+Cups F–G: "Large, very full breasts dramatically prominent"
+Cups H–I: "Very large, buoyant rounded breasts dominating torso"
+Cups J–K: "Huge, extremely full breasts extending well beyond ribcage"
+Cups L–M: "Huge breasts, each larger than her head, dramatically oversized"
+Cups N–O: "Massive breasts, each significantly larger than her head"
+Cups P–Q: "Enormous breasts, extending far past arms, dominating entire frame"
+Cups R–S: "Immense, torso-dominating breasts wider than shoulders"
+Cups T–U: "Colossal breasts dwarfing upper body, each as large as torso"
+V and above: "Reality-defying breasts significantly larger than torso and beyond"
+
+---
+
+In illustrClothes:
+
+
+Female subjects — clothed:
+· Append clothing bust size indicator per cupSize from cup_clothing table below:
+&lt;cup_clothing&gt;
+Cup A: "Very small bust"
+Cup B: "Small bust"
+Cup C: "Small-medium bust"
+Cup D: "Medium bust"
+Cup E: "Full bust"
+Cups F–G: "Large bust"
+Cups H–I: "Very large bust"
+Cups J–K: "Huge bust"
+Cups L–M: "Very huge bust"
+Cups N–O: "Massive bust"
+Cups P–Q: "Enormous bust"
+Cups R–S: "Immense bust"
+Cups T–U: "Colossal bust"
+Cups V and above: "Gargantuan bust"
+&lt;/cup_clothing&gt;</pre></div><h2>Male Description (alternate for baseline female description in PD/Manga)</h2><p>Swap in male body language.</p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Male Description (alternate for baseline female description in PD/Manga)</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3"># MALE DESCRIPTION MODULE — FEMALE/GAY GAZE
+### For use in games where male subjects are primary objects of attraction
+### Output targets: illustrAppearance · illustrClothes · illustrExpressionPosition
+
+If adding alongside female descriptions, instead of in place of female descriptions, take care to interleave description blocks where shared in common
+
+---
+
+## POSITIONAL DIRECTOR SCRIPT
+
+**§4 — After each illustrAppearance template (face-visible, obscured, back-to-camera):**
+
+Male subjects: If subject is male, append to whichever template was used above a 1-word descriptor conveying size, shape, or physical presence for each body part, followed by the appropriate size tier:
+· build: [1-word descriptor] + ("slender, lean frame with subtle muscle definition" / "lean athletic build, muscle clearly defined beneath the skin" / "athletic build, broad-shouldered and powerfully proportioned" / "muscular build, chest and arms heavily defined, veins visible at the forearms") &lt;#Extended tier: add ("heavily muscular build, broad and imposing with dense mass suggesting power beneath" / "fantasy-exaggerated musculature, proportions beyond human limits")#&gt;
+· chest: [1-word descriptor] + ("chest broad and defined" / "chest broad and imposing" / "chest narrow and smooth")
+· waist: ("narrow waist tapering from broad shoulders" / "waist trim and defined, v-taper pronounced" / "waist solid and proportionate to frame")
+· rear: [1-word descriptor] + ("rear firm and rounded" / "rear notably full and firm, prominently rounded")
+
+Select matching established build. The 1-word descriptor must convey size, shape, physical weight, or presence specific to this character — e.g., broad, powerful, lean, defined, massive, compact, dense, sculpted, or specify. Never use generic filler alone. 
+
+For upper build tiers: append presence descriptor — "[body part] carrying [dense/solid/dramatic] weight, presence maintained" — scaled to tier. 
+Fantasy-exaggerated tier: append "Ignore human proportions for [body part]" and repeat size descriptor twice.
+
+Use "muscle definition" — never "visible muscle" or colloquial equivalents (pecs, abs, guns). Omit stomach unless midsection is picture-plane-visible — add to illustrClothes as fit-adjacent detail if exposed. 
+
+---
+
+**§4 — After illustrClothes block:**
+
+Male subjects — clothed:
+Append chest behavior at end of illustrClothes: describe how garments sit on the figure — tension across shoulders and chest, fabric behavior through torso and arms. For well-fitted clothing: "fabric pulling taut across chest and shoulders, sleeves filled by arms." For clothing straining with exaggerated build: "seams straining at shoulders, fabric stretched across chest and upper arms."
+Large build sizes: Use "skintight over chest" rather than "fitted" — asserts fabric presence, prevents displacement.
+When waist and rear described in illustrAppearance, illustrClothes must address fabric behavior over both — waist fit and seat fit. Any unanchored lower body feature renders exposed.
+Stomach if camera-visible: add "flat defined stomach" / "softly muscled stomach" / "slight softness at midsection" as appropriate to build tier.
+Crotch if camera-visible: "[garment] fitted through hips, pronounced mass visible at front, weight and fullness suggested beneath fabric" / "[garment] fitted through hips, substantial outline pressing against fabric" — presence and shape only, never clinical anatomy when clothed.
+
+Nude: 
+Male subjects:
+Describe chest (definition, thickness) · rear (shape, firmness) · genitalia if visible (&lt;#Extended tier: "penis impressively long and substantially thick, heavy and prominent even at rest, visibly dominant" /#&gt; "penis thick and substantial, roughly the length of his hand" / "penis long and defined, visibly heavy" · &lt;#Extended tier "testes large and impressively heavy, hanging full and low, visibly weighty and substantial" /#&gt; "testes full and heavy, hanging low" / "testes large and weighty, visibly substantial" — describe with confident, admiring language)
+
+---
+
+**§5 — After posing section:**
+
+Male subjects: Describe pose, action, and emotion in illustrExpressionPosition with language emphasizing physical power and emotional availability — body language conveying capability and openness simultaneously, physical ease contrasting with emotional expressiveness. No clothing descriptions. No chest or rear references. Exception: sex and post-coital compositions retain explicit genital and penetration detail per existing sex composition rules.
+
+---
+
+**§8 — Technical Constraints addition:**
+
+* Male subjects: Build described using tier-appropriate language. Crotch bulge described through clothing fit and fabric behavior — never clinical anatomy when clothed. Stomach omitted from illustrAppearance unless camera-visible. 
+
+---
+
+## MANGA SCRIPT
+
+**§4 — After Panel 1 block definition:**
+
+**Male subjects — Panel 1:** If subject is male, within the appearance portion of Panel 1 append: build tier (`"slender, lean frame with subtle muscle definition"` / `"lean athletic build, muscle clearly defined beneath the skin"` / `"athletic build, broad-shouldered and powerfully proportioned"` / `"muscular build, chest and arms heavily defined, veins visible at the forearms"` / `"heavily muscular build, broad and imposing with dense mass suggesting power beneath"` / `"fantasy-exaggerated musculature, proportions beyond human limits"`) · chest (`"chest broad and defined"` / `"chest broad and imposing"` / `"chest narrow and smooth"`) · waist (`"narrow waist tapering from broad shoulders"` / `"waist trim and defined, v-taper pronounced"` / `"waist solid and proportionate to frame"`) · rear (`"rear firm and rounded, filling out [garment] cleanly"` / `"rear notably full and firm, prominently filling [garment]"`). For unrealistic proportions: append `"Ignore human proportions for [body part]"` and repeat size descriptor twice.
+
+Within the clothing portion of Panel 1: describe how garments sit on the figure — tension across shoulders and chest, fabric pulling at the arms, fit through the torso. For well-fitted clothing: `"fabric pulling taut across the chest and shoulders, sleeves filled by the arms."` For clothing straining with exaggerated build: `"seams straining at the shoulders, fabric stretched across the chest and upper arms."`
+If stomach is camera-visible or exposed by clothing, add here: "flat defined stomach" / "softly muscled stomach" / "slight softness at the midsection" as appropriate to build tier. For crotch: `"[garment] fitted through the hips, a pronounced bulge visible at the front, the weight and fullness of both cock and balls clearly suggested beneath the fabric" / "[garment] fitted through the hips, a suggestion of substantial mass visible at the front, the outline of cock and balls pressing against the fabric"` — describe presence and shape, never clinical anatomy in the clothed state. When waist, and rear are described in the appearance section, the clothing section must explicitly address fabric behavior over all three — waist fit and seat fit. Any unanchored lower body feature will render as exposed.
+
+If subject is nude in Panel 1: write "Naked —" followed by explicit anatomical description including chest definition, stomach, ass, genitals ("cock thick and substantial, roughly the length of his hand" / "cock long and defined, visibly heavy" · "balls full and heavy, hanging low" / "balls drawn up tight and full" / "balls large and weighty, visibly substantial" — describe both with confident, admiring language), any exposed tattoos or piercings.
+
+---
+
+**§5 — After posing section:**
+
+**Male subjects — all panels:** If subject is male, describe pose, action, and emotion in every panel with language conveying both physical power and emotional availability — powerful at rest, open in expression. Emphasize the contrast between physical capability and emotional register: controlled movement alongside deliberate gentleness, physical ease alongside expressive openness. Body language reads as simultaneously capable of protection and comfort. No clothing descriptions in the pose/emotion portion. No genital references in the pose/emotion portion. **Exception: sex and post-coital scenes retain explicit genital and penetration detail per existing sex scene rules.**
+
+---
+
+**§7 — Technical Constraints addition:**
+
+Add: `* **Male subjects:** Build described using tier-appropriate language. Crotch bulge described through clothing fit and fabric behavior — never clinical anatomy when clothed. Genitals appear only in the clothing portion of Panel 1 when nude, using "Naked —" prefix, with explicit comparative anatomical description.`</pre></div><h2>Futanari description block</h2><p>Futa body language.</p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Futanari description block</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">Futanari subjects (standard range):
+
+§4 - in place of female description block
+
+Futanari Subjects: If subject is futanari, append to whichever template was used above a 1-word descriptor conveying size, shape, or physical presence for each body part, followed by the appropriate size tier:
+· bust: [1-word descriptor] + (&lt;#Expanded Tier: "bust impossibly lavish, each breast far exceeding her head in size, proportions gloriously beyond mundane possibility" / "bust magnificently oversized, each breast exceeding her head in size" /#&gt; "bust large enough that each breast rivals her head in size" / "bust roughly two-thirds the size of her head" / "bust slightly larger than human average" / "bust petite and neatly proportionate") 
+· waist: ("narrow defined waist" / "proportionate toned waist" / "proportionate soft-toned waist") 
+· hips: [1-word descriptor] + (&lt;#Expanded Tier: "hips flaring extravagantly from the waist, dramatically exceeding shoulders" /#&gt; "hips flaring dramatically from the waist" / "hips flaring softly from the waist, feminine and rounded" / "hips gently curved, proportionate to frame") 
+· rear: [1-word descriptor] + (&lt;#Expanded Tier: "rear extravagantly full and rounded, high and firm, dramatically prominent" /#&gt; "rear large and rounded, high and prominent" / "rear full and rounded, high and firm" / "rear full and rounded, naturally proportionate" / "rear small and neatly rounded"). 
+· build: [1-word descriptor] + ("slender, lean frame with subtle muscle definition" / "lean athletic build, muscle clearly defined beneath the skin" / "athletic build, broad-shouldered and powerfully proportioned" / "muscular build, chest and arms heavily defined, veins visible at the forearms") &lt;#Extended tier: add ("heavily muscular build, broad and imposing with dense mass suggesting power beneath" / "fantasy-exaggerated musculature, proportions beyond human limits")#&gt;
+
+The 1-word descriptor must convey size, shape, physical weight, or presence specific to this character — e.g., full, heavy, firm, rounded, powerful, lean, defined, sculpted, or specify. Never use generic filler alone. Defined muscle coexists with generous curves — describe both as physical fact. 
+
+For large proportions: after tier selection, append projection and shape descriptor — "[body part] projecting [forward/laterally/backward] with [firm/pronounced/dramatic] weight, shape maintained" — scaled to tier. 
+Upper tiers: describe shadow cast from projection onto adjacent body surface — bust onto upper stomach, rear onto upper thighs, hips creating lateral shadow in strong directional lighting.
+Magically or supernaturally altered figures: append "waist and stomach unchanged by the transformation." 
+Unrealistic proportions: append "Ignore human proportions for [body part]" and repeat size descriptor twice.
+
+Use "bust"/"chest" only — never "breasts". Use "rear" only — never "ass". Omit stomach unless midsection is picture-plane-visible — add to illustrClothes as fit-adjacent detail if exposed. 
+
+§4 - in place of female clothing block
+
+Futanari subjects — clothed:
+Append single word bust size indicator from illustrAppearance, followed by bust behavior at end of illustrClothes: describe how garments respond to bust, hips, rear, AND muscle mass simultaneously — multiple stress sources. "Fabric skintight over bust, seams straining across shoulders from build, fabric stretched across hips and rear" / "fabric pulled taut at bust and stretched across shoulders, hips straining seat seams."
+Large bust sizes: Use "skintight over bust" rather than "fitted."
+Large build: sleeves and shoulder seams under additional stress from muscle mass and feminine curves — note both stress sources when STRAINING or above.
+When waist, hips, and rear described in illustrAppearance, illustrClothes must address fabric behavior over all three — waist fit, hip fit, seat fit. Any unanchored lower body feature renders exposed.
+Stomach if camera-visible: "flat toned/defined stomach" / "softly curved/muscled stomach" as appropriate.
+Crotch if camera-visible: "[garment] fitted through hips, pronounced mass visible at front, weight and fullness suggested beneath fabric" — presence and shape only, never clinical anatomy when clothed.
+
+Nude:
+Futanari subjects:
+Describe bust (comparative size, shape, nipple detail) · rear (shape, firmness) · genitalia if visible (penis (&lt;#Extended tier: "penis impressively long and substantially thick, heavy and prominent even at rest, visibly dominant" /#&gt; "penis thick and substantial, roughly the length of his hand" / "penis long and defined, visibly heavy") · testes (&lt;#Extended tier "testes large and impressively heavy, hanging full and low, visibly weighty and substantial" /#&gt; "testes full and heavy, hanging low" / "testes large and weighty, visibly substantial") · vulva ("labia full and soft, outer lips closed" / "labia full, inner lips visible between outer lips" / "labia swollen and parted, inner lips prominent and glistening" / "labia held open, inner lips flushed and wet, arousal evident") — describe all with sensual, confident, admiring language) 
+
+§5, replacing female pose instructions 
+
+Futanari subjects — pose/expression:
+Describe pose, action, and emotion in illustrExpressionPosition with language that synthesizes sensuality and physical power as a unified quality — not in tension but expressing the same thing simultaneously. Body language and facial expression read as both invitation and presence: the weight of physical capability behind every gentle gesture, the warmth of desire behind every display of strength. No clothing descriptions. No bust or rear references. Exception: sex and post-coital compositions retain explicit genital and penetration detail per existing sex composition rules.
+
+§8, replacing female QC block
+
+* Futanari subjects — quality check:
+Figure maintained through simultaneous female curve language and male build language — never one without the other unless the scene specifically frames one as dominant. Defined muscle coexists with generous curves as stated physical fact. Shadow casting optional at larger bust tiers. Crotch bulge described through clothing behavior only when clothed. Stomach omitted from illustrAppearance unless camera-visible. </pre></div><h2>Hypermasc/Hypertrophy module</h2><p>Very large male muscle and size language.</p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Hypermasc/Hypertrophy module</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">MALE/FEMALE/FUTANARI HYPERTROPHY MODULE 
+- Male description for the male gaze/red pill/"alpha male"
+- Muscle Mommy and Futa descriptions from a similar perspective 
+- Clothing strain descriptions set for muscle hypertrophy 
+
+HYPERTROPHY MODULE — Complete Replacement Block
+
+For games featuring eldritch/supernatural muscle and figure growth
+Register: dominance, transgression, scale beyond human limits — intentionally beyond standard script vocabulary
+
+§4 — APPEARANCE
+
+**Male subjects**
+Append to illustrAppearance:
+build: [1-word descriptor] + ("scrawny frame, minimal muscle, body lacking physical presence" / "lean build, slight muscle definition beginning to show" / "athletic build, broad-shouldered and powerfully proportioned" / "muscular build, thick and heavily defined, veins visible at the forearms" / "massive muscular build, imposing and dense, built for dominance" / "fantasy-exaggerated musculature, proportions beyond human limits, physical presence crushing and absolute")
+chest: [1-word descriptor] + ("chest narrow, underdeveloped" / "chest broad and dominant" / "chest thick and imposing, pecs heavily defined")
+waist: ("narrow waist tapering from broad shoulders, v-taper pronounced" / "waist solid and thick, core built like a foundation")
+rear: [1-word descriptor] + ("rear firm and powerful" / "rear thick and dominant, prominently rounded")
+The 1-word descriptor must convey size, shape, physical weight, or dominance — e.g., massive, dense, thick, powerful, dominant, imposing, colossal, or specify. Never use generic filler alone. Read growth log for current growth state — descriptors and tier selection must match established narrative. Unrealistic proportions: append "Ignore human proportions for [body part]" and repeat size descriptor twice. For fantasy-exaggerated tier: always append "Ignore human proportions for build."
+
+For large proportions: append presence descriptor — "[body part] carrying [dense/solid/crushing/titanic] weight, mass maintained" — scaled to tier.
+
+**Female subjects**
+Append to illustrAppearance:
+bust: [1-word descriptor] + ("bust petite and neatly proportionate" / "bust slightly larger than human average" / "bust roughly two-thirds the size of her head" / "bust large enough that each breast rivals her head in size" / "bust obscenely full, each breast far exceeding her head in size, proportions impossible by mundane standards")
+muscle tier: [1-word descriptor] + ("soft build, no visible muscle" / "lightly toned, feminine definition beginning" / "athletic and defined, muscle clearly present beneath curves" / "visibly muscular, strength apparent in every line of the body" / "hypertrophied muscle mommy build, massive defined muscle carrying exaggerated curves" / "fantasy-exaggerated musculature and proportions beyond human limits")
+waist: ("narrow defined waist" / "proportionate toned waist" / "proportionate soft-toned waist" / "thickened powerful waist, core visibly muscled")
+hips: [1-word descriptor] + ("hips gently curved, proportionate to frame" / "hips flaring softly from the waist, feminine and rounded" / "hips flaring dramatically from the waist" / "hips flaring to impossible width, dramatically exceeding human proportion")
+rear: [1-word descriptor] + ("rear small and neatly rounded" / "rear full and rounded, naturally proportionate" / "rear full and rounded, high and firm" / "rear large and rounded, high and prominent" / "rear colossal and dominating, overwhelming the silhouette")
+The 1-word descriptor must convey size, shape, physical weight, or presence — e.g., full, heavy, massive, colossal, powerful, defined, immense, obscene, or specify. Never use generic filler alone. Read growth log for current growth state — descriptors and tier selection must match established narrative. Use "bust"/"chest" only — never "breasts". Use "rear" only — never "ass". Omit stomach unless midsection is picture-plane-visible — add to illustrClothes as fit-adjacent detail if exposed. Unrealistic proportions: append "Ignore human proportions for [body part]" and repeat size descriptor twice.
+
+For large proportions: after tier selection, append projection and shape descriptor — "[body part] projecting [forward/laterally/backward] with [firm/pronounced/impossible/crushing/obscene] weight, shape maintained" — scaled to tier. Upper tiers: describe shadow cast from projection onto adjacent body surface — bust onto upper stomach, rear onto upper thighs, hips creating lateral shadow in strong directional lighting.
+
+
+**Futanari subjects**
+Apply both male and female appearance rules simultaneously — select build and muscle tier from male rules above, select bust/hip/rear tier from female rules above. Append all descriptors to illustrAppearance.
+
+Futanari proportions escalate faster than either male or female baseline — default to upper tiers unless growth log establishes early stage. Read growth log for current state across all tracked features. For unrealistic proportions on any feature: append "Ignore human proportions for [body part]" and repeat size descriptor twice.
+
+For large proportions: apply projection descriptor to all relevant features — bust forward, hips laterally, rear backward, muscle mass outward. Multiple simultaneous projection descriptions expected at advanced growth stages.
+
+§4 — CLOTHING (CLOTHED)
+
+Deterioration system — applies to all subject types
+
+Read growth log before writing illustrClothes. Identify which features grew this turn and current cumulative growth state. Apply deterioration language at stress points consistent with what the growth log describes — never invent deterioration beyond what the growth log supports. Never describe what is visible through tears before describing the tear itself. Multiple simultaneous stress points expected for futanari and advanced-stage subjects.
+
+Deterioration vocabulary (scaled to growth log state):
+* Early stress: "fabric pulling taut across [location], seams under tension"
+* Active strain: "seams visibly straining at [location], fabric stretched to limit"
+* Structural failure: "fabric splitting at [location], tears forming along stress lines"
+* Ruins: "clothing in ruins at [location], fabric torn open and barely holding"
+
+**Male subjects — clothed**
+Append chest and build behavior at end of illustrClothes: describe how garments respond to muscle mass — tension across shoulders and chest, fabric pulling at arms, fit through torso. Apply deterioration language at stress points matching growth log.
+When waist and rear described in illustrAppearance, illustrClothes must address waist fit and seat fit. Any unanchored lower body feature renders exposed.
+Stomach if camera-visible: "flat defined stomach" / "thick muscled core" / "slight softness at midsection" as appropriate to build tier.
+Crotch if camera-visible: "[garment] fitted through hips, pronounced mass visible at front, weight and fullness suggested beneath fabric" — presence and shape only, never clinical anatomy when clothed.
+
+Large builds: Use "skintight over chest and shoulders" rather than "fitted."
+Sheer fabrics: thin fabric clinging to muscle definition, form clearly suggested beneath — never name body parts visible through it.
+Wet fabric: fabric clinging damply to chest and shoulders, darkened patches where saturated, muscle mass clearly suggested beneath wet material.
+Fabric imprint: fabric stretched tight across chest, muscle mass pressing insistently against material.
+
+Coverage visibility (select one):
+FULLY_COVERED · CHEST_VISIBLE — [neckline/cut: open collar / unbuttoned to sternum / deep V / sleeveless] · TORSO_EXPOSED · SHEER_COVERED · PARTIALLY_EXPOSED · FULLY_EXPOSED
+
+Fastener state (select one when garment has closures):
+SECURE · STRAINING — [tension description, coverage maintained] · GAPING — [gaps visible, coverage maintained] · FAILING — [exposure occurring or imminent]
+
+Displacement physics (match to growth log state):
+STRAINING/GAPING: "hem lifted slightly, collar pulled wider than designed — build evident even within accommodating cut"
+FAILING: "seams splitting at shoulders and chest, fabric overwhelmed by current proportions"
+RUINS: "garment structurally compromised, fabric torn at primary stress points, coverage failing"
+
+Figure intent (select one when narratively relevant):
+DISPLAYING — wearing to show physique deliberately · CONCEALING — wearing to downplay physique deliberately · NEUTRAL (default, omit)
+
+Describe garments/gear in plain functional and structural terms — material, fit, wear state from growth log, never invented fresh each turn.
+
+Back-to-camera template: Omit chest behavior and coverage visibility. Describe clothing from back-facing perspective — fabric across broad shoulders and back, how build affects sleeve and shoulder fit from behind. Retain waist and rear anchoring. Fastener state applies only if closures visible from behind.
+
+**Female subjects — clothed**
+Append bust behavior at end of illustrClothes: describe how garments respond to bust, hips, and rear simultaneously — all three anchor points must be addressed. Apply deterioration language at stress points matching growth log across all growing features.
+When waist, hips, and rear described in illustrAppearance, illustrClothes must address fabric behavior over all three — waist fit, hip fit, seat fit. Any unanchored lower body feature renders exposed.
+Stomach if camera-visible: "flat defined stomach" / "softly muscled stomach" / "thick muscled core" as appropriate to muscle tier.
+
+Large bust sizes: Use "skintight over bust" rather than "fitted."
+Sheer fabrics: thin fabric clinging to curves, figure clearly suggested beneath — never name body parts visible through it.
+Wet fabric: fabric clinging damply, darkened patches where saturated, curves clearly suggested beneath wet material.
+Fabric imprint: fabric stretched tight, bust projection and hip/rear mass pressing insistently against material.
+
+Coverage visibility (select one):
+FULLY_COVERED · CLEAVAGE_VISIBLE — [neckline type] · UNDERBOOB_VISIBLE · SIDE_VISIBLE · SHEER_COVERED · PARTIALLY_EXPOSED · FULLY_EXPOSED
+
+Fastener state (select one when garment has closures):
+SECURE · STRAINING — [tension description — specify which features causing strain] · GAPING · FAILING
+
+Displacement physics (match to growth log state):
+STRAINING/GAPING: "hem lifted at front from bust projection, neckline pulled wider than designed, fabric gathering at hip flare"
+FAILING: "hem riding up exposing midriff, neckline stretched significantly past intended cut, seams splitting at hips"
+RUINS: "garment structurally compromised at multiple stress points, coverage failing at bust and hips simultaneously"
+
+Figure intent (select one when narratively relevant):
+DISPLAYING · CONCEALING · NEUTRAL (default, omit)
+
+Describe garments/gear in plain functional and structural terms — material, fit, wear state from growth log, never invented fresh each turn.
+
+Back-to-camera template: Omit bust behavior and coverage visibility. Describe clothing from back-facing perspective — how fabric drapes over rear and hips, deterioration visible from behind. Retain waist, hip, and rear anchoring. Fastener state applies only if closures visible from behind.
+
+
+**Futanari subjects — clothed**
+Apply both male and female clothed rules simultaneously. Describe clothing behavior over bust, chest, shoulders, hips, rear, and crotch — all anchor points must be addressed. Apply deterioration language to all growing features simultaneously per growth log — multiple simultaneous stress points are expected and should all be described. At advanced growth stages, clothing is typically in active deterioration across multiple stress points.
+
+Displacement physics: apply both male and female displacement language simultaneously — bust projection AND muscle mass AND hip/rear growth all contributing to garment failure.
+
+§4 — CLOTHING (NUDE)
+
+**Male subjects — nude**
+Write "Naked —" followed by: chest (definition, thickness, dominance — match growth log) · stomach (definition, visible musculature, core thickness) · rear (shape, power, firmness) · genitalia if visible (penis ("penis thick and dominant, length roughly matching his hand" / "penis massive and heavy, length far exceeding his hand" / "penis impossibly oversized, proportions beyond human reckoning") · testes ("testes heavy and full, hanging low with substantial weight" / "testes massive and dense, visibly dominant" / "testes impossibly heavy, proportions beyond human reckoning") — describe with language emphasizing size, dominance, and physical authority) · exposed tattoos/piercings. Partially clothed: describe garments AND exposed anatomy.
+
+**Female subjects — nude**
+Write "Naked —" followed by: bust (comparative size, shape, nipple detail — match growth log) · muscle definition (visible across chest, arms, stomach, thighs — match muscle tier) · rear (shape, power, firmness) · genitalia if visible ("labia full and soft, outer lips closed" / "labia full, inner lips visible between outer lips" / "labia swollen and parted, inner lips prominent and glistening" / "labia held open, inner lips flushed and wet, arousal evident" — describe with sensual, admiring language) · exposed tattoos/piercings · stomach if visible. Bust and rear move entirely to illustrClothes when nude. Partially clothed: describe garments AND exposed anatomy.
+
+**Futanari subjects — nude**
+Write "Naked —" followed by: build and muscle description matching growth log · bust (comparative size, shape, nipple detail) · stomach (muscle definition, visible abs or softness over muscle) · rear (shape, power, firmness) · genitalia if visible (penis ("penis thick and dominant, length roughly matching her hand" / "penis massive and heavy, length far exceeding her hand" / "penis impossibly oversized, proportions beyond human reckoning") · testes ("testes heavy and full, hanging low with substantial weight" / "testes massive and dense, visibly dominant" / "testes impossibly heavy, proportions beyond human reckoning") · vulva ("labia full and soft, outer lips closed" / "labia full, inner lips visible between outer lips" / "labia swollen and parted, inner lips prominent and glistening" / "labia held open, inner lips flushed and wet, arousal evident") — describe all with sensual, confident, dominant, admiring language) · exposed tattoos/piercings. Bust and rear move entirely to illustrClothes when nude. Partially clothed: describe garments AND exposed anatomy.
+
+
+§5 — POSE/EXPRESSION
+
+**Male subjects**
+Describe pose, action, and emotion in illustrExpressionPosition with language conveying dominance, physical authority, and controlled aggression. Body language reads as total ownership of the space — wide stance, deliberate movement, unhurried physicality. Expression conveys power as default state, not performance. Emotions expressed through physical action rather than facial vulnerability. No clothing descriptions. No chest or rear references. Exception: sex and post-coital compositions retain explicit genital and penetration detail per existing sex composition rules.
+
+**Female subjects**
+Describe pose, action, and emotion in illustrExpressionPosition with sensual, provocative language layered with dominant, predatory energy — physical authority and controlled aggression sitting beneath and amplifying the sensual register. Body language reads as both commanding and deliberately, dangerously attractive. At advanced muscle tier: size and strength worn as natural authority, sexuality weaponized rather than offered. No clothing descriptions. No bust or rear references. Exception: sex and post-coital compositions retain explicit genital and penetration detail per existing sex composition rules.
+
+**Futanari subjects**
+Describe pose, action, and emotion in illustrExpressionPosition drawing from both male and female registers simultaneously — physical dominance and authority from the male register, sensual hunger and predatory confidence from the female register. The combined effect reads as apex predator energy: total physical command, insatiable arousal, complete ownership of the space and everyone in it. Heightened arousal and predatory hunger are always present and always visible in posture, gaze, and expression. No clothing descriptions. Exception: sex and post-coital compositions retain explicit genital and penetration detail per existing sex composition rules.
+
+§8 — QUALITY CHECK
+
+* Male subjects: Figure maintained through tier-appropriate build, chest, waist, and rear language — declarative and dominant, no similes or material comparisons. Crotch bulge described through clothing fit and fabric behavior only — never clinical anatomy when clothed. No genitalia or piercings in illustrAppearance even when nude. Shadow casting optional at larger chest tiers in strong directional lighting.
+* Female subjects: Muscle tier described alongside bust, hip, and rear language — all four present every turn. Exaggerated proportions use "Ignore human proportions for [body part]" override and repeat descriptor twice. Bust and rear described using "bust"/"rear" only in illustrAppearance — anatomical language freely in nude illustrClothes. No nipples, genitalia, or piercings in illustrAppearance even when nude.
+* Futanari subjects: All male and female descriptor rules apply simultaneously. All proportions default to upper tiers unless growth log establishes early stage. Nude description includes all anatomical features from both male and female nude rules.
+* Clothing deterioration: Read growth log before writing illustrClothes. Apply deterioration language at stress points consistent with growth log — never invent deterioration beyond what the log supports. Never describe what is visible through tears before describing the tear itself. Declare coverage visibility and fastener state after all lower body anchoring — STRAINING and above carry size signaling, coverage state must match clothing description. Displacement physics applied at STRAINING and above — match to growth log state and fastener/display state.</pre></div><h2>Cup Sizes notebook</h2><p>Optional Items to track row if you want cup letters to persist. Type: YAML. Visible to: everyone. <strong>Auto-update: off</strong>.</p><div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">Cup Sizes</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: off</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">&lt;#WG's Bra Cup Size System
+Will require cup size as a discrete field in Player Appearance or NPC Appearance 
+
+Use
+&lt;&lt;$cup_sizes.where(cup = $npc_appearance.where(name = "Character Name").first().cup_size).first().description&gt;&gt;
+To access the description for the character's bra size
+
+Or, include in the image script: 
+When populating illustrAppearance, reference the cup_size field from the NPC Appearance or Player Appearance tracked item for the current illustrSubject, and use the corresponding description from the Bra Cup Sizing System tracked item.#&gt;</pre></div>
+<div class="copybox"><header><span>Starting value</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">- cup: A
+  description: "very small, nearly flat chest with slight gentle curves"
+- cup: B
+  description: "small breasts with visible subtle curves"
+- cup: C
+  description: "small-medium breasts, modest but noticeable"
+- cup: D
+  description: "medium, full breasts, clearly visible"
+- cup: E
+  description: "full, rounded breasts noticeably large"
+- cup: FG
+  description: "large, very full breasts dramatically prominent"
+- cup: HI
+  description: "very large, buoyant rounded breasts dominating torso"
+- cup: JK
+  description: "huge, extremely full breasts extending well beyond ribcage"
+- cup: LM
+  description: "huge breasts, each larger than her head, dramatically oversized"
+- cup: NO
+  description: "massive breasts, each significantly larger than her head"
+- cup: PQ
+  description: "enormous breasts, extending far past arms, dominating entire frame"
+- cup: RS
+  description: "immense, torso-dominating breasts wider than shoulders"
+- cup: TU
+  description: "colossal breasts dwarfing upper body, each as large as torso"
+- cup: V
+  description: "reality-defying breasts significantly larger than torso and beyond"</pre></div>
+<footer>
+<p>Copy from the boxes on these pages into Infinite Worlds. A contribution from <strong>KaapstadMK</strong>, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.</p>
+<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a></p>
+</footer>
+</main>
+<script src="assets/copy.js"></script>
+</body>
+</html>

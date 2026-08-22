@@ -1,0 +1,7 @@
+.herenow/
+_auth.json
+_verify.json
+_publish.py
+*.log
+.DS_Store
+Thumbs.db
