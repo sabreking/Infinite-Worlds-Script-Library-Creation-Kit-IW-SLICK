@@ -13,48 +13,28 @@
 <body>
 <header class="top">
 <div class="row">
-<a class="logo" href="index.html">THE SCRIPT LIBRARY</a>
-<nav><a href="index.html">Pick a look</a>
-<a href="start.html">First time</a>
+<a class="logo" href="index.html">IW-SLICK</a>
+<nav><a href="library.html">Looks</a>
 <a href="writing.html">Story voice</a>
-<a href="extras.html">Extra writing</a>
-<a href="bodies.html">Bodies</a>
-<a href="creatures.html">Creatures</a>
-<a href="frame.html">Picture frame</a>
-<a href="dont.html">Never mix</a></nav>
+<a href="extras.html">Add-ons</a></nav>
 </div>
 </header>
 <main class="wrap">
 
-<p class="bubble">PICTURE SCRIPT</p>
+<p class="bubble">STAY ON THIS PAGE</p>
 <h1>Manga pages</h1>
-<div class="panel">
-<h2>Use this when</h2>
+<p class="chip">Manga (Artist Base)</p>
 <p class="lede">Use this when you want comic pages — three panels and talk bubbles. A new picture is drawn every time, so you keep appearance notebooks.</p>
-</div>
-<div class="warn">
-<h2>Do not use with</h2>
-<p>Do not turn on any other picture script. The painting script is one still picture, not comic pages. Do not make appearance notebooks whose names include “for Bob Ross/Wrangler”.</p>
-</div>
-<h2>Shopping list</h2>
+<nav class="toc">
+<a href="#step1">1. Picture rules</a>
+<a href="#step2">2. Notebooks</a>
+<a href="#step3">3. Fill blanks</a>
+<a href="#step4">4. Image style</a>
+</nav>
+<section class="step" id="step1">
+<h2>Step 1 — Extra Instruction Blocks</h2>
+<div class="warn"><p>Do not turn on any other picture script. The painting script is one still picture, not comic pages. Do not make appearance notebooks whose names include “for Bob Ross/Wrangler”.</p></div>
 
-<div class="panel">
-<p>One Extra Instruction Block. Name it exactly:</p>
-<p><strong>Manga (Artist Base)</strong></p>
-
-
-<p><strong>Items to track</strong> — Type: YAML, Visible to: everyone, Auto-update: on.</p>
-<ul>
-<li>Always: <strong>Player Appearance</strong></li>
-<li>A few people: <strong>NPC Appearance small cast</strong></li>
-<li>Many people: <strong>NPC Appearance (large cast)</strong> and also <strong>Relationship Tracker</strong> (that last one is visible to AI only)</li>
-</ul>
-
-</div>
-
-<h2>After you paste</h2>
-<div class="panel"><ul><li>Fill the tradition line (Shonen / Seinen / manga / manhwa, and so on) in square brackets, then unwrap it.</li><li>Write 3 to 5 mood words and unwrap that line.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
-<h2>Copy boxes</h2>
 <div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Manga (Artist Base)</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Manga/Comic Artist Instructions v1.8.2 — Claude Opus 4 / Sonnet 4.5 → Flux 2 Pro
 Credit: KaapstadMK · Base/combat/angle: Xyphrax · Pose/sex/non-human: MrDrunkinDragon · Manga: TWNT, Tori · Clothing coverage: Funky Munky
  
@@ -298,7 +278,10 @@ illustrSetting: &lt;#Comic Tradition#&gt; Page Layout, 3 distinct panels
  
 illustrClothesChanged: [TRUE]
 illustrAppearanceChanges: [NONE]</pre></div>
-<h3>Notebook: Player Appearance</h3>
+</section>
+<section class="step" id="step2">
+<h2>Step 2 — Items to track</h2>
+<p>Always copy the player notebook. Then copy <strong>either</strong> the few-people list <strong>or</strong> the many-people pair — not both.</p><h3>Always — player</h3>
 <div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">Player Appearance</pre></div>
 <div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">&lt;#Player Appearance#&gt;
@@ -354,7 +337,8 @@ clothing:
   permanent_marks?:
     - text
   state: text
-...:</pre></div><h3>Notebook: NPC Appearance small cast</h3>
+...:</pre></div>
+<div class="or-split"><section><h3>A few people — copy this one, skip the large list</h3>
 <div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">NPC Appearance small cast</pre></div>
 <div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">&lt;#NPC Appearance#&gt;
@@ -413,7 +397,7 @@ Create an entry when a named character has a speaking role or direct physical in
       - text
     state: text
     ...:
-  ...:</pre></div><h3>Notebook: NPC Appearance (large cast)</h3>
+  ...:</pre></div></section><section><h3>Many people — copy these two, skip the small list</h3>
 <div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">NPC Appearance (large cast)</pre></div>
 <div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">&lt;#NPC Appearance#&gt;
@@ -472,7 +456,7 @@ Structured appearance and clothing data for significant NPCs, stored as discrete
       - text
     state: text
     ...:
-  ...:</pre></div><h3>Notebook: Relationship Tracker</h3>
+  ...:</pre></div>
 <div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c17">COPY</button></header><pre id="c17">Relationship Tracker</pre></div>
 <div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only (the player does not see this notebook)</li><li>Auto-update: on</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c18">COPY</button></header><pre id="c18">&lt;#Relationship Tracker#&gt;
@@ -527,10 +511,81 @@ connection: one-line description of relationship to player, 10 words maximum.</p
   aliases?: text
   tier: text
   significant:
-  connection: text</pre></div>
+  connection: text</pre></div></section></div>
+</section>
+<section class="step" id="step3">
+<h2>Step 3 — Fill blanks on what you pasted</h2>
+<div class="panel"><ul><li>Fill the tradition line (Shonen / Seinen / manga / manhwa, and so on) in square brackets, then unwrap it.</li><li>Write 3 to 5 mood words and unwrap that line.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
+</section>
+<section class="step" id="step4">
+<h2>Step 4 — Image style</h2>
+<p>Paste these four boxes into Image style prefix and suffix. Then keep or delete paragraphs for <em>this</em> look.</p>
+<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>Keep the manga/comic paragraph.</li><li>Delete Unreal Engine lines.</li><li>If the game does not show sex in pictures, delete sexually stylized / erotic / genitalia phrases.</li><li>Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</li></ul></div>
+<h3>Image style — people — prefix</h3>
+<div class="copybox"><header><span>Image style — people — prefix</span><button type="button" class="sticker" data-copy="c22">COPY</button></header><pre id="c22">&lt;#TONE#&gt;
+[Adjectives] [fantasy/sci-fi concept art].
+
+&lt;#IMAGE SPECIFICS — sexually stylized anchors content register · artifact noun anchors visual tradition#&gt;
+[Sexually stylized] [hyper-realistic] [4k] [digital / hand-painted / hand-drawn / CGI / Unreal Engine 5 rendered] [image/art/artwork/photograph/print/painting/drawing/still] of</pre></div>
+<h3>Image style — people — suffix</h3>
+<div class="copybox"><header><span>Image style — people — suffix</span><button type="button" class="sticker" data-copy="c23">COPY</button></header><pre id="c23">[Setting], [in the style of person/style], [such as [examples]]. 
+
+&lt;#PALETTE &amp; MEDIUM#&gt;
+[2-4 adjectives] palette, [art medium, [with [brush strokes clearly visible/[clearly defined/sharp/smooth/clean lineart] [with bold outline/detailing/controlled negative spaces]], [[adjective] saturation], [[adjective] contrast], [[adjective/textured/cel] shading], [screen tones and layered halftone textures], [depth-enhancing shadows/volumetric ambient occlusion], 
+
+&lt;#SURFACE RENDERING#&gt;
+[[character appeal]/[large expressive eyes, delicate facial features, detailed hair, and [stylized/exaggerated/sexualized] proportions]/[smooth CG skin texture, low surface detail]], rich background detail, intricate costume design [with well-rendered fabric folds], [Physically Based Rendering aesthetic], [Nanite surface geometry],
+
+&lt;#LIGHTING#&gt;
+[Lumen global illumination], [adverb] atmospheric/volumetric lighting, [sunlight/bloom effects], [chiaroscuro], [[adjective] haze], [[adjective] glow], [subsurface scattering, specular highlights],
+
+&lt;#CLOSER#&gt;
+and vibrant use of color and color theory, evoking/contrasting/highlighting [a sense of magical realism/different concept]. 
+
+&lt;#MANGA/COMIC ONLY#&gt;
+[Professional [genre]-style detailing with [erotic hentai styling and doujinshi intimacy]. printed-page aesthetic, as if from a high-quality [manga] volume. clean gutters or panel framing when appropriate to the scene.]
+
+&lt;#SHOW INSTRUCTION#&gt;
+Show the face (if visible), [genitalia (if naked and visible)], and majority of body (occasionally full body); highly detailed, candid, sensual, [erotic, sexy,] dynamic poses and expressions, with lighting matching time of day and location.</pre></div>
+<h3>Image style — not people — prefix</h3>
+<div class="copybox"><header><span>Image style — not people — prefix</span><button type="button" class="sticker" data-copy="c24">COPY</button></header><pre id="c24">&lt;#TONE#&gt;
+[Adjectives] [fantasy/sci-fi concept art].
+
+&lt;#IMAGE SPECIFICS — sexually stylized anchors content register · artifact noun anchors visual tradition#&gt;
+[Sexually stylized] [hyper-realistic] [4k] [digital / hand-painted / hand-drawn / CGI / Unreal Engine 5 rendered] [image/art/artwork/photograph/print/painting/drawing/still] of</pre></div>
+<h3>Image style — not people — suffix</h3>
+<div class="copybox"><header><span>Image style — not people — suffix</span><button type="button" class="sticker" data-copy="c25">COPY</button></header><pre id="c25">[Setting], [in the style of person/style], [such as [examples]]. 
+
+&lt;#PALETTE &amp; MEDIUM#&gt;
+[2-4 adjectives] palette, [art medium, [with [brush strokes clearly visible/[clearly defined/sharp/smooth/clean lineart] [with bold outline/detailing/controlled negative spaces]], [[adjective] saturation], [[adjective] contrast], [[adjective/textured/cel] shading], [screen tones and layered halftone textures], [depth-enhancing shadows/volumetric ambient occlusion], 
+
+&lt;#SURFACE RENDERING#&gt;
+[[character appeal]/[large expressive eyes, delicate facial features, detailed hair, and [stylized/exaggerated/sexualized] proportions]/[smooth CG skin texture, low surface detail]], rich background detail, intricate costume design [with well-rendered fabric folds], [Physically Based Rendering aesthetic], [Nanite surface geometry],
+
+&lt;#LIGHTING#&gt;
+[Lumen global illumination], [adverb] atmospheric/volumetric lighting, [sunlight/bloom effects], [chiaroscuro], [[adjective] haze], [[adjective] glow], [subsurface scattering, specular highlights],
+
+&lt;#CLOSER#&gt;
+and vibrant use of color and color theory, evoking/contrasting/highlighting [a sense of magical realism/different concept]. 
+
+&lt;#MANGA/COMIC ONLY#&gt;
+[Professional [genre]-style detailing with [erotic hentai styling and doujinshi intimacy]. printed-page aesthetic, as if from a high-quality [manga] volume. clean gutters or panel framing when appropriate to the scene.]
+
+&lt;#SHOW INSTRUCTION#&gt;
+Show the face (if visible), [genitalia (if naked and visible)], and majority of body (occasionally full body); highly detailed, candid, sensual, [erotic, sexy,] dynamic poses and expressions, with lighting matching time of day and location.</pre></div>
+</section>
+
+<div class="ok">
+<p><strong>Pictures are done</strong> when those four steps are in your game. Optional next:</p>
+<p><a class="btn" href="writing.html">STORY VOICE</a>
+<a class="btn" href="extras.html">EXTRA WRITING</a>
+<a class="btn" href="bodies.html">BODIES</a>
+<a class="btn" href="creatures.html">CREATURES</a></p>
+</div>
+
+
 <footer>
-<p>Copy from the boxes on these pages into Infinite Worlds. A contribution from <strong>KaapstadMK</strong>, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.</p>
-<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a></p>
+<p>The Script Library — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>

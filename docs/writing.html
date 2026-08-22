@@ -13,31 +13,37 @@
 <body>
 <header class="top">
 <div class="row">
-<a class="logo" href="index.html">THE SCRIPT LIBRARY</a>
-<nav><a href="index.html">Pick a look</a>
-<a href="start.html">First time</a>
+<a class="logo" href="index.html">IW-SLICK</a>
+<nav><a href="library.html">Looks</a>
 <a href="writing.html">Story voice</a>
-<a href="extras.html">Extra writing</a>
-<a href="bodies.html">Bodies</a>
-<a href="creatures.html">Creatures</a>
-<a href="frame.html">Picture frame</a>
-<a href="dont.html">Never mix</a></nav>
+<a href="extras.html">Add-ons</a></nav>
 </div>
 </header>
 <main class="wrap">
 
 <p class="bubble">STORY VOICE</p>
 <h1>How the story talks.</h1>
-<p class="lede">These paste into Main Instructions, Extra Instruction Blocks, Author style, Evaluation, Description, and Summarization.</p>
-<h2>Split Game Master</h2>
-<p>Paste into <strong>Main Instructions</strong>. Fill <code>[insert full author style here]</code> with the same voice you put in Author style.</p>
+<p class="lede">Do this <strong>once</strong>, not once per picture look. Paste in the order of the Infinite Worlds screen.</p>
+<nav class="toc">
+<a href="#w1">1. Main Instructions</a>
+<a href="#w2">2. Storymaster</a>
+<a href="#w3">3. Author style</a>
+<a href="#w4">4. Evaluation</a>
+<a href="#w5">5. Description</a>
+<a href="#w6">6. Summarization</a>
+</nav>
+<section class="step" id="w1">
+<h2>Step 1 — Main Instructions</h2>
+<p>Fill <code>[insert full author style here]</code> with the same voice you put in Author style.</p>
 <div class="copybox"><header><span>Main Instructions — Split Game Master</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">You are running an interactive fiction experience and must seamlessly switch between two distinct modes:
 
 MODE: SIMULATION ENGINE — cold, analytical, and precise. You handle system state, hidden data, mechanical tracking, and SecretInfo. You do not write prose in this mode. You speak in data and logic.
 
 MODE: NARRATIVE AUTHOR — [insert full author style here]. You write all narrative output in this register. NEVER let the vocabulary, tone, or clinical analysis of the Simulation Engine bleed into your prose or dialogue.</pre></div>
-<h2>Storymaster</h2>
-<p>One Extra Instruction Block. Name it exactly <strong>Storymaster + SecretInfo </strong> (the name ends with a space). After you paste, fill the square brackets: genres, tone, themes, conflicts, how many turns, length of time.</p>
+</section>
+<section class="step" id="w2">
+<h2>Step 2 — Extra Instruction Blocks (Storymaster)</h2>
+<p>Name it exactly <strong>Storymaster + SecretInfo </strong> (the name ends with a space). After you paste, fill the square brackets: genres, tone, themes, conflicts, how many turns, length of time.</p>
 <div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Storymaster + SecretInfo </span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">[MODE: SIMULATION ENGINE]
 
 - SecretInfo consists of four paragraphs.
@@ -75,11 +81,13 @@ Omit fields not yet established in narrative. Never speculate or invent appearan
 Paragraph 4 — Elsewhere:
 
 Optional. Fire only when something narratively significant is happening off-screen that Storymaster is actively tracking and that will eventually intersect with the main narrative. One short paragraph, 200 characters maximum. Omit entirely if nothing relevant is occurring off-screen. Never repeat content from Paragraph 1.</pre></div>
-<h2>Author style</h2>
-<p>Paste into the <strong>Author style</strong> field.</p>
+</section>
+<section class="step" id="w3">
+<h2>Step 3 — Author style</h2>
 <div class="copybox"><header><span>Author style</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">Written by Storymaster. [Author Style]</pre></div>
-<h2>Evaluation</h2>
-<p>Paste into <strong>Evaluation</strong>.</p>
+</section>
+<section class="step" id="w4">
+<h2>Step 4 — Evaluation</h2>
 <div class="copybox"><header><span>Evaluation</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">[MODE: SIMULATION ENGINE] 
 
 Firstly, if I have made any assertions in my description, evaluate whether you judge that they are reasonable and likely. If they are nonsensical, incoherent or blatantly impossible, the action should be DENIED. On the other hand, if the action is trivial and there is nothing to complicate it, skip the evaluation entirely and deem the action a SUCCESS. Don't overthink this! If the action doesn't warrant further evaluation, make a judgement and move on.
@@ -117,8 +125,10 @@ Storymaster Evaluation:
 - Determine contents of Option1_text, Option2_text, Option3_text, as Storymaster, adding scene movement if the current scene is at/near completion. All scene movement options clearly denote time/place change.
 
 </pre></div>
-<h2>Description</h2>
-<p>Paste into <strong>Description</strong>. This is story voice, not picture rules. If you already wrote Description instructions for images, do not overwrite them with this.</p>
+</section>
+<section class="step" id="w5">
+<h2>Step 5 — Description</h2>
+<p>This is story voice, not picture rules. If you already wrote Description instructions for images, do not overwrite them with this.</p>
 <div class="copybox"><header><span>Description</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">&lt;#Adapted from Tori#&gt;
 [MODE: NARRATIVE AUTHOR]
 
@@ -129,8 +139,9 @@ Target length: 5-10 paragraphs depending on scene complexity. Sex scenes and maj
 Every response must actively advance the plot, escalate tension, or introduce a new dynamic. Scenes end with a clear decision point or natural conclusion, always including at least one OptionN_Text to advance.
 
 BANNED NARRATIVE VOCABULARY: Never use system terminology or clinical language in prose or dialogue. Forbidden: framework, methodology, baseline, parameters, variables, mechanics, evaluation, performance, optimal, threshold, dynamic, metric, protocol.</pre></div>
-<h2>Summarization</h2>
-<p>Paste into <strong>Summarization</strong>.</p>
+</section>
+<section class="step" id="w6">
+<h2>Step 6 — Summarization</h2>
 <div class="copybox"><header><span>Summarization</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">&lt;#Adapted from Excelsior #&gt;
 [MODE: SIMULATION ENGINE] 
 
@@ -165,10 +176,15 @@ Update clothing fields whenever clothing changes in outcomeDescription. Update a
 NEVER record Storymaster planning, author analysis, or content from Paragraph 2 of secretInfo — those are Storyteller AI's internal process, not story facts.
 
 NEVER record content from Paragraph 4 of secretInfo (Elsewhere) unless those off-screen events have surfaced into the main narrative.</pre></div>
+</section>
+<p class="quiet">Optional add-ons:
+<a href="extras.html">Extra writing</a> ·
+<a href="bodies.html">Bodies</a> ·
+<a href="creatures.html">Creatures</a> ·
+<a href="library.html">Back to looks</a></p>
 
 <footer>
-<p>Copy from the boxes on these pages into Infinite Worlds. A contribution from <strong>KaapstadMK</strong>, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.</p>
-<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a></p>
+<p>The Script Library — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build the amateur copy-paste HTML kit from The Script Library 2.38.json.
+"""Build the IW-SLICK site and The Script Library paste kit from 2.38 JSON.
 
-The website is the kit. Visitors copy from boxes into Infinite Worlds.
+docs/index.html is the repo home (contributions). Library pages are the paste kit.
 Teaching copy stays in amateur English. Module bodies are html.escape of the export.
 """
 from __future__ import annotations
@@ -14,15 +14,22 @@ ROOT = Path(__file__).resolve().parents[1]
 JSON_PATH = ROOT / "library" / "The Script Library 2.38.json"
 DOCS = ROOT / "docs"
 
-NAV = [
-    ("index.html", "Pick a look"),
-    ("start.html", "First time"),
+LIB_NAV = [
+    ("library.html", "Looks"),
     ("writing.html", "Story voice"),
-    ("extras.html", "Extra writing"),
-    ("bodies.html", "Bodies"),
-    ("creatures.html", "Creatures"),
-    ("frame.html", "Picture frame"),
-    ("dont.html", "Never mix"),
+    ("extras.html", "Add-ons"),
+]
+
+CREDITS = (
+    "KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, "
+    "MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff"
+)
+
+FRAME_FIELDS = [
+    ("imageStyleCharacterPre", "Image style — people — prefix"),
+    ("imageStyleCharacterPost", "Image style — people — suffix"),
+    ("imageStyleNonCharacterPre", "Image style — not people — prefix"),
+    ("imageStyleNonCharacterPost", "Image style — not people — suffix"),
 ]
 
 
@@ -58,10 +65,24 @@ def split_gm(game: dict) -> str:
     return raw.strip()
 
 
-def page_shell(title: str, description: str, body: str) -> str:
-    nav = "\n".join(
-        f'<a href="{href}">{esc(label)}</a>' for href, label in NAV
-    )
+def page_shell(title: str, description: str, body: str, mode: str = "library") -> str:
+    if mode == "home":
+        nav = ""
+        footer = (
+            "<p>IW-SLICK is a public copy-paste kit for "
+            '<a href="https://infiniteworlds.app">Infinite Worlds</a> world creators. '
+            "Contributions from the community. More will land here.</p>"
+            "<p>License: GPL-3.0</p>"
+        )
+    else:
+        nav = "\n".join(f'<a href="{href}">{esc(label)}</a>' for href, label in LIB_NAV)
+        footer = (
+            f"<p>The Script Library — copy from these pages into Infinite Worlds. "
+            f"A contribution from <strong>{esc(CREDITS)}</strong>.</p>"
+            '<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">'
+            "infiniteworlds.app/shared/7zDKHR</a> · "
+            '<a href="index.html">IW-SLICK home</a></p>'
+        )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,15 +98,14 @@ def page_shell(title: str, description: str, body: str) -> str:
 <body>
 <header class="top">
 <div class="row">
-<a class="logo" href="index.html">THE SCRIPT LIBRARY</a>
+<a class="logo" href="index.html">IW-SLICK</a>
 <nav>{nav}</nav>
 </div>
 </header>
 <main class="wrap">
 {body}
 <footer>
-<p>Copy from the boxes on these pages into Infinite Worlds. A contribution from <strong>KaapstadMK</strong>, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.</p>
-<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a></p>
+{footer}
 </footer>
 </main>
 <script src="assets/copy.js"></script>
@@ -122,11 +142,10 @@ def auto_line(item: dict) -> str:
 
 
 def tracker_boxes(boxes: Boxes, item: dict) -> str:
-    name = item["name"]
     bits = [
-        boxes.box("Name this item exactly", name),
+        boxes.box("Name this item exactly", item["name"]),
         (
-            "<div class=\"ok\"><p><strong>Settings on the Items to track screen</strong></p>"
+            '<div class="ok"><p><strong>Settings on the Items to track screen</strong></p>'
             f"<ul><li>Type: YAML</li><li>{esc(vis_line(item))}</li>"
             f"<li>{esc(auto_line(item))}</li></ul></div>"
         ),
@@ -151,19 +170,6 @@ def block_box(boxes: Boxes, block: dict, title: str | None = None) -> str:
     return boxes.box(heading, block["content"])
 
 
-PD_FAMILY = [
-    "Player Appearance",
-    "NPC Appearance small cast",
-    "NPC Appearance (large cast)",
-    "Relationship Tracker",
-]
-WRANGLER_FAMILY = [
-    "Player Appearance for Bob Ross/Wrangler",
-    "NPC Appearance small, for Bob Ross/Wrangler",
-    "NPC Appearance large, for Bob Ross/Wrangler",
-    "Relationship Tracker",
-]
-
 SCRIPTS = [
     {
         "file": "pd.html",
@@ -171,6 +177,7 @@ SCRIPTS = [
         "hub_line": "Photographs, live-action stills, video-game photos.",
         "title": "Photos of people",
         "block": "PD Condensed (new main)",
+        "frame": "photo",
         "when": (
             "Use this when you want the pictures to look like photographs — "
             "movie stills, camera language, realistic people. A new picture is "
@@ -197,6 +204,7 @@ SCRIPTS = [
         "hub_line": "Oil, watercolor, illustration — drawn art, not a camera.",
         "title": "A painting",
         "block": "Artist script",
+        "frame": "paint",
         "when": (
             "Use this when you want the pictures to look painted or drawn — "
             "oil, watercolor, print, illustration. Same “new picture every time” "
@@ -222,6 +230,7 @@ SCRIPTS = [
         "hub_line": "Same photo look, shorter rules, still a new picture every time.",
         "title": "Cheap photos",
         "block": "Lean Director",
+        "frame": "photo",
         "when": (
             "Use this when you still want photographs, but a shorter rule sheet. "
             "A new picture is drawn every time, so you still keep appearance notebooks."
@@ -245,6 +254,7 @@ SCRIPTS = [
         "hub_line": "Three comic panels with talk bubbles.",
         "title": "Manga pages",
         "block": "Manga (Artist Base)",
+        "frame": "manga",
         "when": (
             "Use this when you want comic pages — three panels and talk bubbles. "
             "A new picture is drawn every time, so you keep appearance notebooks."
@@ -268,6 +278,7 @@ SCRIPTS = [
         "hub_line": "Lots of people arranged in one picture.",
         "title": "A crowded scene",
         "block": "Bob Ross script",
+        "frame": "mixed",
         "when": (
             "Use this when the shot is a crowd arranged in space, not two people "
             "talking in close-up. A new picture is drawn every time. Use the appearance "
@@ -292,6 +303,7 @@ SCRIPTS = [
         "hub_line": "Two named people in the picture, cheaper than the photo script.",
         "title": "Two people",
         "block": "Vanilla Bean IW Wrangler (Dual subject)",
+        "frame": "mixed",
         "when": (
             "Use this when two named people share the picture and you want a cheaper "
             "rule sheet than the photo script. A new picture is drawn every time. "
@@ -316,6 +328,7 @@ SCRIPTS = [
         "hub_line": "One face that stays the same from picture to picture.",
         "title": "One person the game remembers",
         "block": "Vanilla IW Wrangler (Single subject)",
+        "frame": "mixed",
         "when": (
             "Use this when there is one named person and you want the game to remember "
             "the face. Create no appearance notebooks."
@@ -340,6 +353,7 @@ SCRIPTS = [
         "hub_line": "One remembered face, with shorter picture rules.",
         "title": "One person, lean language",
         "block": "Bareback Wrangler",
+        "frame": "mixed",
         "when": (
             "Use this when there is one named person, you want the game to remember "
             "the face, and you want shorter picture rules. Create no appearance notebooks."
@@ -360,79 +374,158 @@ SCRIPTS = [
     },
 ]
 
+SCRIPT_BY_FILE = {s["file"]: s for s in SCRIPTS}
 
-def shopping_html(script: dict, blocks: dict) -> str:
-    block = blocks[script["block"]]
-    exact = block["name"]
-    space_note = ""
-    if exact.endswith(" "):
-        space_note = (
-            "<p><strong>The name ends with a space.</strong> Copy it exactly from the box below.</p>"
+LIB_GROUPS = [
+    ("Photographs — pick one", ["pd.html", "lean.html"]),
+    ("Painted / comic — pick one", ["artist.html", "manga.html"]),
+    ("Crowd / two people — pick one", ["bob-ross.html", "dual.html"]),
+    ("One remembered face — pick one", ["single.html", "bareback.html"]),
+]
+
+
+def exact_name(script: dict, blocks: dict) -> str:
+    return blocks[script["block"]]["name"]
+
+
+def look_card(script: dict, blocks: dict) -> str:
+    exact = exact_name(script, blocks)
+    face = (
+        "The game remembers the face"
+        if script["family"] == "none"
+        else "A new picture every time"
+    )
+    space = " The name ends with a space — copy it exactly." if exact.endswith(" ") else ""
+    return (
+        f'<a class="card" href="{script["file"]}">'
+        f"<strong>{esc(script['hub'])}</strong>"
+        f'<p class="chip">{esc(exact)}</p>'
+        f"<p>{esc(script['hub_line'])}</p>"
+        f'<p class="face">{esc(face)}.{esc(space)}</p>'
+        f'<span class="btn">OPEN THIS</span></a>'
+    )
+
+
+def frame_keep(kind: str) -> str:
+    extra = (
+        "<li>If the game does not show sex in pictures, delete sexually stylized / erotic / genitalia phrases.</li>"
+        "<li>Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</li>"
+    )
+    if kind == "photo":
+        body = (
+            "<li>Keep tone and lines that sound like photos or CGI.</li>"
+            "<li>Delete the manga/comic-only paragraph.</li>"
         )
-    if script["family"] == "none":
-        notes = (
-            "<p><strong>Items to track:</strong> create none for appearance. "
-            "The game remembers the face without those notebooks.</p>"
+    elif kind == "paint":
+        body = (
+            "<li>Keep paint and brush words.</li>"
+            "<li>Delete camera-film words and Unreal Engine lines unless you truly want a game screenshot.</li>"
+            "<li>Delete the manga/comic-only paragraph.</li>"
         )
-    elif script["family"] == "pd":
-        notes = """
-<p><strong>Items to track</strong> — Type: YAML, Visible to: everyone, Auto-update: on.</p>
-<ul>
-<li>Always: <strong>Player Appearance</strong></li>
-<li>A few people: <strong>NPC Appearance small cast</strong></li>
-<li>Many people: <strong>NPC Appearance (large cast)</strong> and also <strong>Relationship Tracker</strong> (that last one is visible to AI only)</li>
-</ul>
-"""
+    elif kind == "manga":
+        body = (
+            "<li>Keep the manga/comic paragraph.</li>"
+            "<li>Delete Unreal Engine lines.</li>"
+        )
     else:
-        notes = """
-<p><strong>Items to track</strong> — Type: YAML, Visible to: everyone, Auto-update: on. Use the names that say “for Bob Ross/Wrangler”.</p>
-<ul>
-<li>Always: <strong>Player Appearance for Bob Ross/Wrangler</strong></li>
-<li>A few people: <strong>NPC Appearance small, for Bob Ross/Wrangler</strong></li>
-<li>Many people: <strong>NPC Appearance large, for Bob Ross/Wrangler</strong> (this name ends with a space) and also <strong>Relationship Tracker</strong> (visible to AI only)</li>
-</ul>
-"""
-    return f"""
-<div class="panel">
-<p>One Extra Instruction Block. Name it exactly:</p>
-<p><strong>{esc(exact)}</strong></p>
-{space_note}
-{notes}
-</div>
-"""
+        body = (
+            "<li>This look can be photos or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other.</li>"
+            "<li>Delete the manga/comic-only paragraph unless you actually want comic pages (you probably wanted the manga look instead).</li>"
+        )
+    return f'<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul>{body}{extra}</ul></div>'
 
 
-def write_script_page(script: dict, blocks: dict, trackers: dict) -> None:
+def frame_boxes(boxes: Boxes, game: dict) -> str:
+    bits = []
+    for key, label in FRAME_FIELDS:
+        bits.append(f"<h3>{esc(label)}</h3>")
+        bits.append(boxes.box(label, game[key]))
+    return "\n".join(bits)
+
+
+def notebook_step(script: dict, trackers: dict, boxes: Boxes) -> str:
+    if script["family"] == "none":
+        return (
+            '<div class="ok"><p><strong>Create no appearance notebooks.</strong> '
+            "The game remembers the face without them. Skip this step.</p></div>"
+        )
+    if script["family"] == "pd":
+        player = trackers["Player Appearance"]
+        small = trackers["NPC Appearance small cast"]
+        large = trackers["NPC Appearance (large cast)"]
+        rel = trackers["Relationship Tracker"]
+        few_h = "A few people — copy this one, skip the large list"
+        many_h = "Many people — copy these two, skip the small list"
+    else:
+        player = trackers["Player Appearance for Bob Ross/Wrangler"]
+        small = trackers["NPC Appearance small, for Bob Ross/Wrangler"]
+        large = trackers["NPC Appearance large, for Bob Ross/Wrangler"]
+        rel = trackers["Relationship Tracker"]
+        few_h = "A few people — copy this one, skip the large list"
+        many_h = "Many people — copy these two, skip the small list (the large name ends with a space)"
+    return (
+        "<p>Always copy the player notebook. Then copy <strong>either</strong> the few-people list "
+        "<strong>or</strong> the many-people pair — not both.</p>"
+        f"<h3>Always — player</h3>\n{tracker_boxes(boxes, player)}\n"
+        '<div class="or-split">'
+        f"<section><h3>{esc(few_h)}</h3>\n{tracker_boxes(boxes, small)}</section>"
+        f"<section><h3>{esc(many_h)}</h3>\n{tracker_boxes(boxes, large)}\n"
+        f"{tracker_boxes(boxes, rel)}</section>"
+        "</div>"
+    )
+
+
+def write_script_page(script: dict, blocks: dict, trackers: dict, game: dict) -> None:
     boxes = Boxes()
     block = blocks[script["block"]]
-    body = f"""
-<p class="bubble">PICTURE SCRIPT</p>
-<h1>{esc(script["title"])}</h1>
-<div class="panel">
-<h2>Use this when</h2>
-<p class="lede">{esc(script["when"])}</p>
+    exact = block["name"]
+    space = (
+        "<p><strong>The name ends with a space.</strong> Copy it exactly from the box.</p>"
+        if exact.endswith(" ")
+        else ""
+    )
+    done = """
+<div class="ok">
+<p><strong>Pictures are done</strong> when those four steps are in your game. Optional next:</p>
+<p><a class="btn" href="writing.html">STORY VOICE</a>
+<a class="btn" href="extras.html">EXTRA WRITING</a>
+<a class="btn" href="bodies.html">BODIES</a>
+<a class="btn" href="creatures.html">CREATURES</a></p>
 </div>
-<div class="warn">
-<h2>Do not use with</h2>
-<p>{esc(script["avoid"])}</p>
-</div>
-<h2>Shopping list</h2>
-{shopping_html(script, blocks)}
-<h2>After you paste</h2>
-<div class="panel">{script["after"]}</div>
-<h2>Copy boxes</h2>
-{block_box(boxes, block)}
 """
-    if script["family"] == "pd":
-        names = PD_FAMILY
-    elif script["family"] == "wrangler":
-        names = WRANGLER_FAMILY
-    else:
-        names = []
-    for name in names:
-        item = trackers[name]
-        body += f"<h3>Notebook: {esc(item['name'])}</h3>\n"
-        body += tracker_boxes(boxes, item)
+    body = f"""
+<p class="bubble">STAY ON THIS PAGE</p>
+<h1>{esc(script["title"])}</h1>
+<p class="chip">{esc(exact)}</p>
+<p class="lede">{esc(script["when"])}</p>
+<nav class="toc">
+<a href="#step1">1. Picture rules</a>
+<a href="#step2">2. Notebooks</a>
+<a href="#step3">3. Fill blanks</a>
+<a href="#step4">4. Image style</a>
+</nav>
+<section class="step" id="step1">
+<h2>Step 1 — Extra Instruction Blocks</h2>
+<div class="warn"><p>{esc(script["avoid"])}</p></div>
+{space}
+{block_box(boxes, block)}
+</section>
+<section class="step" id="step2">
+<h2>Step 2 — Items to track</h2>
+{notebook_step(script, trackers, boxes)}
+</section>
+<section class="step" id="step3">
+<h2>Step 3 — Fill blanks on what you pasted</h2>
+<div class="panel">{script["after"]}</div>
+</section>
+<section class="step" id="step4">
+<h2>Step 4 — Image style</h2>
+<p>Paste these four boxes into Image style prefix and suffix. Then keep or delete paragraphs for <em>this</em> look.</p>
+{frame_keep(script["frame"])}
+{frame_boxes(boxes, game)}
+</section>
+{done}
+"""
     (DOCS / script["file"]).write_text(
         page_shell(
             f"{script['title']} — The Script Library",
@@ -443,71 +536,84 @@ def write_script_page(script: dict, blocks: dict, trackers: dict) -> None:
     )
 
 
+def picker_body(blocks: dict, intro: str) -> str:
+    groups = []
+    for heading, files in LIB_GROUPS:
+        cards = "".join(look_card(SCRIPT_BY_FILE[f], blocks) for f in files)
+        groups.append(f'<div class="group"><h2>{esc(heading)}</h2><div class="grid">{cards}</div></div>')
+    quiet = """
+<p class="quiet">After pictures work:
+<a href="writing.html">Story voice</a> ·
+<a href="extras.html">Extra writing</a> ·
+<a href="bodies.html">Bodies</a> ·
+<a href="creatures.html">Creatures</a></p>
+"""
+    return f"""
+<p class="bubble">THE SCRIPT LIBRARY</p>
+<h1>Pick one look.</h1>
+<p class="lede">{esc(intro)}</p>
+<p class="ok">Stay on that look’s page until pictures work. Come back later for story voice or add-ons.</p>
+{"".join(groups)}
+{quiet}
+"""
+
+
 def write_index() -> None:
-    cards = []
-    for script in SCRIPTS:
-        cards.append(
-            f'<a class="card" href="{script["file"]}">'
-            f'<strong>{esc(script["hub"])}</strong>'
-            f'<p>{esc(script["hub_line"])}</p>'
-            f'<span class="btn">OPEN THIS</span></a>'
-        )
-    extras = [
-        ("start.html", "First time", "Six steps. No file talk."),
-        ("writing.html", "Story voice", "Main Instructions, Storymaster, Description, Evaluation, Summarization."),
-        ("extras.html", "Extra writing rules", "Characterization, pacing, sex, period, craft, Lion, Leopard."),
-        ("bodies.html", "Body add-ons", "Expanded female, cups, male, futa, hypertrophy."),
-        ("creatures.html", "Creature add-ons", "Monstergirl, Pokégirl, Alien."),
-        ("frame.html", "Picture frame words", "The four Image style prefix and suffix boxes."),
-        ("dont.html", "Never mix these", "The short list of fights."),
-    ]
-    more = []
-    for href, title, line in extras:
-        more.append(
-            f'<a class="card" href="{href}"><strong>{esc(title)}</strong>'
-            f"<p>{esc(line)}</p><span class=\"btn\">OPEN THIS</span></a>"
-        )
     body = f"""
-<p class="bubble">PICK A LOOK</p>
-<h1>Copy from the page.</h1>
-<p class="lede">This website is the kit. Open a look, press COPY, paste into Infinite Worlds. You do not open a JSON file.</p>
-<p class="ok">Pick <strong>one</strong> picture look. Then add story voice, extra writing, bodies, or creatures if you want them.</p>
+<p class="bubble">IW-SLICK</p>
+<h1>Copy-paste kit.</h1>
+<p class="lede">A public kit for Infinite Worlds world creators. Contributions from the community. More will land here.</p>
+<h2>Contributions</h2>
 <div class="grid">
-{"".join(cards)}
+<a class="card" href="library.html">
+<strong>The Script Library</strong>
+<p>Picture scripts, story voice, extras — copy from the page into Infinite Worlds.</p>
+<p>From {esc(CREDITS)}.</p>
+<span class="btn">OPEN THIS</span>
+</a>
+<div class="card soon">
+<strong>More later</strong>
+<p>Other contributions will show up on this board. This home is for the whole kit, not only one library.</p>
 </div>
-<h2>Also on the board</h2>
-<div class="grid">
-{"".join(more)}
 </div>
 """
     (DOCS / "index.html").write_text(
         page_shell(
-            "The Script Library — pick a look",
-            "Amateur copy-paste kit for Infinite Worlds. Copy scripts from the page, not from a JSON file.",
+            "IW-SLICK — Infinite Worlds copy-paste kit",
+            "IW-SLICK is a public copy-paste kit for Infinite Worlds. Contributions from the community.",
             body,
+            mode="home",
         ),
         encoding="utf-8",
     )
 
 
-def write_start() -> None:
-    body = """
-<p class="bubble">FIRST TIME</p>
-<h1>Six steps.</h1>
-<p class="lede">Use the words you already see on the Infinite Worlds screen.</p>
-<ol class="steps">
-<li><strong>Open your game.</strong> Stay in the editor. You are going to paste into fields that already exist.</li>
-<li><strong>Main Instructions</strong> — paste the Split Game Master voice from the Story voice page. Fill the square brackets with how the story should sound.</li>
-<li><strong>Extra Instruction Blocks</strong> — add <em>one</em> picture script from Pick a look. Name the block exactly as the shopping list says. Optional extra writing, bodies, and creatures are more Extra Instruction Blocks, each with its own name.</li>
-<li><strong>Items to track</strong> — only the notebooks on that picture page. Type: YAML. Follow Visible to and Auto-update on the page. The one-person looks create no appearance notebooks.</li>
-<li><strong>Description / Evaluation / Summarization</strong> — paste those three boxes from the Story voice page. Do not paste the story-voice Description over a Description you already wrote for pictures.</li>
-<li><strong>Image style</strong> — paste the four prefix and suffix boxes from Picture frame words, then keep or delete paragraphs as that page says.</li>
-</ol>
-<p class="warn">Never turn on two picture scripts. If two looks both sound right, read Never mix these, then pick one.</p>
-<p><a class="btn" href="index.html">PICK A LOOK</a> <a class="btn" href="dont.html">NEVER MIX</a></p>
-"""
+def write_library(blocks: dict) -> None:
+    intro = (
+        "Open one picture look. The card shows the exact Extra Instruction Block name. "
+        "Copy everything on that page. You do not open a JSON file."
+    )
+    (DOCS / "library.html").write_text(
+        page_shell(
+            "The Script Library — pick a look",
+            "Pick one picture script by name. Stay on that page until pictures work.",
+            picker_body(blocks, intro),
+        ),
+        encoding="utf-8",
+    )
+
+
+def write_start(blocks: dict) -> None:
+    intro = (
+        "You are in The Script Library. Open a look below. Stay on that page until pictures work. "
+        "The card shows the exact Extra Instruction Block name."
+    )
     (DOCS / "start.html").write_text(
-        page_shell("First time — The Script Library", "Six steps to paste the Script Library into Infinite Worlds.", body),
+        page_shell(
+            "The Script Library — pick a look",
+            "Open one picture look and finish pictures on that page.",
+            picker_body(blocks, intro),
+        ),
         encoding="utf-8",
     )
 
@@ -518,28 +624,54 @@ def write_writing(game: dict, blocks: dict) -> None:
     body = f"""
 <p class="bubble">STORY VOICE</p>
 <h1>How the story talks.</h1>
-<p class="lede">These paste into Main Instructions, Extra Instruction Blocks, Author style, Evaluation, Description, and Summarization.</p>
-<h2>Split Game Master</h2>
-<p>Paste into <strong>Main Instructions</strong>. Fill <code>[insert full author style here]</code> with the same voice you put in Author style.</p>
+<p class="lede">Do this <strong>once</strong>, not once per picture look. Paste in the order of the Infinite Worlds screen.</p>
+<nav class="toc">
+<a href="#w1">1. Main Instructions</a>
+<a href="#w2">2. Storymaster</a>
+<a href="#w3">3. Author style</a>
+<a href="#w4">4. Evaluation</a>
+<a href="#w5">5. Description</a>
+<a href="#w6">6. Summarization</a>
+</nav>
+<section class="step" id="w1">
+<h2>Step 1 — Main Instructions</h2>
+<p>Fill <code>[insert full author style here]</code> with the same voice you put in Author style.</p>
 {boxes.box("Main Instructions — Split Game Master", split_gm(game))}
-<h2>Storymaster</h2>
-<p>One Extra Instruction Block. Name it exactly <strong>{esc(story['name'])}</strong> (the name ends with a space). After you paste, fill the square brackets: genres, tone, themes, conflicts, how many turns, length of time.</p>
+</section>
+<section class="step" id="w2">
+<h2>Step 2 — Extra Instruction Blocks (Storymaster)</h2>
+<p>Name it exactly <strong>{esc(story['name'])}</strong> (the name ends with a space). After you paste, fill the square brackets: genres, tone, themes, conflicts, how many turns, length of time.</p>
 {block_box(boxes, story)}
-<h2>Author style</h2>
-<p>Paste into the <strong>Author style</strong> field.</p>
+</section>
+<section class="step" id="w3">
+<h2>Step 3 — Author style</h2>
 {boxes.box("Author style", game["authorStyle"])}
-<h2>Evaluation</h2>
-<p>Paste into <strong>Evaluation</strong>.</p>
+</section>
+<section class="step" id="w4">
+<h2>Step 4 — Evaluation</h2>
 {boxes.box("Evaluation", game["evaluationRequest"])}
-<h2>Description</h2>
-<p>Paste into <strong>Description</strong>. This is story voice, not picture rules. If you already wrote Description instructions for images, do not overwrite them with this.</p>
+</section>
+<section class="step" id="w5">
+<h2>Step 5 — Description</h2>
+<p>This is story voice, not picture rules. If you already wrote Description instructions for images, do not overwrite them with this.</p>
 {boxes.box("Description", game["descriptionRequest"])}
-<h2>Summarization</h2>
-<p>Paste into <strong>Summarization</strong>.</p>
+</section>
+<section class="step" id="w6">
+<h2>Step 6 — Summarization</h2>
 {boxes.box("Summarization", game["summaryRequest"])}
+</section>
+<p class="quiet">Optional add-ons:
+<a href="extras.html">Extra writing</a> ·
+<a href="bodies.html">Bodies</a> ·
+<a href="creatures.html">Creatures</a> ·
+<a href="library.html">Back to looks</a></p>
 """
     (DOCS / "writing.html").write_text(
-        page_shell("Story voice — The Script Library", "Split Game Master, Storymaster, Author style, Evaluation, Description, Summarization.", body),
+        page_shell(
+            "Story voice — The Script Library",
+            "Split Game Master, Storymaster, Author style, Evaluation, Description, Summarization.",
+            body,
+        ),
         encoding="utf-8",
     )
 
@@ -559,9 +691,10 @@ def write_extras(blocks: dict) -> None:
     boxes = Boxes()
     bits = [
         """
-<p class="bubble">EXTRA WRITING</p>
-<h1>Optional story rules.</h1>
-<p class="lede">Each one is its own Extra Instruction Block. Copy only the ones your game needs. More blocks cost more every turn.</p>
+<p class="bubble">ADD-ONS</p>
+<h1>Optional extras.</h1>
+<p class="lede">Use these after pictures work. Each one is its own Extra Instruction Block. Copy only what your game needs. More blocks cost more every turn.</p>
+<p class="quiet"><a href="extras.html">Extra writing</a> · <a href="bodies.html">Bodies</a> · <a href="creatures.html">Creatures</a></p>
 <div class="warn"><p><strong>Lion and Leopard:</strong> in Infinite Worlds settings, turn on “AI-specific extra instructions”. If that switch is off, Lion and Leopard hit every model.</p></div>
 """
     ]
@@ -572,7 +705,11 @@ def write_extras(blocks: dict) -> None:
         bits.append(f"<p>Name the Extra Instruction Block exactly: <strong>{esc(block['name'])}</strong></p>")
         bits.append(block_box(boxes, block))
     (DOCS / "extras.html").write_text(
-        page_shell("Extra writing rules — The Script Library", "Characterization, Pacing, Sexual Content, Period Knowledge, Narrative Craft, Lion, Leopard.", "".join(bits)),
+        page_shell(
+            "Add-ons — The Script Library",
+            "Characterization, Pacing, Sexual Content, Period Knowledge, Narrative Craft, Lion, Leopard.",
+            "".join(bits),
+        ),
         encoding="utf-8",
     )
 
@@ -594,6 +731,7 @@ def write_bodies(blocks: dict, trackers: dict) -> None:
 <p class="bubble">BODY ADD-ONS</p>
 <h1>Bodies.</h1>
 <p class="lede">These are extra Extra Instruction Blocks. They fit the photo, painting, and manga scripts. Do not stack every body add-on at once.</p>
+<p class="quiet"><a href="extras.html">Extra writing</a> · <a href="bodies.html">Bodies</a> · <a href="creatures.html">Creatures</a></p>
 """
     ]
     for name, blurb in BODIES:
@@ -608,7 +746,11 @@ def write_bodies(blocks: dict, trackers: dict) -> None:
     )
     bits.append(tracker_boxes(boxes, cups))
     (DOCS / "bodies.html").write_text(
-        page_shell("Body add-ons — The Script Library", "Expanded female, cups, male, futa, hypertrophy, Cup Sizes notebook.", "".join(bits)),
+        page_shell(
+            "Body add-ons — The Script Library",
+            "Expanded female, cups, male, futa, hypertrophy, Cup Sizes notebook.",
+            "".join(bits),
+        ),
         encoding="utf-8",
     )
 
@@ -631,6 +773,7 @@ def write_creatures(blocks: dict) -> None:
 <p class="bubble">CREATURE ADD-ONS</p>
 <h1>Not-human people.</h1>
 <p class="lede">Each numbered part is its own Extra Instruction Block. If you want monstergirls, paste 1, 2, and 3. Same idea for Pokégirl and Alien.</p>
+<p class="quiet"><a href="extras.html">Extra writing</a> · <a href="bodies.html">Bodies</a> · <a href="creatures.html">Creatures</a></p>
 """
     ]
     for name, blurb in CREATURES:
@@ -640,24 +783,22 @@ def write_creatures(blocks: dict) -> None:
         bits.append(f"<p>Name it exactly: <strong>{esc(block['name'])}</strong></p>")
         bits.append(block_box(boxes, block))
     (DOCS / "creatures.html").write_text(
-        page_shell("Creature add-ons — The Script Library", "Monstergirl, Pokégirl, and Alien Extra Instruction Blocks.", "".join(bits)),
+        page_shell(
+            "Creature add-ons — The Script Library",
+            "Monstergirl, Pokégirl, and Alien Extra Instruction Blocks.",
+            "".join(bits),
+        ),
         encoding="utf-8",
     )
 
 
 def write_frame(game: dict) -> None:
     boxes = Boxes()
-    fields = [
-        ("imageStyleCharacterPre", "Image style — people — prefix"),
-        ("imageStyleCharacterPost", "Image style — people — suffix"),
-        ("imageStyleNonCharacterPre", "Image style — not people — prefix"),
-        ("imageStyleNonCharacterPost", "Image style — not people — suffix"),
-    ]
     bits = [
         """
-<p class="bubble">PICTURE FRAME</p>
+<p class="bubble">BACKUP</p>
 <h1>Words around the picture.</h1>
-<p class="lede">These four boxes paste into Image style prefix and suffix. Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</p>
+<p class="lede">You do not need this page to finish a look. Each look already has these four boxes and the keep/delete notes for that look. This is the same paste with every look listed.</p>
 <div class="panel">
 <p><strong>Keep or delete, in plain English</strong></p>
 <ul>
@@ -669,7 +810,7 @@ def write_frame(game: dict) -> None:
 </div>
 """
     ]
-    for key, label in fields:
+    for key, label in FRAME_FIELDS:
         bits.append(f"<h2>{esc(label)}</h2>")
         bits.append(boxes.box(label, game[key]))
     (DOCS / "frame.html").write_text(
@@ -680,8 +821,9 @@ def write_frame(game: dict) -> None:
 
 def write_dont() -> None:
     body = """
-<p class="bubble">HARD NO</p>
+<p class="bubble">BACKUP</p>
 <h1>Never mix these.</h1>
+<p class="lede">Each look page already lists the fights for that look. This is the full list.</p>
 <div class="warn">
 <ul>
 <li>Never two picture scripts in the same game.</li>
@@ -693,10 +835,14 @@ def write_dont() -> None:
 <li>Do not overwrite Description instructions you already wrote for pictures with the story-voice Description paste.</li>
 </ul>
 </div>
-<p><a class="btn" href="index.html">BACK TO PICK A LOOK</a></p>
+<p><a class="btn" href="library.html">BACK TO LOOKS</a></p>
 """
     (DOCS / "dont.html").write_text(
-        page_shell("Never mix these — The Script Library", "Conflicts: two picture scripts, Lean+PD, Bareback+Single, both notebook families.", body),
+        page_shell(
+            "Never mix these — The Script Library",
+            "Conflicts: two picture scripts, Lean+PD, Bareback+Single, both notebook families.",
+            body,
+        ),
         encoding="utf-8",
     )
 
@@ -708,9 +854,10 @@ def main() -> None:
     DOCS.mkdir(parents=True, exist_ok=True)
     (DOCS / "assets").mkdir(parents=True, exist_ok=True)
     write_index()
-    write_start()
+    write_library(blocks)
+    write_start(blocks)
     for script in SCRIPTS:
-        write_script_page(script, blocks, trackers)
+        write_script_page(script, blocks, trackers, game)
     write_writing(game, blocks)
     write_extras(blocks)
     write_bodies(blocks, trackers)

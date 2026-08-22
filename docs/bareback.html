@@ -13,41 +13,28 @@
 <body>
 <header class="top">
 <div class="row">
-<a class="logo" href="index.html">THE SCRIPT LIBRARY</a>
-<nav><a href="index.html">Pick a look</a>
-<a href="start.html">First time</a>
+<a class="logo" href="index.html">IW-SLICK</a>
+<nav><a href="library.html">Looks</a>
 <a href="writing.html">Story voice</a>
-<a href="extras.html">Extra writing</a>
-<a href="bodies.html">Bodies</a>
-<a href="creatures.html">Creatures</a>
-<a href="frame.html">Picture frame</a>
-<a href="dont.html">Never mix</a></nav>
+<a href="extras.html">Add-ons</a></nav>
 </div>
 </header>
 <main class="wrap">
 
-<p class="bubble">PICTURE SCRIPT</p>
+<p class="bubble">STAY ON THIS PAGE</p>
 <h1>One person, lean language</h1>
-<div class="panel">
-<h2>Use this when</h2>
+<p class="chip">Bareback Wrangler</p>
 <p class="lede">Use this when there is one named person, you want the game to remember the face, and you want shorter picture rules. Create no appearance notebooks.</p>
-</div>
-<div class="warn">
-<h2>Do not use with</h2>
-<p>Do not turn on any other picture script. Do not also use the one-person Wrangler. Do not create appearance notebooks.</p>
-</div>
-<h2>Shopping list</h2>
+<nav class="toc">
+<a href="#step1">1. Picture rules</a>
+<a href="#step2">2. Notebooks</a>
+<a href="#step3">3. Fill blanks</a>
+<a href="#step4">4. Image style</a>
+</nav>
+<section class="step" id="step1">
+<h2>Step 1 — Extra Instruction Blocks</h2>
+<div class="warn"><p>Do not turn on any other picture script. Do not also use the one-person Wrangler. Do not create appearance notebooks.</p></div>
 
-<div class="panel">
-<p>One Extra Instruction Block. Name it exactly:</p>
-<p><strong>Bareback Wrangler</strong></p>
-
-<p><strong>Items to track:</strong> create none for appearance. The game remembers the face without those notebooks.</p>
-</div>
-
-<h2>After you paste</h2>
-<div class="panel"><ul><li>Delete the live line that says to pull appearance from tracked items. That line does not belong on this script.</li><li>There is a photo-or-painting slot. Fill one side, delete the other, then unwrap it.</li><li>Write 3 to 5 mood words and unwrap that line.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
-<h2>Copy boxes</h2>
 <div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Bareback Wrangler</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Bareback IW Wrangler Script v1.0 — Claude Opus 4 / Sonnet 4 → Flux 2 Pro
 Credit: KaapstadMK · Xyphrax · MrDrunkinDragon · _Thyr_ · Funky Munky
 
@@ -157,10 +144,84 @@ Gaze:
 
 &lt;#* Word limit (hard cap): 200 words total. Exceeding corrupts Flux output and is never acceptable. COUNT before outputting. If over: TRUNCATE immediately — setting first, clothing behavior second, standard appearance third. Never truncate core non-human identity features — species-defining visual markers (ears, tail, scales, claws, wings, eye type, skin color). Secondary elaboration (behavioral implications, biological detail beyond core markers) follows standard truncation priority. 
 * Field length (hard cap): illustrAppearance - 50 words maximum; illustrClothes - 50 words maximum; illustrExpressionPosition - 50 words maximum; illustrSetting - 50 words maximum.#&gt;</pre></div>
+</section>
+<section class="step" id="step2">
+<h2>Step 2 — Items to track</h2>
+<div class="ok"><p><strong>Create no appearance notebooks.</strong> The game remembers the face without them. Skip this step.</p></div>
+</section>
+<section class="step" id="step3">
+<h2>Step 3 — Fill blanks on what you pasted</h2>
+<div class="panel"><ul><li>Delete the live line that says to pull appearance from tracked items. That line does not belong on this script.</li><li>There is a photo-or-painting slot. Fill one side, delete the other, then unwrap it.</li><li>Write 3 to 5 mood words and unwrap that line.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
+</section>
+<section class="step" id="step4">
+<h2>Step 4 — Image style</h2>
+<p>Paste these four boxes into Image style prefix and suffix. Then keep or delete paragraphs for <em>this</em> look.</p>
+<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>This look can be photos or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other.</li><li>Delete the manga/comic-only paragraph unless you actually want comic pages (you probably wanted the manga look instead).</li><li>If the game does not show sex in pictures, delete sexually stylized / erotic / genitalia phrases.</li><li>Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</li></ul></div>
+<h3>Image style — people — prefix</h3>
+<div class="copybox"><header><span>Image style — people — prefix</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">&lt;#TONE#&gt;
+[Adjectives] [fantasy/sci-fi concept art].
+
+&lt;#IMAGE SPECIFICS — sexually stylized anchors content register · artifact noun anchors visual tradition#&gt;
+[Sexually stylized] [hyper-realistic] [4k] [digital / hand-painted / hand-drawn / CGI / Unreal Engine 5 rendered] [image/art/artwork/photograph/print/painting/drawing/still] of</pre></div>
+<h3>Image style — people — suffix</h3>
+<div class="copybox"><header><span>Image style — people — suffix</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">[Setting], [in the style of person/style], [such as [examples]]. 
+
+&lt;#PALETTE &amp; MEDIUM#&gt;
+[2-4 adjectives] palette, [art medium, [with [brush strokes clearly visible/[clearly defined/sharp/smooth/clean lineart] [with bold outline/detailing/controlled negative spaces]], [[adjective] saturation], [[adjective] contrast], [[adjective/textured/cel] shading], [screen tones and layered halftone textures], [depth-enhancing shadows/volumetric ambient occlusion], 
+
+&lt;#SURFACE RENDERING#&gt;
+[[character appeal]/[large expressive eyes, delicate facial features, detailed hair, and [stylized/exaggerated/sexualized] proportions]/[smooth CG skin texture, low surface detail]], rich background detail, intricate costume design [with well-rendered fabric folds], [Physically Based Rendering aesthetic], [Nanite surface geometry],
+
+&lt;#LIGHTING#&gt;
+[Lumen global illumination], [adverb] atmospheric/volumetric lighting, [sunlight/bloom effects], [chiaroscuro], [[adjective] haze], [[adjective] glow], [subsurface scattering, specular highlights],
+
+&lt;#CLOSER#&gt;
+and vibrant use of color and color theory, evoking/contrasting/highlighting [a sense of magical realism/different concept]. 
+
+&lt;#MANGA/COMIC ONLY#&gt;
+[Professional [genre]-style detailing with [erotic hentai styling and doujinshi intimacy]. printed-page aesthetic, as if from a high-quality [manga] volume. clean gutters or panel framing when appropriate to the scene.]
+
+&lt;#SHOW INSTRUCTION#&gt;
+Show the face (if visible), [genitalia (if naked and visible)], and majority of body (occasionally full body); highly detailed, candid, sensual, [erotic, sexy,] dynamic poses and expressions, with lighting matching time of day and location.</pre></div>
+<h3>Image style — not people — prefix</h3>
+<div class="copybox"><header><span>Image style — not people — prefix</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">&lt;#TONE#&gt;
+[Adjectives] [fantasy/sci-fi concept art].
+
+&lt;#IMAGE SPECIFICS — sexually stylized anchors content register · artifact noun anchors visual tradition#&gt;
+[Sexually stylized] [hyper-realistic] [4k] [digital / hand-painted / hand-drawn / CGI / Unreal Engine 5 rendered] [image/art/artwork/photograph/print/painting/drawing/still] of</pre></div>
+<h3>Image style — not people — suffix</h3>
+<div class="copybox"><header><span>Image style — not people — suffix</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">[Setting], [in the style of person/style], [such as [examples]]. 
+
+&lt;#PALETTE &amp; MEDIUM#&gt;
+[2-4 adjectives] palette, [art medium, [with [brush strokes clearly visible/[clearly defined/sharp/smooth/clean lineart] [with bold outline/detailing/controlled negative spaces]], [[adjective] saturation], [[adjective] contrast], [[adjective/textured/cel] shading], [screen tones and layered halftone textures], [depth-enhancing shadows/volumetric ambient occlusion], 
+
+&lt;#SURFACE RENDERING#&gt;
+[[character appeal]/[large expressive eyes, delicate facial features, detailed hair, and [stylized/exaggerated/sexualized] proportions]/[smooth CG skin texture, low surface detail]], rich background detail, intricate costume design [with well-rendered fabric folds], [Physically Based Rendering aesthetic], [Nanite surface geometry],
+
+&lt;#LIGHTING#&gt;
+[Lumen global illumination], [adverb] atmospheric/volumetric lighting, [sunlight/bloom effects], [chiaroscuro], [[adjective] haze], [[adjective] glow], [subsurface scattering, specular highlights],
+
+&lt;#CLOSER#&gt;
+and vibrant use of color and color theory, evoking/contrasting/highlighting [a sense of magical realism/different concept]. 
+
+&lt;#MANGA/COMIC ONLY#&gt;
+[Professional [genre]-style detailing with [erotic hentai styling and doujinshi intimacy]. printed-page aesthetic, as if from a high-quality [manga] volume. clean gutters or panel framing when appropriate to the scene.]
+
+&lt;#SHOW INSTRUCTION#&gt;
+Show the face (if visible), [genitalia (if naked and visible)], and majority of body (occasionally full body); highly detailed, candid, sensual, [erotic, sexy,] dynamic poses and expressions, with lighting matching time of day and location.</pre></div>
+</section>
+
+<div class="ok">
+<p><strong>Pictures are done</strong> when those four steps are in your game. Optional next:</p>
+<p><a class="btn" href="writing.html">STORY VOICE</a>
+<a class="btn" href="extras.html">EXTRA WRITING</a>
+<a class="btn" href="bodies.html">BODIES</a>
+<a class="btn" href="creatures.html">CREATURES</a></p>
+</div>
+
 
 <footer>
-<p>Copy from the boxes on these pages into Infinite Worlds. A contribution from <strong>KaapstadMK</strong>, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.</p>
-<p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a></p>
+<p>The Script Library — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>
