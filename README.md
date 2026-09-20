@@ -53,7 +53,10 @@ This will make it easier to add library modules to an existing game without manu
 
 ## Compressing a game JSON
 
-Give an AI agent [InfiniteWorldsTokenCompressionShareable.md](InfiniteWorldsTokenCompressionShareable.md) plus your game JSON. That file is self-contained: it maps always-on storyteller cost, ranked levers, omission-over-FORBID, an intent quality gate, and a play-parity checklist. It compresses AI-facing rules only — not player-visible voice, headings, store card, or image copy-strings.
+Give an AI agent one of these files plus your game JSON. Each file is self-contained. Both compress AI-facing rules only — not player-visible voice, headings, store card, or image copy-strings.
+
+- **In-place text pass:** [InfiniteWorldsTokenCompressionLite.md](InfiniteWorldsTokenCompressionLite.md) — recut existing fields. Does not move rules into lore, GiveInfo, or hidden trackers, and does not add or remove blocks.
+- **Structural pass:** [InfiniteWorldsTokenCompressionShareable.md](InfiniteWorldsTokenCompressionShareable.md) — also allows lore routing, mutable extra instruction blocks, GiveInfo, caps, and sealing spent story.
 
 ---
 
