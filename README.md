@@ -51,6 +51,10 @@ This will make it easier to add library modules to an existing game without manu
 - [PawScript scripts](https://infiniteworlds.app/pawscript-script-guide)
 - [YAML guide](https://infiniteworlds.app/yaml-guide)
 
+## Compressing a game JSON
+
+Give an AI agent [InfiniteWorldsTokenCompressionShareable.md](InfiniteWorldsTokenCompressionShareable.md) plus your game JSON. That file is self-contained: it maps always-on storyteller cost, ranked levers, omission-over-FORBID, an intent quality gate, and a play-parity checklist. It compresses AI-facing rules only — not player-visible voice, headings, store card, or image copy-strings.
+
 ---
 
 ## License
