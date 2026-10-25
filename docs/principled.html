@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Richer photos, no size tiers — The Script Library</title>
-<meta name="description" content="More detail in the photograph, without size-tier language.">
+<meta name="description" content="Choose this when you want a fuller photograph, with more detail, and you do not want the script to assign body-size steps.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 <h1>Richer photos, no size tiers</h1>
 <p class="chip">Unified Principled Director (WF)</p>
 
-<p class="lede">Use this when you want a fuller photograph script, and you do not want body-size tiers. A new picture is drawn every time, so you keep appearance notebooks.</p>
+<p class="lede">Choose this when you want a fuller set of photograph rules, and you do not want the script to assign body-size steps. You still keep appearance notebooks. The script can be filled as a film look or as a painting look. You pick one side when you fill the blanks.</p>
 <nav class="toc">
 <a href="#step1">1. Picture rules</a>
 <a href="#step2">2. Notebooks</a>
@@ -35,9 +35,10 @@
 </nav>
 <section class="step" id="step1">
 <h2>Step 1 — Extra Instruction Blocks</h2>
-<div class="warn"><p>Do not turn on any other picture script. Do not also use Unified Explicit or Positional Director.</p></div>
+<p>In your world, open Extra Instruction Blocks. That is the list of extra rule sheets the game sends every turn. Create one block, paste the box below into it, and name the block exactly as the box says.</p>
+<div class="warn"><p>Turn on this picture script and no other. Unified Explicit is the version that names body-size steps. Positional Director is the full photograph script. Leave both of those off.</p></div>
 
-<div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Unified Principled Director (WF)</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Unified Principled Director script v1.2 — Claude Opus 4 / Sonnet 4 → Manticore
+<div class="copybox"><header><span>Copy this whole text into Extra Instruction Blocks. Name the block exactly: Unified Principled Director (WF)</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Unified Principled Director script v1.2 — Claude Opus 4 / Sonnet 4 → Manticore
 Credit: KaapstadMK · Xyphrax · MrDrunkinDragon · _Thyr_ · Funky Munky · WolfishGrimm · Luna Eterna · Robinbehindthenet
 For: Games needing richer detail without specific size tiers#&gt;
 
@@ -339,9 +340,10 @@ illustrSetting:
 </section>
 <section class="step" id="step2">
 <h2>Step 2 — Items to track</h2>
-<p>Always copy the player notebook. Then copy <strong>either</strong> the few-people list <strong>or</strong> the many-people list.</p><p>Relationship, intimacy, and the NPC appearance update live on the <a href="notebooks.html">Notebooks</a> page. Copy those after pictures work.</p><h3>Always — player</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">Player Appearance</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<p>Items to track are the notebooks the game keeps between turns. This step tells you which notebooks this look needs.</p>
+<div class="panel"><p><strong>Why these notebooks</strong></p><p>Every turn, Infinite Worlds draws a brand new picture. It does not keep the last picture. This look also throws away last turn’s written description of the face and the clothes. It does that by putting the turn number on the subject line and by marking the clothes as changed. The notebooks are the written description the new picture copies. A notebook here means an Items to track entry. Without it, the face drifts, because there is nothing stable to copy.</p><p>If your cast is small, add a row when someone speaks or is physically in the scene. If your cast is large, add a row only when the Relationship Tracker marks that person <code>significant: true</code>. That word is a yes-or-no flag on their relationship row. A large cast therefore also needs the Relationship set on the <a href="notebooks.html">Notebooks</a> page. If that set is missing, the flag never gets set, and the appearance list stays empty.</p></div><p>Always copy the player notebook. Then copy either the few-people list or the many-people list. Copy one of those NPC lists, not both. Two lists for the same people will disagree about how they look.</p><p>Relationship, intimacy, and the NPC appearance update are a separate set. Open the <a href="notebooks.html">Notebooks</a> page after the pictures are working, and copy that set there.</p><h3>Always — player</h3>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">Player Appearance</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: everyone. You and the story can both see this notebook.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">&lt;#Player Appearance#&gt;
 Structured appearance and clothing data for the player character, stored as discrete fields for image generation reference. Updated whenever physical appearance or clothing changes.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">&lt;#Player Appearance#&gt;
@@ -424,9 +426,9 @@ clothing:
     - text
   state: text
   ...:</pre></div>
-<div class="or-split"><section><h3>A few people — copy this one, skip the large list</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">NPC Appearance small cast</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<div class="or-split"><section><h3>A few people — copy this notebook, and skip the large list</h3>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">NPC Appearance small cast</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: everyone. You and the story can both see this notebook.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">&lt;#NPC Appearance#&gt;
 Structured appearance and clothing data for significant NPCs, stored as discrete fields for image generation reference. Updated whenever a character's physical appearance or clothing changes.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c9">COPY</button></header><pre id="c9">&lt;#NPC Appearance — Small Cast#&gt;
@@ -513,9 +515,9 @@ Remove entries ONLY if character permanently exits narrative</pre></div>
       - text
     state: text
     ...:
-  ...:</pre></div></section><section><h3>Many people — copy this one, skip the small list</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">NPC Appearance (large cast)</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+  ...:</pre></div></section><section><h3>Many people — copy this notebook, and skip the small list</h3>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">NPC Appearance (large cast)</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: everyone. You and the story can both see this notebook.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">&lt;#NPC Appearance#&gt;
 Structured appearance and clothing data for significant NPCs, stored as discrete fields for image generation reference. Updated whenever a character's physical appearance or clothing changes.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c14">COPY</button></header><pre id="c14">&lt;#NPC Appearance — Large Cast#&gt;
@@ -606,13 +608,18 @@ Remove entries ONLY if relationship becomes non-significant OR character permane
 </section>
 <section class="step" id="step3">
 <h2>Step 3 — Fill blanks on what you pasted</h2>
-<div class="panel"><ul><li>Find hidden notes wrapped in <code>&lt;# … #&gt;</code>. The game ignores those until you delete the wrap.</li><li>There is a film-or-painting slot. Fill one side, delete the other, then unwrap it.</li><li>Fill the period / region / artist line in square brackets, then unwrap it.</li><li>Write 3 to 5 mood words, then unwrap that line too.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
+<div class="panel">
+<p>Some notes in the script are wrapped in <code>&lt;# … #&gt;</code>. The game skips everything between those marks. The author hid optional packs there — sex scenes, fights, and long clothing rules — so you do not pay for them every turn until you want them. When you want a pack, fill any square brackets inside it, then delete the <code>&lt;#</code> and the <code>#&gt;</code>. When this page tells you to leave a wrap closed, leave it closed.</p>
+<ul><li>Search the text you pasted for notes wrapped in <code>&lt;# … #&gt;</code>. The game skips those notes until you delete the wrap.</li><li>There is a slot that says film or painting. Keep the side you want, delete the other side, and then delete the wrap so the game can read your choice.</li><li>Find the line with square brackets for period, region, and the kind of artist. Write your choices, then delete the wrap.</li><li>Find the mood line. Write three to five mood words, then delete the wrap.</li><li>Sex pose packs and fight pose packs stay wrapped unless your game actually shows those scenes.</li></ul>
+</div>
 </section>
 <section class="step" id="step4">
 <h2>Step 4 — Image style</h2>
-<p>These four boxes are the blank template. Paste them, then keep or delete paragraphs for <em>this</em> look.</p>
-<p>If you want a finished named look instead, open <a href="styles.html">Styles</a> and copy one prefix and one suffix. Do not paste both the blank template and a named style.</p>
-<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>This look can be photos or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other.</li><li>Delete the manga/comic-only paragraph unless you actually want comic pages (you probably wanted the manga look instead).</li><li>If the game does not show sex in pictures, delete sexually stylized / erotic / genitalia phrases.</li><li>Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</li></ul></div>
+<p>These four boxes are a blank template for the words that wrap the picture. Paste them into the Image style prefix and suffix fields, then keep or delete paragraphs so they match this look.</p>
+<p>Those fields go to the picture model only. They do not go to the story writer. That is why you should not paste them into the story Description field. Description is how the story talks. Image style is how the picture looks.</p>
+<p>A named style from the Styles page and this blank template are two different wrappers. Use one of them. If you paste both, the picture model receives two looks at once and they fight.</p>
+<p>If you would rather start from a finished look, open <a href="styles.html">Styles</a>, pick one, and copy its prefix and its suffix instead of these four boxes.</p>
+<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>This look can be photographs or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other side, or both looks will be sent at once.</li><li>Delete the manga or comic paragraph unless you actually want comic pages. If you want comic pages, the manga look is the better script.</li><li>If your game does not show sex in the pictures, delete the phrases about sexually stylized art, erotic styling, and genitalia. Those words are instructions to the picture model. Leaving them in will push the pictures that way.</li><li>A label such as <code>&lt;#TONE#&gt;</code> is a comment. The game ignores the label. The paragraph after the label is live until you delete that paragraph.</li></ul></div>
 <h3>Image style — people — prefix</h3>
 <div class="copybox"><header><span>Image style — people — prefix</span><button type="button" class="sticker" data-copy="c17">COPY</button></header><pre id="c17">&lt;#TONE#&gt;
 [Adjectives] [fantasy/sci-fi concept art].
@@ -668,7 +675,7 @@ Show the face (if visible), and majority of body (occasionally full body); highl
 </section>
 
 <div class="ok">
-<p><strong>Pictures are done</strong> when those four steps are in your game. Optional next:</p>
+<p><strong>Pictures are done</strong> when those four steps are in your game. You can stop here and play. If you want more, these pages are optional:</p>
 <p><a class="btn" href="writing.html">STORY VOICE</a>
 <a class="btn" href="extras.html">ADD-ONS</a>
 <a class="btn" href="bodies.html">BODIES</a>
@@ -679,7 +686,7 @@ Show the face (if visible), and majority of body (occasionally full body); highl
 
 
 <footer>
-<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+<p>Site by <strong>Sabre</strong>. Scripts by <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>The Script Library 3.29 — copy from these pages into Infinite Worlds.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>

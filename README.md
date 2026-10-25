@@ -18,7 +18,7 @@ The goal is to keep useful modular material together in one place so creators ca
 
 ## First contribution: The Script Library
 
-The Script Library is the first contribution to IW-SLICK. It was added with permission from **@KaapstadMK**, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.
+The Script Library is the first contribution to IW-SLICK. It was added with permission from **@KaapstadMK**, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff. The copy-paste site is built by **Sabre**. To submit something, find Sabre in the Infinite Worlds Discord.
 
 It contains picture scripts, story voice, notebooks, picture styles, and extras for Infinite Worlds. The hosted pages are the way to copy these into a game. The project is intended to grow beyond this first collection.
 

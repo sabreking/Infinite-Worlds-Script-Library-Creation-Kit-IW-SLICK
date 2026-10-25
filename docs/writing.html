@@ -24,7 +24,12 @@
 
 <p class="bubble">STORY VOICE</p>
 <h1>How the story talks.</h1>
-<p class="lede">Do this <strong>once</strong>, not once per picture look. Paste in the order of the Infinite Worlds screen.</p>
+<p class="lede">Do this once for your whole game. You do not paste it again for each picture look. Paste the boxes in the same order as the fields on the Infinite Worlds screen, so each box lands in the field it belongs to.</p>
+<div class="panel">
+<p><strong>Why these fields are separate</strong></p>
+<p>Infinite Worlds splits the story into two jobs. The Simulation Engine is the hidden plan: what happens next, and what the characters know. The Narrative Author is the prose the player reads. If those jobs share one box, the hidden plan leaks into the story the player sees.</p>
+<p>Storymaster is the block that decides what happens next. Description is the field that decides how that prose sounds. Reader Profile is a notebook about the human at the keyboard, so pacing can follow how they play. It is not the player character’s character sheet. Story Metadata is a notebook of the story’s genre and appeal. Change it only when the story itself changes for good. One wild turn should not rewrite the genre.</p>
+</div>
 <nav class="toc">
 <a href="#w1">1. Main Instructions</a>
 <a href="#w2">2. Storymaster</a>
@@ -37,7 +42,7 @@
 </nav>
 <section class="step" id="w1">
 <h2>Step 1 — Main Instructions</h2>
-<p>Paste this into Main Instructions. It reads the Reader Profile and Story Metadata notebooks. Those are steps 7 and 8 on this page. Copy them too, or those lines have nothing to read.</p>
+<p>Paste this into Main Instructions, the big instruction box at the top of the world. It tells the story to read the Reader Profile and Story Metadata notebooks. Those notebooks are steps 7 and 8 on this page. Copy them too. If you skip them, those lines in Main Instructions have nothing to read.</p>
 <div class="copybox"><header><span>Main Instructions — Split Game Master</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">Two modes — switch seamlessly:
 
 MODE: SIMULATION ENGINE — cold + analytical + precise; handles system state + hidden data + mechanical tracking + SecretInfo; FORBID: prose — data + logic only
@@ -52,8 +57,8 @@ reader_profile governs how the story's content is surfaced and paced — calibra
 </section>
 <section class="step" id="w2">
 <h2>Step 2 — Extra Instruction Blocks (Storymaster)</h2>
-<p>Name it exactly <strong>SecretInfo + Storymaster</strong>. The variable block is hidden inside <code>&lt;# … #&gt;</code>. Fill the square brackets: genres, what those genres owe the reader, this story’s appeal, what is new, tone, themes, conflicts, and the turn counts. Then delete the wraps so the game can read that block.</p>
-<div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: SecretInfo + Storymaster</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">#STORYMASTER
+<p>Create an Extra Instruction Block and name it exactly <strong>SecretInfo + Storymaster</strong>. An Extra Instruction Block is an extra rule sheet the game sends every turn. Inside the paste, a section is wrapped in <code>&lt;# … #&gt;</code>. The game skips everything between those marks until you delete the wrap. Fill the square brackets first: the genres, what those genres owe the reader, this story’s appeal, what is new about it, the tone, the themes, the conflicts, and the turn counts. Then delete the <code>&lt;#</code> and <code>#&gt;</code> so the game can read that section.</p>
+<div class="copybox"><header><span>Copy this whole text into Extra Instruction Blocks. Name the block exactly: SecretInfo + Storymaster</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">#STORYMASTER
 [MODE: SIMULATION ENGINE]
 
 SecretInfo: four sections — Actions + Analysis + Secrets + Elsewhere
@@ -143,11 +148,12 @@ Optional; fire ONLY when something narratively significant is happening off-scre
 </section>
 <section class="step" id="w3">
 <h2>Step 3 — Author style</h2>
-<p>Replace <code>[Author Style]</code> with how the sentences should sound. Leave “Written by Storymaster.” in place.</p>
+<p>Paste this into the Author style field. Replace <code>[Author Style]</code> with a short description of how the sentences should sound, such as spare, warm, or formal. Leave the words “Written by Storymaster.” in place. Those words tell the story which voice is speaking.</p>
 <div class="copybox"><header><span>Author style</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">Written by Storymaster. [Author Style]</pre></div>
 </section>
 <section class="step" id="w4">
 <h2>Step 4 — Evaluation</h2>
+<p>Paste this into the Evaluation field. Evaluation is the private check the game runs on the turn before the player reads it. It is not a paragraph the player sees.</p>
 <div class="copybox"><header><span>Evaluation</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">[MODE: SIMULATION ENGINE]
 
 Evaluation: three parts completed in order — Assertions + Judgements + Evaluation
@@ -265,7 +271,7 @@ Step 17: Option 1 / Option 2 / Option 3</pre></div>
 </section>
 <section class="step" id="w5">
 <h2>Step 5 — Description</h2>
-<p>This is story voice, not picture rules. If you already wrote Description instructions for images, do not overwrite them with this.</p>
+<p>Paste this into the Description field only if that field is still about how the story sounds. Description is the voice of the prose the player reads. Picture style belongs in Image style, which only the picture model reads. If you already wrote picture instructions in Description, leave them. Pasting this box would replace those instructions.</p>
 <div class="copybox"><header><span>Description</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">[MODE: NARRATIVE AUTHOR]
 
 POV: second-person limited ONLY — you/your/yours
@@ -283,6 +289,7 @@ FORBID in prose/dialogue: framework | methodology | baseline | parameters | vari
 </section>
 <section class="step" id="w6">
 <h2>Step 6 — Summarization</h2>
+<p>Paste this into the Summarization field. That field tells the game how to shrink older turns so the story can remember them without rereading the whole chat.</p>
 <div class="copybox"><header><span>Summarization</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">[MODE: SIMULATION ENGINE]
 
 Tracked item fact -&gt; omit copy; looks + clothes: omit; secretInfo ¶2 (Storymaster/analysis): omit entirely; Elsewhere (¶4): omit UNLESS surfaced into main narrative this turn
@@ -325,9 +332,9 @@ FORBID: literary recap of narration · invent · change who wanted/who forced/wh
 </section>
 <section class="step" id="w7">
 <h2>Step 7 — Reader Profile notebook</h2>
-<p>This notebook is the real human reader, not the player character. The AI fills it over many turns.</p>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">Reader Profile</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only, boring (the AI still gets this every turn; it is marked boring so it is not treated as story prose)</li><li>Auto-update: on</li></ul></div>
+<p>Create this notebook under Items to track. A notebook is a saved note the game keeps between turns. This one describes the human at the keyboard, so the story can match its pace to how you actually play. It is not the player character’s sheet. The story fills it in over many turns. You do not have to write the profile yourself before you start.</p>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">Reader Profile</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: AI only, and mark it boring. The story still receives it every turn. Boring means “this is bookkeeping, not story prose,” so the story should not rewrite it into the scene.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">&lt;#Reader Profile#&gt;
 Stores the player's demonstrated storytelling interests, decision patterns, and preferred interaction style — guides what elements the world surfaces each turn</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c9">COPY</button></header><pre id="c9">&lt;#Reader Profile#&gt;
@@ -359,9 +366,9 @@ conflict_approach: text
 </section>
 <section class="step" id="w8">
 <h2>Step 8 — Story Metadata notebook</h2>
-<p>Genre, appeal, and who the story is for. It should change only when the story itself changes for good.</p>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">Story Metadata</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only, boring (the AI still gets this every turn; it is marked boring so it is not treated as story prose)</li><li>Auto-update: on</li></ul></div>
+<p>Create this notebook under Items to track. It stores the story’s genre and what the story is trying to deliver. Leave it alone during ordinary play. Change it only when the story itself changes for good, such as a new act with a different promise to the reader. One strange turn should not rewrite it.</p>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">Story Metadata</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: AI only, and mark it boring. The story still receives it every turn. Boring means “this is bookkeeping, not story prose,” so the story should not rewrite it into the scene.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">&lt;#Story Metadata#&gt;
 Stores the story's genre identity, core appeal, and audience positioning — stable anchor updated only on major narrative pivots</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c14">COPY</button></header><pre id="c14">&lt;#Story Metadata#&gt;
@@ -391,7 +398,7 @@ target_audience: text
 ...:</pre></div>
 </section>
 
-<p class="quiet">After pictures work:
+<p class="quiet">Once the pictures are in your game, you can add:
 <a href="writing.html">Story voice</a> ·
 <a href="extras.html">Add-ons</a> ·
 <a href="bodies.html">Bodies</a> ·
@@ -403,7 +410,7 @@ target_audience: text
 
 
 <footer>
-<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+<p>Site by <strong>Sabre</strong>. Scripts by <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>The Script Library 3.29 — copy from these pages into Infinite Worlds.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>

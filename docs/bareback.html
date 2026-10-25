@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>One person, lean language — The Script Library</title>
-<meta name="description" content="One remembered face, with shorter picture rules.">
+<meta name="description" content="Choose this when there is one named person, you want the face to stay steady, and you want a shorter rule sheet than Wrangler.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 <h1>One person, lean language</h1>
 <p class="chip">Bareback Wrangler (WF)</p>
 
-<p class="lede">Use this when there is one named person, you want the game to remember the face, and you want shorter picture rules. Create no appearance notebooks.</p>
+<p class="lede">Choose this when there is one named person, you want the face to stay steady, and you want shorter picture rules than Wrangler. Create no appearance notebooks. The saved description is what keeps the face steady, and a notebook fights that.</p>
 <nav class="toc">
 <a href="#step1">1. Picture rules</a>
 <a href="#step2">2. Notebooks</a>
@@ -35,9 +35,10 @@
 </nav>
 <section class="step" id="step1">
 <h2>Step 1 — Extra Instruction Blocks</h2>
-<div class="warn"><p>Do not turn on any other picture script. Do not also use Wrangler (WF). Do not create appearance notebooks.</p></div>
+<p>In your world, open Extra Instruction Blocks. That is the list of extra rule sheets the game sends every turn. Create one block, paste the box below into it, and name the block exactly as the box says.</p>
+<div class="warn"><p>Turn on this picture script and no other. Wrangler (WF) is the longer version of this same one-person job. Leave it off, and do not create appearance notebooks.</p></div>
 
-<div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Bareback Wrangler (WF)</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Bareback IW Wrangler Script v2.3.1 — Claude Opus 4 / Sonnet 4 → Manticore, Wyvern (word count visible)
+<div class="copybox"><header><span>Copy this whole text into Extra Instruction Blocks. Name the block exactly: Bareback Wrangler (WF)</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Bareback IW Wrangler Script v2.3.1 — Claude Opus 4 / Sonnet 4 → Manticore, Wyvern (word count visible)
 Credit: KaapstadMK · Xyphrax · MrDrunkinDragon · _Thyr_ · Funky Munky · Robinbehindthenet
 Minimalist Wrangler direction with Single Subject guardrails. Designed to be used with the base image generation and caching system. No appearance tracked items needed#&gt;
 #ILLUSTRATION_RULES
@@ -193,17 +194,23 @@ Field caps: illustrAppearance→125w · illustrClothes→125w · illustrExpressi
 </section>
 <section class="step" id="step2">
 <h2>Step 2 — Items to track</h2>
-<div class="ok"><p><strong>Create no appearance notebooks.</strong> The game remembers the face without them. Skip this step.</p></div>
+<p>Items to track are the notebooks the game keeps between turns. This step tells you which notebooks this look needs.</p>
+<div class="ok"><p><strong>Create no appearance notebooks.</strong></p><p>Every turn, Infinite Worlds draws a brand new picture. It does not reuse the last picture. What this look can reuse is the written description of the person’s face and clothes, and only when you spell their name the same way every time. That saved description is what people mean by the picture cache.</p><p>Leave the hidden note that starts “If using appearance tracked items” wrapped. Opening it tells the game to throw the saved description away. The first description has to name the face, the hair, and the colors of the clothes. If that first line is vague, the new picture invents a new person even though the name matches. If someone else is in the scene, put them in the setting. This script is built for one named person.</p></div>
 </section>
 <section class="step" id="step3">
 <h2>Step 3 — Fill blanks on what you pasted</h2>
-<div class="panel"><ul><li>Keep spelling the person’s name the same way every turn.</li><li>Leave the hidden “If using appearance tracked items” note wrapped. Do not unwrap it. Create no appearance notebooks.</li><li>There is a film-or-painting slot. Fill one side, delete the other, then unwrap it.</li><li>Fill the period / region / artist line in square brackets, then unwrap it.</li><li>Write 3 to 5 mood words, then unwrap that line too.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
+<div class="panel">
+<p>Some notes in the script are wrapped in <code>&lt;# … #&gt;</code>. The game skips everything between those marks. The author hid optional packs there — sex scenes, fights, and long clothing rules — so you do not pay for them every turn until you want them. When you want a pack, fill any square brackets inside it, then delete the <code>&lt;#</code> and the <code>#&gt;</code>. When this page tells you to leave a wrap closed, leave it closed.</p>
+<ul><li>Spell the person’s name the same way every turn. The saved description is tied to that exact spelling. A new spelling looks like a new person, so the face changes.</li><li>Leave the hidden note that starts “If using appearance tracked items” wrapped. That note is what would throw away the saved description. Do not delete its wrap, and do not create appearance notebooks.</li><li>There is a slot that says film or painting. Keep the side you want, delete the other side, and then delete the wrap.</li><li>Find the line with square brackets for period, region, and the kind of artist. Write your choices, then delete the wrap.</li><li>Find the mood line. Write three to five mood words, then delete the wrap.</li><li>The first time this person is drawn, name the face, the hair, and the colors of the clothes. Later turns reuse those words. A vague first description gets redrawn as a different person even when the name matches.</li><li>Sex pose packs and fight pose packs stay wrapped unless your game actually shows those scenes.</li></ul>
+</div>
 </section>
 <section class="step" id="step4">
 <h2>Step 4 — Image style</h2>
-<p>These four boxes are the blank template. Paste them, then keep or delete paragraphs for <em>this</em> look.</p>
-<p>If you want a finished named look instead, open <a href="styles.html">Styles</a> and copy one prefix and one suffix. Do not paste both the blank template and a named style.</p>
-<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>This look can be photos or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other.</li><li>Delete the manga/comic-only paragraph unless you actually want comic pages (you probably wanted the manga look instead).</li><li>If the game does not show sex in pictures, delete sexually stylized / erotic / genitalia phrases.</li><li>Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</li></ul></div>
+<p>These four boxes are a blank template for the words that wrap the picture. Paste them into the Image style prefix and suffix fields, then keep or delete paragraphs so they match this look.</p>
+<p>Those fields go to the picture model only. They do not go to the story writer. That is why you should not paste them into the story Description field. Description is how the story talks. Image style is how the picture looks.</p>
+<p>A named style from the Styles page and this blank template are two different wrappers. Use one of them. If you paste both, the picture model receives two looks at once and they fight.</p>
+<p>If you would rather start from a finished look, open <a href="styles.html">Styles</a>, pick one, and copy its prefix and its suffix instead of these four boxes.</p>
+<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>This look can be photographs or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other side, or both looks will be sent at once.</li><li>Delete the manga or comic paragraph unless you actually want comic pages. If you want comic pages, the manga look is the better script.</li><li>If your game does not show sex in the pictures, delete the phrases about sexually stylized art, erotic styling, and genitalia. Those words are instructions to the picture model. Leaving them in will push the pictures that way.</li><li>A label such as <code>&lt;#TONE#&gt;</code> is a comment. The game ignores the label. The paragraph after the label is live until you delete that paragraph.</li></ul></div>
 <h3>Image style — people — prefix</h3>
 <div class="copybox"><header><span>Image style — people — prefix</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">&lt;#TONE#&gt;
 [Adjectives] [fantasy/sci-fi concept art].
@@ -259,7 +266,7 @@ Show the face (if visible), and majority of body (occasionally full body); highl
 </section>
 
 <div class="ok">
-<p><strong>Pictures are done</strong> when those four steps are in your game. Optional next:</p>
+<p><strong>Pictures are done</strong> when those four steps are in your game. You can stop here and play. If you want more, these pages are optional:</p>
 <p><a class="btn" href="writing.html">STORY VOICE</a>
 <a class="btn" href="extras.html">ADD-ONS</a>
 <a class="btn" href="bodies.html">BODIES</a>
@@ -270,7 +277,7 @@ Show the face (if visible), and majority of body (occasionally full body); highl
 
 
 <footer>
-<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+<p>Site by <strong>Sabre</strong>. Scripts by <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>The Script Library 3.29 — copy from these pages into Infinite Worlds.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>

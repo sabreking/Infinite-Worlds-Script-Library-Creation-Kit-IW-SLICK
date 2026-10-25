@@ -24,8 +24,9 @@
 
 <p class="bubble">NOTEBOOKS</p>
 <h1>Notebooks that update themselves.</h1>
-<p class="lede">Your look page already has Player Appearance and one NPC Appearance list. This page is the other notebooks. Copy a set together: the real notebook, the Update notebook, and the trigger.</p>
-<p>The AI writes the Update notebook. The trigger copies that row onto the real notebook and clears the update row. A row is the whole record, so the Update notebook should hold the full row, not one changed field by itself.</p>
+<p class="lede">Your look page already told you to create Player Appearance and one NPC Appearance list. This page is the other notebooks. A notebook is an Items to track entry the game keeps between turns. Copy a set together: the real notebook, the Update notebook, and the trigger. A trigger is a small automatic job that runs when its check is true. If you copy only one piece, the set cannot finish the update.</p>
+<div class="panel"><p><strong>Why an Update notebook</strong></p>
+<p>If the story edits the real list and only fills in one field, that partial row can replace the whole person and wipe the other fields. The Update notebook is a staging inbox, so the story writes the new row there instead of on the real list. The trigger then copies that whole row onto the real list, matching the person by name or by alias, and clears the inbox. Leave Auto-update off on the real Relationship and Intimacy notebooks. If you turn it on, the story also writes those notebooks directly, and the staging step is skipped.</p></div>
 <nav class="toc">
 <a href="#rel">Relationship</a>
 <a href="#intimacy">Intimacy</a>
@@ -33,10 +34,10 @@
 </nav>
 <section class="step" id="rel">
 <h2>Relationship</h2>
-<p>Copy all three. Auto-update stays off on the real notebook and on on the Update notebook. That is how this set ships.</p>
+<p>Copy all three pieces below. On the real notebook, turn Auto-update off. On the Update notebook, turn Auto-update on. That is how this set is meant to run. Auto-update is the switch that lets the story rewrite a notebook after each turn.</p>
 <h3>1. The real notebook</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">Relationship Tracker</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only (the player does not see this notebook)</li><li>Auto-update: off</li></ul></div>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">Relationship Tracker</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: AI only. The player does not see this notebook. The story still receives it every turn.</li><li>Turn Auto-update off. The story will not rewrite this notebook on its own. The starting text you paste stays until a trigger or you change it.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">&lt;#Relationship Tracker#&gt;
 Named characters, their relationship tier to the player, and their connection.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">&lt;#Relationship Tracker#&gt;
@@ -102,8 +103,8 @@ connection: one-line description of relationship to player, 10 words maximum.</p
   significant:
   connection: text</pre></div>
 <h3>2. The Update notebook</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">Relationship Update</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only, boring (the AI still gets this every turn; it is marked boring so it is not treated as story prose)</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">Relationship Update</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: AI only, and mark it boring. The story still receives it every turn. Boring means “this is bookkeeping, not story prose,” so the story should not rewrite it into the scene.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">&lt;#Relationship Tracker#&gt;
 Named characters, their relationship tier to the player, and their connection.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">&lt;#Relationship Tracker#&gt;
@@ -170,13 +171,13 @@ description of relationship to player, 10 words maximum.</pre></div>
   connection: text</pre></div>
 <h3>The trigger</h3>
 
-<p>Name the trigger exactly: <strong>Relationship Updater</strong></p>
-<div class="copybox"><header><span>Trigger name</span><button type="button" class="sticker" data-copy="c11">COPY</button></header><pre id="c11">Relationship Updater</pre></div>
-<p>Turn on “can trigger more than once.”</p>
-<p><strong>Condition.</strong> Type: PawScript. Paste this check.</p>
-<div class="copybox"><header><span>PawScript condition</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">$relationship_update.any(name.exists())</pre></div>
-<p><strong>Effect.</strong> Type: Run a script. Paste this script.</p>
-<div class="copybox"><header><span>Run a script</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">#Relationship Updater
+<p>In Triggers, create a new trigger and name it exactly <strong>Relationship Updater</strong>. A trigger is a small automatic job. This one runs after the story writes the Update notebook, and it copies that row onto the real notebook.</p>
+<div class="copybox"><header><span>Trigger name — copy this into the trigger’s name</span><button type="button" class="sticker" data-copy="c11">COPY</button></header><pre id="c11">Relationship Updater</pre></div>
+<p>Turn on “can trigger more than once.” That lets the job run again on later turns, whenever a new update row appears. If you leave it off, the copy happens once and then never again.</p>
+<p><strong>Condition.</strong> Set the condition type to PawScript. A PawScript condition is a check the game runs before the trigger is allowed to fire. Paste this check. It means “run only when the Update notebook has a row with a name.”</p>
+<div class="copybox"><header><span>PawScript condition — paste this as the check</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">$relationship_update.any(name.exists())</pre></div>
+<p><strong>Effect.</strong> Set the effect to Run a script. Paste this script as that effect. The script finds the matching person on the real list, replaces that whole row, and then clears the row from the Update notebook.</p>
+<div class="copybox"><header><span>Run a script — paste this as the effect</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">#Relationship Updater
 for each $char_update in $relationship_update
   if $relationship_tracker.any(name.exists()) = false
     $relationship_tracker = list()
@@ -189,10 +190,10 @@ for each $char_update in $relationship_update
 </section>
 <section class="step" id="intimacy">
 <h2>Intimacy</h2>
-<p>Same pattern. Copy the log, the Update notebook, and the trigger.</p>
+<p>Use the same three-piece pattern. Copy the log, which is the real notebook. Then copy the Update notebook. Then copy the trigger that moves a finished row from the Update notebook onto the log.</p>
 <h3>1. The real notebook</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c14">COPY</button></header><pre id="c14">Intimacy Log</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: off</li></ul></div>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c14">COPY</button></header><pre id="c14">Intimacy Log</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: everyone. You and the story can both see this notebook.</li><li>Turn Auto-update off. The story will not rewrite this notebook on its own. The starting text you paste stays until a trigger or you change it.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c15">COPY</button></header><pre id="c15">&lt;#Intimacy Log#&gt;
 A record of significant intimate encounters between the player character and other characters — emotional and physical milestones that the narrative should reference naturally going forward.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c16">COPY</button></header><pre id="c16">&lt;#Intimacy Log#&gt;
@@ -223,8 +224,8 @@ current_register: one line, 10 words maximum — current emotional and intimate 
   current_register: text
   ...:</pre></div>
 <h3>2. The Update notebook</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c19">COPY</button></header><pre id="c19">Intimacy Update</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c19">COPY</button></header><pre id="c19">Intimacy Update</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: everyone. You and the story can both see this notebook.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c20">COPY</button></header><pre id="c20">&lt;#Intimacy Log#&gt;
 A record of significant intimate encounters between the player character and other characters — emotional and physical milestones that the narrative should reference naturally going forward.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c21">COPY</button></header><pre id="c21">&lt;#Intimacy Log#&gt;
@@ -256,13 +257,13 @@ current_register: one line, 10 words maximum — current emotional + intimate re
   ...:</pre></div>
 <h3>The trigger</h3>
 <p><strong>The name ends with a space.</strong> Copy it exactly from the box.</p>
-<p>Name the trigger exactly: <strong>Intimacy Updater </strong></p>
-<div class="copybox"><header><span>Trigger name</span><button type="button" class="sticker" data-copy="c24">COPY</button></header><pre id="c24">Intimacy Updater </pre></div>
-<p>Turn on “can trigger more than once.”</p>
-<p><strong>Condition.</strong> Type: PawScript. Paste this check.</p>
-<div class="copybox"><header><span>PawScript condition</span><button type="button" class="sticker" data-copy="c25">COPY</button></header><pre id="c25">$intimacy_update.any(name.exists())</pre></div>
-<p><strong>Effect.</strong> Type: Run a script. Paste this script.</p>
-<div class="copybox"><header><span>Run a script</span><button type="button" class="sticker" data-copy="c26">COPY</button></header><pre id="c26">#Intimacy Updater
+<p>In Triggers, create a new trigger and name it exactly <strong>Intimacy Updater </strong>. A trigger is a small automatic job. This one runs after the story writes the Update notebook, and it copies that row onto the real notebook.</p>
+<div class="copybox"><header><span>Trigger name — copy this into the trigger’s name</span><button type="button" class="sticker" data-copy="c24">COPY</button></header><pre id="c24">Intimacy Updater </pre></div>
+<p>Turn on “can trigger more than once.” That lets the job run again on later turns, whenever a new update row appears. If you leave it off, the copy happens once and then never again.</p>
+<p><strong>Condition.</strong> Set the condition type to PawScript. A PawScript condition is a check the game runs before the trigger is allowed to fire. Paste this check. It means “run only when the Update notebook has a row with a name.”</p>
+<div class="copybox"><header><span>PawScript condition — paste this as the check</span><button type="button" class="sticker" data-copy="c25">COPY</button></header><pre id="c25">$intimacy_update.any(name.exists())</pre></div>
+<p><strong>Effect.</strong> Set the effect to Run a script. Paste this script as that effect. The script finds the matching person on the real list, replaces that whole row, and then clears the row from the Update notebook.</p>
+<div class="copybox"><header><span>Run a script — paste this as the effect</span><button type="button" class="sticker" data-copy="c26">COPY</button></header><pre id="c26">#Intimacy Updater
 for each $entry in $intimacy_update
   if $intimacy_log.any(name.exists()) = false
     $intimacy_log = list()
@@ -275,11 +276,11 @@ for each $entry in $intimacy_update
 </section>
 <section class="step" id="npc">
 <h2>NPC appearance update</h2>
-<p>Optional. Use this when appearance edits should land through a staging list. You already pasted either the small-cast or the large-cast NPC Appearance notebook on your look page.</p>
-<p>This Update notebook’s rules are only a reminder. After you paste, replace those rules with the update rules from the notebook you already copied. Then set that NPC Appearance notebook to <strong>Auto-update: off</strong>. Leave this Update notebook on Auto-update: on.</p>
+<p>This set is optional. Use it when you want appearance edits to land through a staging list, the same way relationship edits do. You already pasted either the small-cast or the large-cast NPC Appearance notebook on your look page. This page does not replace that notebook. It adds the inbox and the trigger.</p>
+<p>The Update notebook’s rules, as they ship, are only a reminder. After you paste, replace those rules with the update rules from the NPC notebook you already copied. Then set that real NPC Appearance notebook to <strong>Auto-update: off</strong>, so the story stops writing it directly. Leave this Update notebook on <strong>Auto-update: on</strong>, so the story writes the inbox and the trigger copies the row.</p>
 <h3>1. The Update notebook</h3>
-<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c27">COPY</button></header><pre id="c27">NPC Appearance Update</pre></div>
-<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only, boring (the AI still gets this every turn; it is marked boring so it is not treated as story prose)</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Notebook name — create an item and name it exactly this</span><button type="button" class="sticker" data-copy="c27">COPY</button></header><pre id="c27">NPC Appearance Update</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Set the type to YAML. YAML is the structured notebook these scripts read. A plain text item will not match the shape they expect.</li><li>Visible to: AI only, and mark it boring. The story still receives it every turn. Boring means “this is bookkeeping, not story prose,” so the story should not rewrite it into the scene.</li><li>Turn Auto-update on. That lets the story rewrite this notebook after each turn.</li></ul></div>
 <div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c28">COPY</button></header><pre id="c28">Structured appearance and clothing data for significant NPCs, stored as discrete fields for image generation reference. Updated whenever a character's physical appearance or clothing changes.</pre></div>
 <div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c29">COPY</button></header><pre id="c29">&lt;#Copy in either large cast or small cast NPC Appearance update instructions, and turn automatically update off in NPC Appearance#&gt;</pre></div>
 <div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c30">COPY</button></header><pre id="c30">- name: Mara Voss
@@ -341,7 +342,7 @@ for each $entry in $intimacy_update
     ...:
   ...:</pre></div>
 <h3>Paste one of these over the reminder</h3>
-<p>Small-cast games use the first box. Many-people games use the second. Paste it into the Update notebook’s update rules, replacing the reminder.</p>
+<p>A small cast uses the first box. A large cast uses the second. Paste that text into the Update notebook’s update rules, replacing the reminder that shipped with it. The small-cast rules add a person when they speak or are physically in the scene. The large-cast rules add a person only when the Relationship Tracker marks them <code>significant: true</code>.</p>
 <div class="copybox"><header><span>Small-cast update rules — paste over the reminder</span><button type="button" class="sticker" data-copy="c32">COPY</button></header><pre id="c32">&lt;#NPC Appearance — Small Cast#&gt;
 Create entry when named character has speaking role or direct physical interaction with player
 New entry: populate ALL fields immediately; incomplete entry (name field only) -&gt; populate immediately
@@ -376,13 +377,13 @@ FORBID: update expressions | emotions | demeanor
 Remove entries ONLY if relationship becomes non-significant OR character permanently exits narrative</pre></div>
 <h3>The trigger</h3>
 <p><strong>The name ends with a space.</strong> Copy it exactly from the box.</p>
-<p>Name the trigger exactly: <strong>NPC Appearance Updater </strong></p>
-<div class="copybox"><header><span>Trigger name</span><button type="button" class="sticker" data-copy="c34">COPY</button></header><pre id="c34">NPC Appearance Updater </pre></div>
-<p>Turn on “can trigger more than once.”</p>
-<p><strong>Condition.</strong> Type: PawScript. Paste this check.</p>
-<div class="copybox"><header><span>PawScript condition</span><button type="button" class="sticker" data-copy="c35">COPY</button></header><pre id="c35">$npc_appearance_update.any(name.exists())</pre></div>
-<p><strong>Effect.</strong> Type: Run a script. Paste this script.</p>
-<div class="copybox"><header><span>Run a script</span><button type="button" class="sticker" data-copy="c36">COPY</button></header><pre id="c36">#NPC Appearance Updater
+<p>In Triggers, create a new trigger and name it exactly <strong>NPC Appearance Updater </strong>. A trigger is a small automatic job. This one runs after the story writes the Update notebook, and it copies that row onto the real notebook.</p>
+<div class="copybox"><header><span>Trigger name — copy this into the trigger’s name</span><button type="button" class="sticker" data-copy="c34">COPY</button></header><pre id="c34">NPC Appearance Updater </pre></div>
+<p>Turn on “can trigger more than once.” That lets the job run again on later turns, whenever a new update row appears. If you leave it off, the copy happens once and then never again.</p>
+<p><strong>Condition.</strong> Set the condition type to PawScript. A PawScript condition is a check the game runs before the trigger is allowed to fire. Paste this check. It means “run only when the Update notebook has a row with a name.”</p>
+<div class="copybox"><header><span>PawScript condition — paste this as the check</span><button type="button" class="sticker" data-copy="c35">COPY</button></header><pre id="c35">$npc_appearance_update.any(name.exists())</pre></div>
+<p><strong>Effect.</strong> Set the effect to Run a script. Paste this script as that effect. The script finds the matching person on the real list, replaces that whole row, and then clears the row from the Update notebook.</p>
+<div class="copybox"><header><span>Run a script — paste this as the effect</span><button type="button" class="sticker" data-copy="c36">COPY</button></header><pre id="c36">#NPC Appearance Updater
 for each $appear_update in $npc_appearance_update
   if $npc_appearance.any(name.exists()) = false
     $npc_appearance = list()
@@ -394,7 +395,7 @@ for each $appear_update in $npc_appearance_update
   $npc_appearance_update.remove($appear_update)</pre></div>
 </section>
 
-<p class="quiet">After pictures work:
+<p class="quiet">Once the pictures are in your game, you can add:
 <a href="writing.html">Story voice</a> ·
 <a href="extras.html">Add-ons</a> ·
 <a href="bodies.html">Bodies</a> ·
@@ -406,7 +407,7 @@ for each $appear_update in $npc_appearance_update
 
 
 <footer>
-<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+<p>Site by <strong>Sabre</strong>. Scripts by <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>The Script Library 3.29 — copy from these pages into Infinite Worlds.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>
