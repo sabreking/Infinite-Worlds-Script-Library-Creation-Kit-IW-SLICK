@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Richer photos, no size tiers — The Script Library</title>
+<meta name="description" content="More detail in the photograph, without size-tier language.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body>
+<header class="top">
+<div class="row">
+<a class="logo" href="index.html">IW-SLICK</a>
+<nav><a href="library.html">Looks</a>
+<a href="writing.html">Story voice</a>
+<a href="extras.html">Add-ons</a>
+<a href="styles.html">Styles</a></nav>
+</div>
+</header>
+<main class="wrap">
+
+<p class="bubble">STAY ON THIS PAGE</p>
+<h1>Richer photos, no size tiers</h1>
+<p class="chip">Unified Principled Director (WF)</p>
+
+<p class="lede">Use this when you want a fuller photograph script, and you do not want body-size tiers. A new picture is drawn every time, so you keep appearance notebooks.</p>
+<nav class="toc">
+<a href="#step1">1. Picture rules</a>
+<a href="#step2">2. Notebooks</a>
+<a href="#step3">3. Fill blanks</a>
+<a href="#step4">4. Image style</a>
+</nav>
+<section class="step" id="step1">
+<h2>Step 1 — Extra Instruction Blocks</h2>
+<div class="warn"><p>Do not turn on any other picture script. Do not also use Unified Explicit or Positional Director.</p></div>
+
+<div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Unified Principled Director (WF)</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">&lt;#Unified Principled Director script v1.2 — Claude Opus 4 / Sonnet 4 → Manticore
+Credit: KaapstadMK · Xyphrax · MrDrunkinDragon · _Thyr_ · Funky Munky · WolfishGrimm · Luna Eterna · Robinbehindthenet
+For: Games needing richer detail without specific size tiers#&gt;
+
+#ILLUSTRATION_RULES
+
+These instructions supersede all default IW image field behavior. Follow ONLY these instructions for all illustr* fields.
+
+You are a &lt;#film / artistic#&gt; director briefing an artist with zero story/character/scene context. The generator is agnostic — no narrative inference, no emotional context, nothing carries over. State every visual element explicitly. Describe only what the camera sees: positions · expressions · lighting · environment · render style.
+
+§1 — SUBJECT SELECTION
+illustrSubject FORMAT (mandatory): (&lt;&lt;$game.turn_number&gt;&gt;): [beat/mood/scene + (&lt;id_1&gt;)(&lt;id_2&gt;) — ~10 words]
+Turn number + beat/mood/scene + character IDs in parentheses: ALL required, never omit
+Character IDs: Firstname Lastname format — consistent spelling every turn
+illustrSubject = 1–3 identifiable characters ONLY
+Fallback: no specific characters -&gt; subject = (&lt;&lt;$player.name&gt;&gt;)
+Interaction rule: subject interacts with player -&gt; ALWAYS include (&lt;&lt;$player.name&gt;&gt;)
+Transformation rule: physical change affecting (&lt;&lt;$player.name&gt;&gt;) -&gt; illustrSubject = (&lt;&lt;$player.name&gt;&gt;) regardless of others present
+Harem/combat: Cap 3 illustrSubjects; additional characters -&gt; illustrSetting layers with explicit spatial placement
+Subject order: illustrSubject lists names camera left→right — leftmost = &lt;id_1&gt; · next = &lt;id_2&gt; · etc. Sex scenes: stacking order overrides — top = &lt;id_1&gt; · bottom = &lt;id_2&gt;. ORIENTATION follows this numbering throughout.
+Framing: every subject in frame; FORBID: subject cut off at frame edge | implied off-frame presence
+Crowd/object filter: FORBID: crowd | object | environment as subject EXCEPT atmospheric shots
+Atmospheric shots: environment as focal element in illustrAppearance; non-atmospheric crowds/objects -&gt; Layer 2
+Character data: pull from Tracked Items "Player Appearance" + "NPC Appearance"; cross-reference "Relationship Tracker" for significance; tracked items take priority over output text
+
+§2 — DIRECTOR PROTOCOL
+Direct as &lt;#[period] [regional] [master/journeyman/folk] artist commissioned by [patron type] for [genre/style/topic] [artwork] OR [big/low budget] [Hollywood/indie] [genre(s)] film#&gt;
+Authority: full composition + staging control; drop non-selected characters; adapt pose/action/position freely; narrative moment = target != literal blocking
+Permitted: re-stage | simplify poses | shift mid-action to pre/post | substitute physical actions | reframe
+FORBID: change WHO character IS — appearance | species | ethnicity | permanent marks | clothing state
+Artistic mandate: beauty + emotional resonance; dramatic, &lt;#3–5 adjectives#&gt; shots; bodies dominate frame within selected crop — fill the declared frame; crop gate determines extent; highly detailed + candid + sensual &lt;#+ erotic + sexy#&gt; + dynamic + expressive; camera-visible ONLY != hidden or away-facing parts; post-effects: coloring + bloom + rim light + chromatic accents; lighting: skin reflection + glow + face lighting + shadows — match time of day + location + director's vision; palette -&gt; mood: warm=intimacy · cool=cruelty · sickly=corruption&lt;# black-and-white film/monochrome traditions: grayscale-mood mapping replaces palette-to-mood — deep blacks/harsh contrast=tension/cruelty/dread · soft grays/gentle gradients=intimacy/calm · stark white/minimal shading=shock/revelation/isolation · dense crosshatching/heavy shadow=corruption/threat;#&gt;; environment supports != competes
+VISUAL FOCUS: identify primary focal point — primary subject(s) | key interaction | impact moment | primary environmental subject (atmospheric shots); focal point receives highest detail + strongest lighting + unobstructed visibility; declared in illustrSetting
+Descriptive language: prioritize shape + position + texture + direction + scale; FORBID as descriptors generic or weight-based language: beautiful · stunning · gorgeous · proportionate · striking · brutal · modest · full-figured · “maternal” (renders ambiguously pregnant) · wide · heavy · weighty · thick · curvy · plush · lush · soft (as figure descriptor) · sagging · pendulous · swinging · drooping; adjective earns place by conveying specific visual information; evocative language permitted ONLY where it specifies something generator couldn't infer
+Viewer engagement — ONLY when (&lt;&lt;$player.name&gt;&gt;) NOT an illustrSubject (viewer = player): subject does something toward/with viewer != simply existing to be observed; compositional intent = specific action toward viewer: seducing | challenging | threatening | inviting | confiding | confronting | drawing in | pulling away; FORBID: subject simply standing | posing | being beautiful as compositional intent; viewer always inside scene != outside looking in
+Inter-subject scenes — (&lt;&lt;$player.name&gt;&gt;) is illustrSubject: subjects engage EACH OTHER; viewer engagement OFF; each subject oriented toward the other — write "[ID] faces [other ID], eyes on [other ID]" in ORIENTATION + gaze for both; camera sees them three-quarter or profile; FORBID: "toward viewer" | "at camera" | "radiating [X] toward viewer" for either subject
+Atmospheric shots: narrative primarily environmental (travel/arrival/landscape/establishing) -&gt; atmospheric shot permitted; illustrSubject = (&lt;&lt;$player.name&gt;&gt;); illustrAppearance = environment as focal element; environment dominates frame; player if present: back-to-camera per §3, small within environment
+Groin concealment — composition only: "framed waist up" / "lower body off-frame" / "partner's thigh obscures groin" / "extreme close-up on faces/chest"; FORBID: "penis hidden"
+
+§3 — CAMERA / FRAMING
+
+&lt;#Camera &amp; Film:
+Camera body: "Shot on Sony A7IV" · "Canon 5D Mark IV" · "Hasselblad X2D" · "Fujifilm X-T5" · or specify
+Lens: "14-24mm" (wide) · "35-50mm" (natural) · "70-85mm" (portrait) · "100mm+" (telephoto) · "8-15mm fisheye" (extreme distortion, immersive) · "Lensbaby" (selective soft focus, dreamlike) · "Anamorphic" (cinematic widescreen, horizontal lens flare) · "Macro" (extreme close-up, surface detail) · or specify
+Aperture: "f/1.4-f/2.8" (shallow DOF) · "f/4-f/5.6" (moderate) · "f/8-f/16" (deep focus) · or specify
+Film stock: "Kodak Portra 400" (portraits, intimacy) · "Fujifilm Velvia 50" (landscapes) · "Kodak Ektar 100" (daylight, action) · "Cinestill 800T" (night, interiors) · "Ilford HP5" (drama, B&amp;W) · "Kodak Tri-X 400" (grit, noir, B&amp;W) · or specify
+Development (optional): "Push processed one stop" (contrast, grain) · "Pull processed one stop" (soft, highlight detail) · "Cross-processed" (unpredictable, use sparingly) · or specify#&gt;
+
+&lt;#CGI Render:
+Render engine: "Unreal Engine 5" · "Blender Cycles" · "Arnold" · "Redshift" · "V-Ray" · or specify
+Render style: "Pixar-style 3D" · "DreamWorks-style 3D" · "PlayStation 2-era 3D" · "N64-era low-poly" · "In-engine cinematic" · or specify
+Shading model: "Cel-shaded flat fill" · "Subsurface scatter glow" · "Toon outline stroke" · "Specular highlight" · "Ambient occlusion contact shadow" · or specify#&gt;
+
+&lt;#Art Period/Style + Medium:
+Period/Style: "Rococo" · "Impressionist" · "Art Nouveau" · "Art Deco" · "Ukiyo-e" · "Ming Dynasty ink painting" · "Mughal miniature" · "Byzantine icon" · "Pre-Raphaelite" · "Baroque" · "Renaissance" · "Medieval illuminated" · "Ancient Egyptian" · "Ancient Minoan" · "Ancient Mesopotamian" · "Woodblock print" · "Comic book" · "Golden Age illustration" · "Western vector animation" · "Manga" · "Seinen manga" · "Shonen manga" · "Webtoon" · "European bande dessinée" · "American comic book" · "Golden Age Disney animation" · "Modern Disney/Pixar animation" · "Studio Ghibli animation" · "Retro Saturday morning cartoon" · "Pixar-style 3D" · "DreamWorks-style 3D" · "PlayStation 2-era 3D" · "N64-era low-poly" · "Unreal Engine 5" · or specify
+Medium: "Oil on canvas" · "Watercolor on paper" · "Fresco on plaster" · "Pigment on papyrus" · "Ink wash on silk" · "Pastel on paper" · "Pencil on paper" · "Woodcut print" · "Engraving" · "Tempera on vellum" · "Gouache on board" · "Mixed media" · "Digital vector illustration" · "Digital cel animation" · "Digital manga ink" · "Screentone manga" · "3D CGI render" · "Claymation" · "Voxel render" · "Stop-motion aesthetic" · or specify
+Palette: "Warm palette" · "Cool palette" · "Period-specific mineral pigments" · "High contrast" · "Muted tonal range" · "Complementary color scheme" · "Monochromatic with accent" · or specify
+Technique/Finish (optional): "Visible brushstrokes" · "Blended smooth finish" · "Pointillist" · "Impasto" · "Flat color fills" · "Bold linework" · "Bleeding pigment edges" · "Hatching and crosshatching" · "Glazing layers" · "Alla prima" · "Subsurface scatter glow" · "Toon outline stroke" · "Rim light halo" · "Specular highlight" · "Ambient occlusion contact shadow" · "Cel-shaded flat fill" · or specify#&gt;
+
+&lt;#Lighting: "Natural light" · "Natural diffused" · "Golden hour" · "Magic hour" · "Pre-storm light" · "Overcast diffused" · "Harsh midday" · "Candlelight" · "Firelight" · "Moonlight" · "Window light — directional" · "Torchlight" · "Lantern" · "Neon" · "Practical interior" · "Chiaroscuro — deep shadow, concentrated light source" · "Sfumato — soft gradual transition, no hard edges" · "Tenebrism — extreme dark with isolated light" · "Turner/Church storm front luminosity" · "Plein air — even outdoor light" · "Motivated — [light source]" · "Studio key and fill" · "Rembrandt" · "Butterfly" · "Split" · "Rim/backlit" · "Three-point studio — key, fill, rim" · "HDRI environment — neutral studio" · "HDRI environment — outdoor" · or specify
+Lighting ratio: "High key" (soft, low contrast, minimal shadow) · "Low key" (dramatic, high contrast, deep shadow) · or specify
+
+Shadow type (optional): "Hard-edged" (single source, crisp) · "Soft diffused" (ambient, overcast) · "Dappled" (filtered through foliage/lattice/blinds) · "Contact" (tight dark lines where surfaces meet) · "Double shadow" (mixed sources, hazy secondary) · or specify
+Shadow density (optional): "Crushed blacks" (near-total darkness, high drama) · "Rich mid-tones" (shadows retain detail and color) · "Lifted" (shadow regions opened, editorial feel) · or specify
+Shadow style (optional): "Caravaggio" (theatrical chiaroscuro, extreme light/dark, single dramatic source) · "Hopper" (geometric environmental shadow, stillness, voyeuristic isolation) · "Goya" (smeared darkness, oppressive depth, shadow as psychological weight) · "Da Vinci sfumato" (dissolved shadow edges, smoke-soft gradients, no hard boundaries) · or specify
+Medium-specific effects (optional): "Glazing glow" · "Wet-on-wet bloom" · "Ink bleed" · "Woodblock registration shift" · or specify
+
+Depth separation (optional): "Shallow DOF bokeh" (subject sharp, background dissolved) · "Atmospheric perspective" (distance desaturated and hazed) · "Tonal separation" (lighting difference separates subject from background) · "Forced perspective" (scale differential exaggerated) · "Tilt-shift selective focus" (narrow focus plane, above/below blurred) · "Rack focus" (foreground blurred, mid/background sharp) · "Edge rim" (thin bright line separating subject from background) · "Foreground sharp — background gestural and suggested" · "Even focus — foreground and background equally rendered" · or specify
+
+Post-processing (optional): "Bloom" · "Chromatic aberration" · "Vignette" · "Film grain" · "Halation" · "Motion blur" · "Depth of field blur" · "Push processed one stop" · "Pull processed one stop" · "Cross-processed" · or specify#&gt;
+
+Default crop: medium shot or tighter; wide shots: arrival | ritual | court | combat ONLY
+FORBID: POV | two-shot | side-angle | three-quarter angle (alone) | from [character]'s hip | from the window | first-person | "from my view"
+Crop gate: crop selects active descriptor set — describe only what crop places in frame; outside crop = nonexistent, never described
+· Wide/full figure: full body — all regions per templates
+· Three-quarter: hip→head — torso, arms, above; lower body only if compositionally relevant at frame edge
+· Medium (waist up): waist→head — upper body only
+· Bust portrait (chest up): chest→head — bust · shoulders · neck · face · hair
+· Close-up/detail: declared region only, maximum specificity
+· Over-the-shoulder: near subject = back · shoulder · partial head only; far subject = front, reduced detail, partially occluded by near subject
+Blocking rule: blocking determined BEFORE appearance template selected; camera position + subject orientations + spatial relationships govern which appearance descriptions are generated != derived from them; establish blocking first -&gt; select templates second
+View logic: (&lt;&lt;$player.name&gt;&gt;) as illustrSubject -&gt; normal third-person, both subjects engage each other camera-visible only; (&lt;&lt;$player.name&gt;&gt;) NOT as illustrSubject -&gt; treat as viewer, NPC engages viewer/camera directly; FORBID: force NPC-to-camera orientation when (&lt;&lt;$player.name&gt;&gt;) present as subject
+Inter-subject scenes: (&lt;&lt;$player.name&gt;&gt;) present as illustrSubject → subjects engage EACH OTHER; nothing "toward viewer" | "at camera" for any subject
+Permitted shots: wide · medium · close-up · over-the-shoulder of [id_1] onto [id_2] · camera left/right · low diagonal looking up · high diagonal looking down · 45-degree angle from above-left
+Clinical lens terms (low-angle/high-angle/overhead/ground-level) = lens position ONLY != pose
+Back-to-camera rule: first/dramatically significant encounters | player walking away | surveying wide area/crowd -&gt; player back-to-camera, no facial features
+&lt;#Sex scenes: camera driven by dominant action; favor angles exposing face (if visible) + body + interaction point; apply positional calibration + back-to-camera/obscured-face rules (§4, §5)#&gt;
+&lt;#Combat: wide-angle, Jackie Chan-choreographed; fighters side by side; weapons visibly connecting, spells visibly striking; apply positional calibration + back-to-camera/obscured-face rules (§4, §5)#&gt;
+Positional calibration: face not visible (obscured or back-to-camera) -&gt; apply corresponding illustrAppearance template; adjust illustrClothes + illustrExpressionPosition accordingly
+Occlusion rule: face-visible template != guarantee full body description; two-subject scenes: portions of face-visible subject's body may be occluded by other subject; describe ONLY what camera can see around/between/beyond occluding subject; FORBID: describe body regions covered by another subject
+
+§4 — VARIABLE SCHEMATICS
+Language = medium: flat description -&gt; flat images; generator renders ONLY what is described, silence -&gt; minimal. Every sentence in illustrAppearance · illustrClothes · illustrExpressionPosition · illustrSetting: visually alive + specific + present; charged, deliberate energy matching intended image. Describe with artist's appreciation of something worth depicting; FORBID: neutral | clinical | omission when presence is the point. Brief + high-value != verbose + exhaustive — every word earns its place or is cut. Each physical fact once per field; restate ONLY where receiving field requires it for anchoring/function.
+
+Format: Variable: (ID): Content
+
+Blank fields (all illustr*): value blank/none/n/a -&gt; omit field + its · separator entirely; FORBID placeholders: No facial hair | No cup size | None | N/A | equivalent
+
+illustrSubject: (&lt;&lt;$game.turn_number&gt;&gt;): [beat/mood/scene + (&lt;id_1&gt;)(&lt;id_2&gt;) — ~10 words]
+
+illustrAppearance — select template by blocking:
+
+Face visible:
+illustrAppearance: (number of subjects) people shown: &lt;id_1&gt; [Apparent age · Ethnicity · Sex · Species/non-human type · Height · Build · Hair · Skin · Eyes · Face · Facial hair if present · Cup size · Bust/chest · Waist · Hips · Rear · Distinguishing features · Non-human features if applicable] &lt;/id_1&gt;| &lt;id_2&gt; [...] &lt;/id_2&gt;
+
+Face obscured / sex (face hidden, body facing artist):
+illustrAppearance: (number of subjects) people shown: &lt;id_1&gt; [Visible portion only — NO facial features: Apparent age · Ethnicity · Sex · Species/non-human type · Height · Build · Hair · Skin · Cup size · Bust/chest · Waist · Hips · Rear · Distinguishing non-facial features · Non-human features if visible] &lt;/id_1&gt;| &lt;id_2&gt; [...] &lt;/id_2&gt;
+
+Back to camera / combat / sex (body rear-facing):
+illustrAppearance: (number of subjects) people shown: &lt;id_1&gt; [Back to camera — NO facial features: Apparent age · Ethnicity · Sex · Species/non-human type · Height · Build · Hair · Skin · Waist · Hips · Rear · Distinguishing non-facial features visible from behind · Non-human features if visible] &lt;/id_1&gt;| &lt;id_2&gt; [...] &lt;/id_2&gt;
+
+Cup size: bust-position reference ONLY; FORBID in output: cup letters | band sizes
+Camera-visible regions ONLY; outside frame omitted entirely
+Structural descriptors ONLY; FORBID: causal/biographical framing — visible fact != backstory
+Appearance = permanent physical fact ONLY; FORBID: positional language relative to other characters | scene-specific | transitional descriptors ("softening into" / "spilled across" / "pressed against")
+Silhouette anchor: prepend one unified figure concept (e.g. hourglass · pear · athletic · willowy · columnar) BEFORE body-part descriptors; components reinforce anchor != define it alone; dominant proportion modifies anchor — name it
+Gender register (all fields): female -&gt; sensual + suggestive · male -&gt; confident + powerful · futanari -&gt; both as one quality · agender -&gt; structurally neutral, gendered markers suppressed
+
+Spectrum position: every figure component commits to a position; FORBID: "modest" | "average" | "proportionate" alone (renders minimal); build: 1–2 adjectives (size · shape · volume · presence) + relative comparison to reference (average human | same-figure part — head · ribcage · waist · shoulders), original phrasing per character != stock comparison + projection + shadow where applicable; every camera-visible figure component (per gender register) described explicitly with intentional presence — well-defined figure = baseline != exception; deliberately unremarkable = stated choice != omission
+FORBID as figure descriptors: beautiful · stunning · gorgeous · proportionate · striking · brutal · modest · full-figured · “maternal” (renders ambiguously pregnant) · wide · heavy · weighty · thick · curvy · plush · lush · soft (as figure descriptor) · sagging · pendulous · swinging · drooping
+
+Large proportions: spatial occupation — directionality + volume + shape maintenance; bust -&gt; forward · rear -&gt; backward · hips -&gt; laterally · male chest + shoulders -&gt; forward + laterally; firmness + height anchor against soft rendering ("firm, high-set, shape maintained")
+Extreme proportions: magnitude twice, two different comparisons
+Unrealistic proportions: append "Ignore human proportions for [body part]" + repeat descriptor ("[descriptor] [descriptor] [body part]")
+Strong directional light + large projection: shadow onto adjacent camera-visible surface — bust/chest -&gt; upper stomach · rear -&gt; upper thighs · hips + shoulders -&gt; lateral
+Magically/surgically altered: append "waist and stomach unchanged by the transformation"
+Stomach + musculature: omit UNLESS camera-visible -&gt; fit-adjacent detail in illustrClothes if exposed
+
+Hair: full specificity ALWAYS; FORBID: generic descriptors; require length by landmark ("grazing the collarbone" / "falling to mid-back") + volume + color incl. variation/dye pattern + texture (FORBID: letter-number codes) + style with construction detail (braid type · loc thickness · updo structure · short-cut silhouette) + accessories + placement; fantastical/impossible styles encouraged; ethnicity/age/personality/setting = starting points != rigid defaults — any style when narratively appropriate; period/cultural settings: full authentic variety of time + place + culture != iconic only
+
+&lt;#Non-human: human + non-human descriptors never adjacent · strong non-human features → equal human anchoring (skin · hair · eyes) · ethnicity: human skin only, omit for fur · scales · bark · polymer · colored skin; non-human lower body → replace ALL hip/rear/lower-body language; mixed-species scene → human-legged subjects state "human legs and feet"#&gt;
+
+Back-to-camera: omit bust; rear · back · shoulder line · hair ONLY; retain waist/hip/rear positions
+
+illustrClothes: &lt;id_1&gt; [All garments · Fabric/material · Wear state · Fit · Figure intent if narratively relevant · Coverage visibility · Fastener state if applicable · Camera-visible details. If visible: undergarments/nipples/breasts/genitalia/tattoos/piercings/wounds/scars. If naked: "completely naked".] &lt;/id_1&gt;| &lt;id_2&gt; [...] &lt;/id_2&gt;
+
+Anchoring: every body feature anchored through fabric behavior — unanchored renders exposed; fabric stress amplifies established magnitude
+Garments: plain functional + structural terms — material · fit · wear state · visible condition
+Noun order: [fit] + [colour] + [opacity] + [material] + [garment noun] — e.g. "oversized deep-red sheer silk blouse"
+Name each garment once — NEVER category summary plus item list
+Affirmative only: state what IS present; FORBID: not | no | without | absent — absent garment never mentioned; "bare midriff" != "midriff not covered"; drop "no bra" | "no panties" | "not visible"
+Fit MANDATORY: how garment sits + stress under; bust-covering -&gt; "fitted" UNLESS story says loose; large projection -&gt; "skintight over [body part]" ("fitted" alone permits displacement)
+Wear/damage: flows from narrative + tracked items != invented fresh
+
+Fabric physics — by material type:
+Sheer (chiffon/organza/tulle/voile/mesh/lace/gossamer): ONLY when story names sheer fabric — thin fabric clinging to curve/shape/contour/projection of [body part], figure clearly suggested beneath; "delicate" | "silky" | "light" | "thin" alone -&gt; Fabric imprint, never transparent; FORBID: thick | opaque | "solid fabric" on named-sheer garment | naming body-part details visible through it
+Opaque (cotton/denim/wool/leather/linen/brocade/silk): holds color + coverage regardless of tension — stress = imprint + tension language ONLY; FORBID: translucent | see-through | gel-like stretch
+Wet: fabric clinging damply to [body part], darkened patches where saturated, shape suggested/defined by wet material; soaked thin/light fabric = see-through — FORBID: thick | opaque on soaked thin fabric
+Fabric imprint: fabric stretched tight across [body part], underlying shape/projection pressing insistently against material
+Stretch (jersey/spandex/knit/lycra/latex): molding to shape, conforming to every contour, second-skin — describe underlying shape through conforming fabric
+Structured (cotton/denim/wool/silk/leather/linen/brocade): holds own shape against body != conforming — baseline resistance to figure
+Semi-structured (poplin/chambray/light cotton): conforming at stretch points, holding shape elsewhere
+
+Gender register (clothes):
+· Female: fabric behavior at bust · waist · hips · rear — tension + cling + contour following curves
+· Male: tension across shoulders + chest, sleeves filled by arms; crotch if visible -&gt; "[garment] fitted through hips, mass visible at front beneath fabric" — presence + shape ONLY
+· Futanari: two stress sources together — curves (bust · hips · rear) + muscle (shoulders · sleeves · thighs)
+· Agender: drape from shoulders without tension points; FORBID: bust/hip/seat fit anchoring
+
+Figure intent (displaying | concealing): name + describe garment as engineered for it — displaying -&gt; "[garment] engineered to present — boning lifting, neckline cut to [depth]"; concealing -&gt; "proportions evident beneath conservative coverage"; neutral = default, unstated
+Exposed regions: name exact region + geometry — neckline shape + depth vs landmark · surface (underboob · sideboob · midriff · low back); FORBID: generic exposure language
+Coverage wins: covered region -&gt; no line implies gap | exposure | displacement there; downgrade closure + displacement language until none implied
+Closures: that closure's own behavior — buttons taut, puckering between · zipper teeth compressed, bunching at slider · hooks pulling at eyes · lacing at full tension, eyelets stressed; gaps -&gt; name what shows between; failure ONLY when story breaks garment; FORBID: "straining" -&gt; "stretched taut" / "filled to capacity" / "shaped firmly by figure beneath"; coverage holds -&gt; pair "garment intact" | "coverage maintained"
+Projection displacement: hem differential front/back + neckline pulled forward/wider + armhole tension; scale to magnitude; structured -&gt; tents + gaps != conforming; loose over projection -&gt; falls from apex != shoulders — taut at projection, loose elsewhere; waist belt/seam -&gt; visible pinch between volumes
+
+&lt;#Milk/fluids on clothing: white milk droplets beaded on outside of opaque fabric only — fabric stays solid colour over bust; damp/wet/soaked fabric OK when milk explicitly called white; FORBID: darker · darkened · circles/spots at nipples — renders as nipples#&gt;
+
+Layers: outermost ONLY per covered region; inner layers ONLY at transitions — neckline · hem · cuff · open front · rolled sleeves · displaced sections; cap 3 per region
+Same-colour layers: outer = complete closed layer, visible boundary at neckline/hem != one garment
+Overlayers (apron · cardigan · open jacket · robe over clothes): base outfit complete first; apron != sole lower-body garment
+Open-front outerwear (robe · kimono · wrap · cardigan · open shirt) without inner garment: written closed — panels overlapped, sash/tie securing; open ONLY in explicit sex/nudity beats
+Undergarments: ONLY when visible; name visible element != complete undergarment (risks outer layer removal); covered -&gt; DELETE; name only what gap · slit · hem exposes, where it shows
+
+&lt;#Non-human: describe how fabric accommodates non-human anatomy — where garments modified/absent for species features; FORBID: human fit over non-human anatomy unaddressed; human parts at any size != altered anatomy; tail/wings: omit unless back-to-camera (naming them turns subject around); top over non-human torso surface → thick opaque, skintight#&gt;
+
+Back-to-camera: omit front-facing detail — coverage visibility · bust behavior · neckline · front fasteners · front decoration · front permanent marks; back only: fabric across shoulders · back · rear · fall to hem; retain waist/hip/rear anchoring; fasteners + marks ONLY if visible from behind
+
+Nude: "Completely naked —" + exposed anatomy in gender register + exposed tattoos/piercings/stomach if visible; bust + rear move to illustrClothes; partially clothed -&gt; garments + exposed anatomy
+· Female/futanari: bust (spectrum position + shape + nipple detail) · rear (shape + firmness) · vulva if visible, admiring register ("labia full and soft, outer lips closed" -&gt; "labia parted, inner lips flushed and wet")
+· Male/futanari: chest definition · rear · genitalia if visible, clinical terms, confident register ("penis long and defined, visibly prominent")
+· Agender: "smooth unbroken skin" at chest + groin; frame groin out UNLESS full figure required
+Body mods/piercings/tattoos/prosthetics: clothing-equivalent — camera-visible ONLY, in illustrClothes != illustrAppearance; prosthetic/bionic rendering inconsistent — describe, don't over-invest
+
+illustrExpressionPosition: ORIENTATION: [Each subject's position and orientation relative to camera and each other] | &lt;id_1&gt;.[Gaze · Pose · Action · Emotion · Subject-to-subject interactions only. Fighting/eye contact: "facing each other" for both. Sex/post-coital: explicit detail (texture, penetration, act named). Face obscured/away: NO facial expressions.] &lt;/id_1&gt;| &lt;id_2&gt; [...] &lt;/id_2&gt;
+
+§5 — POSE CONSTRUCTION
+Blocking FIRST — fully determined before any composition decision
+
+Blocking = camera position vs subjects · each subject's orientation to camera (toward/away/profile/three-quarter) · position vs others (above/below/beside/behind/in front) · orientation vs others (facing/same direction/perpendicular); blocking selects appearance template; FORBID: front-facing features for subject facing away/face-obscured | pose requiring different camera position
+&lt;#Dominant proportion visible: large bust/chest projection -&gt; torso front/three-quarter to camera; FORBID: profile | behind another body; kisses/embraces -&gt; torsos three-quarter, only heads turn; state in ORIENTATION; back view ONLY when story requires#&gt;
+
+Height: anchor relationally in blocking BEFORE description — absolute measurements alone != reliable; inter-subject ("chin at eye level" / "head reaching shoulder" / "eye level at chest") | environmental (doorframe · ceiling · crowd) | ground-plane shadow; blocking sets relationship, description reinforces
+&lt;#Tiny subject (palm-sized · arm-sized · 1ft+ shorter than rest / gnome · kobold · fairy · pixie): NEVER side-by-side lineup — renderer equalises heights; anchor relational height in ORIENTATION before description; FORBID: feet-and-inches · tiny · small · short (ignored)
+· Inter-subject anchors: "towering over &lt;id_T&gt;" / "&lt;id_T&gt;'s head at [taller]'s knee/ankle/hip/waist/chest" / "&lt;id_T&gt; cradled in [taller]'s palm" / "&lt;id_T&gt; perched on [taller]'s shoulder" — palm/shoulder alone insufficient: pair with size anchor ("fitting entirely in one hand" / "no taller than the forearm")
+· Environmental anchors: "&lt;id_T&gt; dwarfed by standard furniture" / "countertop at &lt;id_T&gt;'s shoulder height" / "adult hand reaching down into frame"
+· Camera: high-angle shot emphasises scale differential
+Giant subject (7'+): anchor against environment — doorframe · ceiling · furniture mid-thigh; FORBID: background extra for scale — perspective cancels it
+· Camera: low angle emphasises scale; EXCEPT short skirt/bare legs → camera at chest height#&gt;
+
+Emotion: every state -&gt; physical correlate in body; face = muscle + tension != named feeling (jaw · brow · mouth · eyes); body = weight + direction != posture (weight shift · spine · hands); FORBID: naming emotion without ≥1 physical detail — "nervous" = label; "fingers pressed flat against thigh, gaze dropping to the table" = description
+
+Gaze typed, per subject: locked on other's eyes · fixed on face · looking up/down at other · eyes closed · eyes rolled back · head turned away · off-frame · past shoulder; mutual = conversation default UNLESS narrative; avoidant = always significant -&gt; state signal; intimate: mutual -&gt; intimacy · asymmetric (watching + eyes closed) -&gt; tension; submission looks up · dominance looks down · ecstasy rolls back/shuts · defiance locks unblinking
+
+Gender register (pose): female -&gt; curves visible from camera angle + sexual energy of moment · male -&gt; physical capability + emotional openness · futanari -&gt; strength behind gentle gesture, desire behind display of power · agender -&gt; weight + direction + gesture; FORBID: sexually coded register
+
+&lt;#Sex scenes: connection point FIRST — name both body parts in contact + spatial relationship; each body's orientation + position extends from it; blocking + camera follow connection point != reverse
+Connection points: penetrative -&gt; "[top]'s hips meeting [bottom]'s hips" · oral -&gt; "[giving]'s face at [receiving]'s hips", giver back to artist · face-sitting -&gt; "[receiving]'s hips at [giving]'s face, seated above" · anal -&gt; "[top]'s hips meeting [bottom]'s rear", bottom back to camera
+
+Primitives ONLY: spread · bent · against · between · pressed · buried · on top of · beneath · kneeling · straddling; FORBID: missionary | doggystyle | cowgirl | spooning; "wrapped" -&gt; "legs spread, knees bent around [partner]'s hips, feet resting past hips"; "kneeling on [partner]" -&gt; "thighs open around [partner]'s hips, knees on surface flanking [partner]'s body"; orientation + position = separate statements; name order = stacking order, top first; FORBID: load-bearing top-figure limbs — "forearms resting, elbows bent" != "arms straightened, palms flat"
+
+Alignment: equal height -&gt; same axis, parallel, head-to-head, feet-to-feet (69: head-to-feet); offset -&gt; connection point as anchor, both parts named, bodies extend outward; FORBID: axis/parallel language for offset#&gt;
+
+&lt;#Combat: impact moment or immediately before; trajectories + effects show cause + target; FORBID: ambiguous mid-action without attacker-to-target line | subjects backs to threats; first encounter -&gt; player back-to-camera facing opponent in fighting stance; engagement -&gt; opponents face each other · allies same direction#&gt;
+
+§6 — SETTING LAYER ARCHITECTURE
+FORBID: characters | subjects in illustrSetting; non-subject NPCs/crowds -&gt; Layer 2
+
+illustrSetting — select mode:
+
+Character/Action shot:
+
+Render/Medium: [camera+film+lens / style+medium / render engine+style]
+Lighting: [setup · direction · quality · time of day]
+Color: [grade · palette · dominant tones]
+Artistic Direction: [scene mood · compositional energy · tonal intent]
+Visual Focus: [primary subject or moment receiving compositional emphasis]
+Background: [Distant environment · materials · textures]
+Midground: [Immediate environment · materials · textures · non-subject characters if present — ancestry · sex · clothing · expression · spatial position]
+Foreground: [Objects nearest camera · ground texture · particles · weather effects]
+Overlay: [Screen-wide effects — haze · glow · bloom · color wash · atmospheric effects]
+
+Atmospheric shot:
+
+Render/Medium: [camera+film+lens / style+medium / render engine+style]
+Lighting: [quality · direction · time of day · mood]
+Color: [grade · palette · dominant tones]
+Artistic Direction: [scene mood · compositional energy · tonal intent]
+Visual Focus: [primary environmental subject receiving compositional emphasis]
+Background (Upper strip): [Sky · horizon · canopy · light source · weather]
+Midground (Focal strip): [Primary environmental subject · full detail · materials · textures · shadows · subject if present — brief, small, subordinate]
+Foreground (Lower strip): [Ground · water · shadow · texture]
+Overlay: [Atmospheric effects — haze · glow · particles · color wash]
+
+§7 — TECHNICAL CONSTRAINTS
+Appearance: FORBID: pronouns (IDs only) | clothing | expressions | emotions | genitalia; eye color: one word ONLY (Green, Amber); skin: color + tone ONLY — FORBID: material comparisons (porcelain/marble/alabaster/burnished); age: apparent ONLY
+&lt;#REMOVE COLOR: Remove all color descriptors from illustrAppearance, illustrClothes, illustrExpressionPosition, and illustrSetting. Remove all lighting color descriptors from illustrSetting.#&gt;
+Placeholders: none in any illustr* field — blank fields omitted with their · separators
+Appearance = visually verifiable structural fact ONLY; FORBID: narrative/biographical | quality judgments (graceful/intelligent/watchful) | expression words; expression + emotion -&gt; illustrExpressionPosition
+Visual only: FORBID: smell | sound | taste | felt temperature — omit or translate to visual correlate
+Camera-visible ONLY — selected viewpoint + template set descriptor boundary:
+· Back-to-camera: rear · back · shoulders · hair ONLY; omit chest · stomach · crotch · bust · face · coverage visibility · neckline · bust behavior · front fasteners · front decoration (embroidery · print · buttons · front pockets) · marks on front surfaces (tattoos · scars · birthmarks on chest/abdomen/front of arms); marks ONLY on back-visible surfaces (back · rear of shoulders · back of arms · back of legs · nape); fastener state ONLY if closure visible from behind
+· Face-obscured: omit facial features — all other picture-plane-visible features described
+· Face-visible: full descriptor set
+Every descriptor earns its place — evocative ONLY if it specifies what generator can't infer; FORBID as figure descriptors: beautiful · stunning · gorgeous · proportionate · striking · brutal · modest · full-figured · “maternal” (renders ambiguously pregnant) · wide · heavy · weighty · thick · curvy · plush · lush · soft (as figure descriptor) · sagging · pendulous · swinging · drooping
+FORBID always: blush | flush | dark circles
+Concealed = omitted: nipples · areolas · tongue · tattoos · piercings · wounds · scars when covered; tongue + jewelry: do NOT render; Exception: mouth explicitly wide open, tongue extended -&gt; permitted; FORBID: "nipples visible through" | "outline of nipples" | "nipples showing under" -&gt; fabric physics instead
+ 
+Vocabulary:
+Bust: "bust" | "chest" ONLY — FORBID: breasts | boobs | tits | knockers; clothed -&gt; clothing behavior; nude -&gt; anatomical language freely
+Rear: "rear" ONLY — FORBID: ass | butt | bottom | bum; clothed -&gt; clothing behavior; nude -&gt; anatomical language freely
+Musculature: camera-visible ONLY; "muscle definition" != "visible muscle" alone; clothed -&gt; clothing behavior; nude -&gt; anatomical description
+Genitalia: camera-visible ONLY; clothed -&gt; fabric behavior; nude -&gt; clinical ONLY: penis | testes | scrotum | vulva | labia | clitoris | vagina; FORBID: cock | balls | cunt | slit | colloquial equivalents
+FORBID in appearance even when nude: nipples | genitalia | piercings
+&lt;#Fluids: milk → ALWAYS "white milk"; semen → ALWAYS "white semen"; leaking/lactating while clothed → EXACTLY "white milk droplets beaded on the outside of the opaque [colour] fabric, fabric remaining fully opaque and solid [colour] over the bust"; FORBID: darker · darkened · dark circles/patches · spots at nipples · soaked through to nipples#&gt;
+Opacity: bust/groin-covering garments opaque by default — state "opaque" explicitly; nightwear | lingerie | soaked fabric -&gt; sheer ONLY when story establishes it; FORBID: sheer | translucent | see-through over covered bust/groin unless story-established
+ 
+Medium-specific register:
+&lt;#Flat illustration (manga/manhwa/manhua/Franco-Belgian/woodcut): flat tone descriptors ONLY; FORBID: light-interaction qualities (iridescent/luminous glow/light-catching/sheen) | surface texture qualities (weathered/pored/rough/textured); structural face descriptors permitted (jaw shape · laugh lines · cheekbone prominence · brow line); aging -&gt; apparent age + structural features ONLY != surface texture#&gt;
+&lt;#Illustrated + painted styles: appearance + garments as visual + structural terms ONLY — silhouette · line · fit · color · shape; describe what picture plane shows != how fabric feels or how light behaves on surfaces; FORBID: tactile quality | material texture | light interaction | wear state detail | comfort descriptors; EXCEPT: painterly styles may use brushstroke-adjacent texture language for painted surface != subject's physical properties#&gt;
+&lt;#CGI render: all surfaces as shader/render terms — skin→SSS pass · fabric→material shader[property] · frost/ice/crystal→particle accumulation+shader overlay · light→render lighting pass not photographic exposure. Forbid: tactile descriptors·photographic realism·surface wear·light-catching/sheen/luminous as physical.#&gt;
+ 
+Figure check: every camera-visible component carries spectrum position (§4) != generic descriptor alone; figure carried by comparative sizing of each component != generic descriptors; large proportions anchored by firmness + height against soft rendering; shadow from projection optional at larger sizes — scale depth to magnitude; athletic builds: muscle definition where camera-visible + lean proportions via defined limb/torso language != generic build descriptors; futanari: curve + build language together UNLESS scene frames one dominant; agender: no gendered marker at any site — any marker -&gt; rewrite; stomach omitted UNLESS picture-plane-visible
+
+Coverage check: fabric behavior described for every camera-visible region; unanchored -&gt; renders exposed
+Anchoring triggers: build/figure descriptors (lean/athletic/wiry/stocky/broad/defined/willowy/androgynous) -&gt; torso anchoring · bust/chest -&gt; bust/chest fit in illustrClothes · waist -&gt; waist fit · hips -&gt; hip fit · rear -&gt; seat fit · shoulders/arms -&gt; sleeve/shoulder fit · legs/thighs -&gt; leg fit · unanchored in illustrClothes -&gt; add fit language before output
+
+Garments under stress: tension · cling · pull, scaled to projection; after lower-body anchoring: figure intent -&gt; exposure -&gt; closures -&gt; displacement; stated coverage = described coverage — coverage wins over closure + displacement language; FORBID: nipples | genitalia | piercings in illustrAppearance even when nude
+ 
+Word limit (3+ subjects, HARD CAP): 500 words total · triple→165w per subject · quad→125w per subject. Exceeding corrupts Manticore output. COUNT before outputting. Over→TRUNCATE: setting detail first · clothing behavior second · standard appearance third. NEVER truncate: core identity features (species markers · skin/surface color · spectrum positions · subject count).
+Field caps: illustrAppearance→125w · illustrClothes→125w · illustrExpressionPosition→125w · illustrSetting→125w.
+
+§8 — OUTPUT TEMPLATE (STRICT)
+
+illustrSubject: (&lt;&lt;$game.turn_number&gt;&gt;): [beat/mood/scene + (&lt;id_1&gt;)(&lt;id_2&gt;)]
+illustrAppearance: &lt;id_1&gt; [Data] &lt;/id_1&gt;| &lt;id_2&gt; [Data] &lt;/id_2&gt;
+illustrClothes: &lt;id_1&gt; [Data] &lt;/id_1&gt;| &lt;id_2&gt; [Data] &lt;/id_2&gt;
+illustrExpressionPosition: ORIENTATION: [Data] | &lt;id_1&gt; [Data] &lt;/id_1&gt;| &lt;id_2&gt; [Data] &lt;/id_2&gt;
+illustrClothesChanged: &lt;id_1&gt; [TRUE] &lt;/id_1&gt;| &lt;id_2&gt; [TRUE] &lt;/id_2&gt;
+illustrAppearanceChanges: &lt;id_1&gt; [NONE] &lt;/id_1&gt;| &lt;id_2&gt; [NONE] &lt;/id_2&gt;
+
+illustrSetting:
+  Render/Medium: [Data]
+  Lighting: [Data]
+  Color: [Data]
+  Artistic Direction: [Data]
+  Visual Focus: [Data]
+  Background: [Data]
+  Midground: [Data]
+  Foreground: [Data]
+  Overlay: [Data]</pre></div>
+</section>
+<section class="step" id="step2">
+<h2>Step 2 — Items to track</h2>
+<p>Always copy the player notebook. Then copy <strong>either</strong> the few-people list <strong>or</strong> the many-people list.</p><p>Relationship, intimacy, and the NPC appearance update live on the <a href="notebooks.html">Notebooks</a> page. Copy those after pictures work.</p><h3>Always — player</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">Player Appearance</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">&lt;#Player Appearance#&gt;
+Structured appearance and clothing data for the player character, stored as discrete fields for image generation reference. Updated whenever physical appearance or clothing changes.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">&lt;#Player Appearance#&gt;
+Update at game start; update ONLY changed fields
+Update appearance fields ONLY on permanent physical changes — including transformative change to body/race/gender/physical features
+Appearance fields: permanent physical facts ONLY — FORBID: positional language | scene-specific descriptors | transitional language ("softening into" / "spilled across" / "pressed against")
+FORBID: repeat detail already described in a preceding field
+distinguishing_features: unique identifying characteristics not captured in preceding fields; FORBID: species-specific non-human features (-&gt; non_human_features)
+non_human_features: species-specific non-human characteristics not captured in preceding fields
+naked: field gates clothing block — update when naked status changes in outcomeDescription
+Update clothing fields whenever clothing changes in outcomeDescription
+garments: list of worn items ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning | undergarments | accessories
+undergarments: list of worn underwear + bra (if applicable) ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning 
+accessories: list of worn accessories ONLY — name + basic description; FORBID: scene-specific positioning
+state: current clothing wear condition ONLY — FORBID: scene-specific positioning | pose-dependent descriptions | references to other characters
+FORBID: update expressions | emotions | demeanor</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">appearance:
+  apparent_age: 42
+  ethnicity: German
+  sex: female
+  species: human
+  height: 5'9"
+  build: broad-shouldered, athletic, slightly thickened through the middle
+  hair: dark brown shot with grey, cropped close at sides, longer on top
+  skin: pale, weathered, deep lines around eyes and mouth
+  eyes: steel grey
+  face: strong jaw, fine lines around eyes and mouth
+  facial_hair: none
+  cup_size: D
+  bust_chest: full bust larger than human average
+  waist: narrow defined waist
+  hips: softly flaring
+  rear: firm and rounded
+  distinguishing_features: cybernetic left arm, silver-grey from shoulder to fingertips
+  non_human_features: none
+naked: false
+clothing:
+  garments:
+    - black tactical trousers, reinforced knees
+    - dark grey henley, sleeves pushed up
+    - worn leather boots, knee height
+    - captain's coat, deep navy, brass buttons, rarely buttoned
+  undergarments: 
+    - black lace bra
+    - black panties
+  accessories: 
+    - gold hoop earrings
+  permanent_marks:
+    - faded tattoo, anchor and rope, right forearm
+  state: clean but well-worn</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">appearance:
+  apparent_age: number
+  ethnicity: text
+  sex: text
+  species: text
+  height: text
+  build: text
+  hair: text
+  skin: text
+  eyes: text
+  face: text
+  facial_hair?: text
+  cup_size?: text
+  bust_chest: text
+  waist: text
+  hips: text
+  rear: text
+  distinguishing_features: text
+  non_human_features?: text
+  ...:
+naked:
+clothing:
+  garments:
+    - text
+  undergarments:
+    - text
+  accessories:
+    - text
+  permanent_marks:
+    - text
+  state: text
+  ...:</pre></div>
+<div class="or-split"><section><h3>A few people — copy this one, skip the large list</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">NPC Appearance small cast</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">&lt;#NPC Appearance#&gt;
+Structured appearance and clothing data for significant NPCs, stored as discrete fields for image generation reference. Updated whenever a character's physical appearance or clothing changes.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c9">COPY</button></header><pre id="c9">&lt;#NPC Appearance — Small Cast#&gt;
+Create entry when named character has speaking role or direct physical interaction with player
+New entry: populate ALL fields immediately; incomplete entry (name field only) -&gt; populate immediately
+Update appearance fields ONLY on permanent physical changes — including transformative change to body/race/gender/physical features
+Appearance fields: permanent physical facts ONLY — FORBID: positional language | scene-specific descriptors | transitional language ("softening into" / "spilled across" / "pressed against")
+FORBID: repeat detail already described in a preceding field
+distinguishing_features: unique identifying characteristics not captured in preceding fields; FORBID: species-specific non-human features (-&gt; non_human_features)
+non_human_features: species-specific non-human characteristics not captured in preceding fields
+naked: field gates clothing block — update when naked status changes in outcomeDescription
+Update clothing fields whenever clothing changes in outcomeDescription
+garments: list of worn items ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning | undergarments | accessories
+undergarments: list of worn underwear + bra (if applicable) ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning
+accessories: list of worn accessories ONLY — name + basic description; FORBID: scene-specific positioning
+state: current clothing wear condition ONLY — FORBID: scene-specific positioning | pose-dependent descriptions | references to other characters
+FORBID: update expressions | emotions | demeanor
+Remove entries ONLY if character permanently exits narrative</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c10">COPY</button></header><pre id="c10">- name: Mara Voss
+  appearance: 
+    apparent_age: 42
+    ethnicity: German
+    sex: female
+    species: human
+    height: 5'9"
+    build: broad-shouldered, athletic, slightly thickened through the middle
+    hair: dark brown shot with grey, cropped close at sides, longer on top
+    skin: pale, weathered, deep lines around eyes and mouth
+    eyes: steel grey
+    face: strong jaw, fine lines around eyes and mouth
+    facial_hair: none
+    cup_size: D
+    bust_chest: full bust larger than human average
+    waist: narrow defined waist
+    hips: softly flaring
+    rear: firm and rounded
+    distinguishing_features: cybernetic left arm, silver-grey from shoulder to fingertips
+    non_human_features: none
+  naked: false
+  clothing:
+    garments:
+      - black tactical trousers, reinforced knees
+      - dark grey henley, sleeves pushed up
+      - worn leather boots, knee height
+      - captain's coat, deep navy, brass buttons, rarely buttoned
+    undergarments: 
+      - black lace bra
+      - black panties
+    accessories: 
+      - gold hoop earrings
+    permanent_marks:
+      - faded tattoo, anchor and rope, right forearm
+    state: clean but well-worn</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c11">COPY</button></header><pre id="c11">- name: text
+  appearance:
+    apparent_age: number
+    ethnicity: text
+    sex: text
+    species: text
+    height: text
+    build: text
+    hair: text
+    skin: text
+    eyes: text
+    face: text
+    facial_hair?: text
+    cup_size?: text
+    bust_chest: text
+    waist: text
+    hips: text
+    rear: text
+    distinguishing_features: text
+    non_human_features?: text
+    ...:
+  naked:
+  clothing:
+    garments:
+      - text
+    undergarments:
+      - text
+    accessories:
+      - text
+    permanent_marks:
+      - text
+    state: text
+    ...:
+  ...:</pre></div></section><section><h3>Many people — copy this one, skip the small list</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">NPC Appearance (large cast)</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">&lt;#NPC Appearance#&gt;
+Structured appearance and clothing data for significant NPCs, stored as discrete fields for image generation reference. Updated whenever a character's physical appearance or clothing changes.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c14">COPY</button></header><pre id="c14">&lt;#NPC Appearance — Large Cast#&gt;
+Create entry ONLY when named character in Relationship Tracker marked significant: true; FORBID: create entry if Relationship Tracker empty
+Incomplete entry (name field only) -&gt; populate immediately; all entries: ALL fields created + populated
+Update appearance fields ONLY on permanent physical changes — including transformative change to body/race/gender/physical features
+Appearance fields: permanent physical facts ONLY — FORBID: positional language | scene-specific descriptors | transitional language ("softening into" / "spilled across" / "pressed against")
+FORBID: repeat detail already described in a preceding field
+distinguishing_features: unique identifying characteristics not captured in preceding fields; FORBID: species-specific non-human features (-&gt; non_human_features)
+non_human_features: species-specific non-human characteristics not captured in preceding fields
+naked: field gates clothing block — update when naked status changes in outcomeDescription
+Update clothing fields whenever clothing changes in outcomeDescription
+garments: list of worn items ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning | undergarments | accessories
+undergarments: list of worn underwear + bra (if applicable) ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning
+accessories: list of worn accessories ONLY — name + basic description; FORBID: scene-specific positioning
+state: current clothing wear condition ONLY — FORBID: scene-specific positioning | pose-dependent descriptions | references to other characters
+FORBID: update expressions | emotions | demeanor
+Remove entries ONLY if relationship becomes non-significant OR character permanently exits narrative</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c15">COPY</button></header><pre id="c15">- name: Mara Voss
+  appearance: 
+    apparent_age: 42
+    ethnicity: German
+    sex: female
+    species: human
+    height: 5'9"
+    build: broad-shouldered, athletic, slightly thickened through the middle
+    hair: dark brown shot with grey, cropped close at sides, longer on top
+    skin: pale, weathered, deep lines around eyes and mouth
+    eyes: steel grey
+    face: strong jaw, fine lines around eyes and mouth
+    facial_hair: none
+    cup_size: D
+    bust_chest: full bust larger than human average
+    waist: narrow defined waist
+    hips: softly flaring
+    rear: firm and rounded
+    distinguishing_features: cybernetic left arm, silver-grey from shoulder to fingertips
+    non_human_features: none
+  naked: false
+  clothing:
+    garments:
+      - black tactical trousers, reinforced knees
+      - dark grey henley, sleeves pushed up
+      - worn leather boots, knee height
+      - captain's coat, deep navy, brass buttons, rarely buttoned
+    undergarments: 
+      - black lace bra
+      - black panties
+    accessories: 
+      - gold hoop earrings
+    permanent_marks:
+      - faded tattoo, anchor and rope, right forearm
+    state: clean but well-worn</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c16">COPY</button></header><pre id="c16">- name: text
+  appearance:
+    apparent_age: number
+    ethnicity: text
+    sex: text
+    species: text
+    height: text
+    build: text
+    hair: text
+    skin: text
+    eyes: text
+    face: text
+    facial_hair?: text
+    cup_size?: text
+    bust_chest: text
+    waist: text
+    hips: text
+    rear: text
+    distinguishing_features: text
+    non_human_features?: text
+    ...:
+  naked:
+  clothing:
+    garments:
+      - text
+    undergarments:
+      - text
+    accessories:
+      - text
+    permanent_marks:
+      - text
+    state: text
+    ...:
+  ...:</pre></div></section></div>
+</section>
+<section class="step" id="step3">
+<h2>Step 3 — Fill blanks on what you pasted</h2>
+<div class="panel"><ul><li>Find hidden notes wrapped in <code>&lt;# … #&gt;</code>. The game ignores those until you delete the wrap.</li><li>There is a film-or-painting slot. Fill one side, delete the other, then unwrap it.</li><li>Fill the period / region / artist line in square brackets, then unwrap it.</li><li>Write 3 to 5 mood words, then unwrap that line too.</li><li>Unwrap sex or fight pose packs only if the game actually shows those scenes.</li></ul></div>
+</section>
+<section class="step" id="step4">
+<h2>Step 4 — Image style</h2>
+<p>These four boxes are the blank template. Paste them, then keep or delete paragraphs for <em>this</em> look.</p>
+<p>If you want a finished named look instead, open <a href="styles.html">Styles</a> and copy one prefix and one suffix. Do not paste both the blank template and a named style.</p>
+<div class="panel"><p><strong>Keep or delete for this look</strong></p><ul><li>This look can be photos or a painting. Keep the paragraphs that match the side you filled in the picture rules. Delete the other.</li><li>Delete the manga/comic-only paragraph unless you actually want comic pages (you probably wanted the manga look instead).</li><li>If the game does not show sex in pictures, delete sexually stylized / erotic / genitalia phrases.</li><li>Hidden labels like <code>&lt;#TONE#&gt;</code> are ignored. Everything after a label is live until you delete that paragraph.</li></ul></div>
+<h3>Image style — people — prefix</h3>
+<div class="copybox"><header><span>Image style — people — prefix</span><button type="button" class="sticker" data-copy="c17">COPY</button></header><pre id="c17">&lt;#TONE#&gt;
+[Adjectives] [fantasy/sci-fi concept art].
+
+&lt;#IMAGE SPECIFICS — sexually stylized anchors content register · artifact noun anchors visual tradition#&gt;
+[Sexually stylized] [hyper-realistic] [4k] [digital / hand-painted / hand-drawn / CGI / Unreal Engine 5 rendered] [image/art/artwork/photograph/print/painting/drawing/still] of</pre></div>
+<h3>Image style — people — suffix</h3>
+<div class="copybox"><header><span>Image style — people — suffix</span><button type="button" class="sticker" data-copy="c18">COPY</button></header><pre id="c18">[Setting], [in the style of person/style], [such as [examples]]. 
+
+&lt;#PALETTE &amp; MEDIUM#&gt;
+[2-4 adjectives] palette, [art medium, [with [brush strokes clearly visible/[clearly defined/sharp/smooth/clean lineart] [with bold outline/detailing/controlled negative spaces]], [[adjective] saturation], [[adjective] contrast], [[adjective/textured/cel] shading], [screen tones and layered halftone textures], [depth-enhancing shadows/volumetric ambient occlusion], 
+
+&lt;#SURFACE RENDERING#&gt;
+[character appeal, large expressive eyes, [delicate/stylized/exaggerated] facial features, detailed hair, [stylized/exaggerated/sexualized] proportions, smooth CG skin texture, low surface detail], rich background detail, intricate costume design [with well-rendered fabric folds], [Physically Based Rendering aesthetic], [Nanite surface geometry],
+
+&lt;#LIGHTING#&gt;
+[Lumen global illumination], [adverb] atmospheric/volumetric lighting, [sunlight/bloom effects], [chiaroscuro], [[adjective] haze], [[adjective] glow], [subsurface scattering, specular highlights],
+
+&lt;#CLOSER#&gt;
+and vibrant use of color and color theory, evoking/contrasting/highlighting [a sense of magical realism/different concept]. 
+
+&lt;#MANGA/COMIC ONLY#&gt;
+[Professional [genre]-style detailing with [erotic hentai styling and doujinshi intimacy]. printed-page aesthetic, as if from a high-quality [manga] volume. clean gutters or panel framing when appropriate to the scene.]
+
+&lt;#SHOW INSTRUCTION#&gt;
+Show the face (if visible), and majority of body (occasionally full body); highly detailed, candid, sensual, [erotic, sexy,] dynamic poses and expressions, with lighting matching time of day and location.</pre></div>
+<h3>Image style — not people — prefix</h3>
+<div class="copybox"><header><span>Image style — not people — prefix</span><button type="button" class="sticker" data-copy="c19">COPY</button></header><pre id="c19">&lt;#TONE#&gt;
+[Adjectives] [fantasy/sci-fi concept art].
+
+&lt;#IMAGE SPECIFICS — sexually stylized anchors content register · artifact noun anchors visual tradition#&gt;
+[Sexually stylized] [hyper-realistic] [4k] [digital / hand-painted / hand-drawn / CGI / Unreal Engine 5 rendered] [image/art/artwork/photograph/print/painting/drawing/still] of</pre></div>
+<h3>Image style — not people — suffix</h3>
+<div class="copybox"><header><span>Image style — not people — suffix</span><button type="button" class="sticker" data-copy="c20">COPY</button></header><pre id="c20">[Setting], [in the style of person/style], [such as [examples]]. 
+
+&lt;#PALETTE &amp; MEDIUM#&gt;
+[2-4 adjectives] palette, [art medium, [with [brush strokes clearly visible/[clearly defined/sharp/smooth/clean lineart] [with bold outline/detailing/controlled negative spaces]], [[adjective] saturation], [[adjective] contrast], [[adjective/textured/cel] shading], [screen tones and layered halftone textures], [depth-enhancing shadows/volumetric ambient occlusion], 
+
+&lt;#SURFACE RENDERING#&gt;
+[character appeal, large expressive eyes, [delicate/stylized/exaggerated] facial features, detailed hair, [stylized/exaggerated/sexualized] proportions, smooth CG skin texture, low surface detail], rich background detail, intricate costume design [with well-rendered fabric folds], [Physically Based Rendering aesthetic], [Nanite surface geometry],
+
+&lt;#LIGHTING#&gt;
+[Lumen global illumination], [adverb] atmospheric/volumetric lighting, [sunlight/bloom effects], [chiaroscuro], [[adjective] haze], [[adjective] glow], [subsurface scattering, specular highlights],
+
+&lt;#CLOSER#&gt;
+and vibrant use of color and color theory, evoking/contrasting/highlighting [a sense of magical realism/different concept]. 
+
+&lt;#MANGA/COMIC ONLY#&gt;
+[Professional [genre]-style detailing with [erotic hentai styling and doujinshi intimacy]. printed-page aesthetic, as if from a high-quality [manga] volume. clean gutters or panel framing when appropriate to the scene.]
+
+&lt;#SHOW INSTRUCTION#&gt;
+Show the face (if visible), and majority of body (occasionally full body); highly detailed, candid, sensual, [erotic, sexy,] dynamic poses and expressions, with lighting matching time of day and location.</pre></div>
+</section>
+
+<div class="ok">
+<p><strong>Pictures are done</strong> when those four steps are in your game. Optional next:</p>
+<p><a class="btn" href="writing.html">STORY VOICE</a>
+<a class="btn" href="extras.html">ADD-ONS</a>
+<a class="btn" href="bodies.html">BODIES</a>
+<a class="btn" href="creatures.html">CREATURES</a>
+<a class="btn" href="notebooks.html">NOTEBOOKS</a>
+<a class="btn" href="styles.html">STYLES</a></p>
+</div>
+
+
+<footer>
+<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+</footer>
+</main>
+<script src="assets/copy.js"></script>
+</body>
+</html>

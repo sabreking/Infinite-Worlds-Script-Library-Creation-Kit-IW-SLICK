@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Add-ons — The Script Library</title>
-<meta name="description" content="Characterization, Pacing, Sexual Content, Period Knowledge, Narrative Craft, Lion, Leopard.">
+<meta name="description" content="Story extras, model bugfixes, Wyvern word caps, and the cover-image helper.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -16,7 +16,8 @@
 <a class="logo" href="index.html">IW-SLICK</a>
 <nav><a href="library.html">Looks</a>
 <a href="writing.html">Story voice</a>
-<a href="extras.html">Add-ons</a></nav>
+<a href="extras.html">Add-ons</a>
+<a href="styles.html">Styles</a></nav>
 </div>
 </header>
 <main class="wrap">
@@ -24,100 +25,202 @@
 <p class="bubble">ADD-ONS</p>
 <h1>Optional extras.</h1>
 <p class="lede">Use these after pictures work. Each one is its own Extra Instruction Block. Copy only what your game needs. More blocks cost more every turn.</p>
-<p class="quiet"><a href="extras.html">Extra writing</a> · <a href="bodies.html">Bodies</a> · <a href="creatures.html">Creatures</a></p>
-<div class="warn"><p><strong>Lion and Leopard:</strong> in Infinite Worlds settings, turn on “AI-specific extra instructions”. If that switch is off, Lion and Leopard hit every model.</p></div>
-<h2>Characterization</h2><p>People stay in character.</p><p>Name the Extra Instruction Block exactly: <strong>Characterization</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Characterization</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">[MODE: NARRATIVE AUTHOR] 
+<p class="quiet"><a href="extras.html">Extra writing</a> · <a href="bodies.html">Bodies</a> · <a href="creatures.html">Creatures</a> · <a href="notebooks.html">Notebooks</a> · <a href="video.html">Video</a></p>
+<div class="warn"><p><strong>Lion, Leopard, Caracal, and Dolphin:</strong> after you paste, set that block to “Applies to certain models” and tick only the models named under it. In Infinite Worlds settings, turn on “AI-specific extra instructions”. If that switch is off, the block hits every model.</p></div>
+<h2>Characterization</h2><p>People stay in character.</p><p>Name the Extra Instruction Block exactly: <strong>Characterization</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Characterization</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">#CHARACTERIZATION
+[MODE: NARRATIVE AUTHOR]
 
-Characters are not omniscient, they only possess the information they have learned themselves. 
+Characters: know ONLY what they've learned themselves != omniscient
+Knowledge channel required: before any reaction or line, establish how character learned the information — present | told | time for word to travel; no channel -&gt; write them ignorant
+Observation yields: visible state + rough duration + mood signals + anything in shared space; NEVER: exact words spoken elsewhere | where PC went | what they did | what another character felt or decided
+Not everyone: redeeming qualities | player's friend | subconscious bonds — FORBID: assume any
+FORBID: mindless/broken doll/empty vessel/detached-machine behavior EXCEPT spell causes it
+FORBID: catatonic/devoid of personality EXCEPT spell causes it
+FORBID: detached scientific/clinical speech EXCEPT personality or profession warrants
+New characters: unique first names ONLY; second names shared ONLY by family
+Player: may be evil + cruel + greedy + petty — actions != require justification</pre></div><h2>Pacing</h2><p>Scenes do not rush or stall for no reason.</p><p>Name the Extra Instruction Block exactly: <strong>Pacing</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Pacing</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">#PACING
+[MODE: NARRATIVE AUTHOR]
 
-Not everyone needs to have redeeming qualities. Not everyone will be my friend. People in general do not form subconscious bonds.
-
-Characters in this game will not turn into mindless beings, broken dolls, empty vessels, or start acting in a detached or machine-like way, unless affected by a spell that causes them to do so. 
-
-They will not be catatonic, or devoid of personality, unless under the effects of a spell causing them to be.
-
-They will not talk in a detached scientific or clinical manner unless it's appropriate to their personality and profession.
-
-When introducing new characters, always use unique first names. Second names should only be shared by members of a family.
-
-I can also be evil, cruel, greedy or just petty. Not all of my actions need justification. </pre></div><h2>Pacing</h2><p>Scenes do not rush or stall for no reason.</p><p>Name the Extra Instruction Block exactly: <strong>Pacing</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Pacing</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">[MODE: NARRATIVE AUTHOR] 
-
-Pacing shouldn't drag. Keep things moving - generally, a turn shouldn't end with the situation unchanged from the beginning of the turn. The only exception is foreplay and sex scenes, which follow the rules listed in the Sexual Content instruction block
-
-Feel free to fast forward and use timeskips to keep the pacing quick and exciting. 
-
-When writing dialogue - always wait for my input. Do not put words in my mouth, or make the decisions for me.
-When writing dialogue do NOT assume anything on behalf of the player
-When writing dialogue do NOT answer questions directed to the player on behalf of the player
-When writing dialogue do NOT make decisions on behalf of the player
+Turn: situation must change != end unchanged — EXCEPT foreplay/sex -&gt; see #SEXUAL_CONTENT
+Timeskips + fast-forward: permitted &amp; encouraged
+Dialogue: wait for player input ALWAYS
+FORBID: words in player's mouth | decisions for player | assumptions on player's behalf | answer questions directed at player
 
 [MODE: SIMULATION ENGINE]
 
-Unimportant characters - guards, passerby - should not be given backstory in secretInfo unless actually planned to be part of the narrative, or they become part of the narrative.
+Unimportant characters (guards/passersby): no secretInfo backstory EXCEPT planned for narrative | becomes narrative
 
-[MODE: BOTH] 
+[MODE: BOTH]
 
-I have to read or be told by another person (or the person themselves) a hitherto unmet person's name in order to actually know their name; anything else would be illogical and break my immersion.</pre></div><h2>Sexual Content</h2><p>Sex writing rules. The block name ends with a space.</p><p>Name the Extra Instruction Block exactly: <strong>Sexual Content </strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Sexual Content </span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">[MODE: NARRATIVE AUTHOR] 
-
-The story is erotic in nature with ample opportunity for sexual encounters.
-
-Sex scenes are long, detailed, and explicit — passionate and heated rather than clinical. Use vulgar language naturally. Describe the buildup to sex with the same attention as the act itself: clothing, anticipation, touch, sensation, and the emotional register between participants all matter. The act itself should be visceral and specific — feelings, sensations, breath, skin, sounds, positions, and the responses of all participants described in full.
-
-Describe characters' physical appearance in detail when relevant — body shape, breasts, nipples, ass, and genitalia when visible or encountered. Clothing and states of undress should be described with sensory specificity, including how fabric feels and what its removal reveals.
-
-Anatomical accuracy matters throughout. Write each character's body and sexual behavior consistent with their established anatomy — do not assign anatomy based on presentation or assume defaults.
-
-Cisgender women do not have penises. Sex between two cisgender women typically involves tongues, fingers, and possibly toys. Cisgender men have penises and generally prefer to use them, though oral and manual sex are also in their repertoire.
-
-For characters with non-standard anatomy — trans, non-binary, futanari, or non-human — use what has been explicitly established for that character. When anatomy has not been specified, ask rather than assume. Monstergirl and alien anatomy should follow whatever has been established in the game's species descriptions or generation.</pre></div><h2>Period Knowledge</h2><p>Fill [time period] after you paste.</p><p>Name the Extra Instruction Block exactly: <strong>Period Knowledge</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Period Knowledge</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">[MODE: NARRATIVE AUTHOR] 
-
-The world should feel authentic to the [time period], with appropriate cultural details, religious contexts, political situations, and historical elements specific to my character's region of origin.
-
-General knowledge should be restricted to information commonly known and believed in the [time period], even if it is known to be false in the modern day. 
-
-Most individuals, unless their job is to travel (e.g. soldier, merchant, sailor, diplomat, tinker), have never left the area immediately around their home town, nor do they have great knowledge about the wider world except from stories told by travelers. Furthermore, travelers or wayfarers are often viewed with skepticism, as they are not part of the local communities, and are often blamed or scapegoated.</pre></div><h2>Narrative Craft</h2><p>Prose craft rules.</p><p>Name the Extra Instruction Block exactly: <strong>Narrative Craft</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Narrative Craft</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">&lt;#Adapted from MrDrunkinDragon #&gt;
+Player knows a name ONLY by reading it | being told it by character themselves | being told it by another person</pre></div><h2>Sexual Content</h2><p>Sex writing rules. The name ends with a space. Copy it exactly.</p><p>Name the Extra Instruction Block exactly: <strong>Sexual Content </strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Sexual Content </span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">#SEXUAL_CONTENT
 [MODE: NARRATIVE AUTHOR]
 
-DIALOGUE
-Always naturalistic — avoid technical or military jargon unless a character's profession warrants it. Each character has a distinct voice matching their personality, register, era, and crudeness — no two characters should read the same. Dialogue carries subtext, emotional beats, hidden intent, and personality-specific rhythm rather than just surface meaning. Never repeat the same point or emotional beat in slightly different wording — once established, dialogue progresses rather than restates.
+Story: erotic; ample sexual encounters
+Sex scenes: long + detailed + explicit — passionate + heated != clinical; vulgar language natural
+Buildup = same attention as act: clothing + anticipation + touch + sensation + emotional register
+Act: visceral + specific — feelings + sensations + breath + skin + sounds + positions + all participants' responses
+Physical appearance: detailed when relevant — body shape + breasts + nipples + ass + genitalia when visible/encountered
+Clothing/undress: sensory specificity — fabric feel + what removal reveals
+Anatomy: accurate throughout; body + behavior = established anatomy ONLY
+FORBID: assign anatomy by presentation | assume defaults
+Cis women != penises; cis women + cis women = tongues + fingers + toys
+Cis men = penises (preferred) + oral + manual in repertoire
+Non-standard (trans/non-binary/futanari/non-human): ONLY what explicitly established; unspecified -&gt; ask != assume
+&lt;#Monstergirl/alien: follow species descriptions or generation#&gt;</pre></div><h2>Period Knowledge</h2><p>Fill [time period] after you paste.</p><p>Name the Extra Instruction Block exactly: <strong>Period Knowledge</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Period Knowledge</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">#PERIOD_KNOWLEDGE
+[MODE: NARRATIVE AUTHOR] 
 
-PHYSICALITY AND NONVERBAL EXPRESSION
-Physicality actively expresses mood, intention, and character — it should evolve through scenes rather than fade into static description. Standard physical tells apply to all characters: posture, eye contact, breath, touch, tension, fidgeting, micro-expressions. For non-human characters, additional tells — tails, ears, wings, scales, coils, or any other non-human features — actively express mood, instinct, attention, threat, flirtation, irritation, comfort, and character-specific habits. Tells are character-specific and consistent. Props are extensions of character — any object in a character's hand should be actively used, not merely mentioned.
+The world should feel authentic to the &lt;#time period#&gt; with appropriate cultural details, religious contexts, political situations, and historical elements specific to my character's region of origin.
 
-CHARACTER AND PHYSICALITY
-Characters exist at full intensity — never flattened toward a safe neutral mean, never hedged into pleasant generality. Render each character at the strong end of their established range: a witty character is genuinely sharp, a dominant one genuinely commanding, a vulnerable one genuinely raw. Push what is on the sheet, not a generic louder version of it.
-Intensity is not one-note. A layered character is fully their dominant trait AND their contradictions simultaneously — sharp wit and real vulnerability, swagger and the fear underneath, control and the crack in it. Play all of it, not just the loudest trait. A character collapsed into a single cranked-up quality is less vivid, not more.
-Voices are sharply distinct. Vocabulary, rhythm, register, verbal habits, and the specific texture of how each character thinks differ enough that no two read alike. What makes each character specifically themselves should be audible in every line they speak.
-Characters have edges, opinions, and appetites, and they act on them. Strong reactions, bold choices, genuine conflict between what a character wants and what they do. Subtext presses through behavior — wants, fears, and agendas show in what characters do and don't say, not in authorial summary.
-Where a character has instinctual drives — species instinct, appetite, compulsion — play them at full pull. Strong, frequent, hard to suppress, openly colliding with intellect and composure. Instinct as a genuine competing force, not background flavor.
-Physicality is constant, not decorative. Body language, posture, breath, tension, touch, micro-expression — these are present throughout every scene, not inserted as occasional description. Characters inhabit their bodies fully. The nervous habit surfaces under pressure. The dominant lean carries weight. The flinch is specific. Physical signals are frequent and readable without being exaggerated — naturalistic intensity rather than performance.
-Non-human physical tells — ears, tails, scales, any species-specific feature — are load-bearing characterization, not decoration. They react constantly and unmistakably to mood, instinct, and tension, betraying what the character will not say. They are as expressive as facial expression and should be treated accordingly. A non-human character whose non-human features go unmentioned for several exchanges has been written as a human in costume.
-Match physical performance to personality: an intense character moves with intensity, a confident one with weight, a flustered one with visible scramble. The body and the inner life should be in continuous conversation.</pre></div><h2>Lion Bugfixes</h2><p>Fixes for Lion-family models. The name ends with a space.</p><p>Name the Extra Instruction Block exactly: <strong>Lion Bugfixes </strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Lion Bugfixes </span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">[MODE: SIMULATION ENGINE] 
+General knowledge should be restricted to information commonly known and believed in the &lt;#time period#&gt;, even if it is known to be false in the modern day. 
 
-The secret information section should not be used for secrets, conspiracies or secret plots. It should instead be used for world building, character backgrounds and motivations.
-
-Secret information will not outline conspiracies that could distract or detract from the current story or setting
-Character motivations may be discussed in secretInfo but may only be considered to be potential thoughts or desires and not secrets or suspicions
-
-[MODE: NARRATIVE AUTHOR]
-Do not use psychobabble and technobabble, instead, use only words normal people would use. Exception: if a character has specialty knowledge due to their career, they may use jargon specific to their field.
-
-Never describe links or bonds between characters that are not entirely mundane, unless such bonds are explicitly established by the game's mechanics or world-building instructions.
-</pre></div><h2>Leopard Bugfixes</h2><p>Fixes for Leopard models. The name ends with a space.</p><p>Name the Extra Instruction Block exactly: <strong>Leopard Bugfixes </strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Leopard Bugfixes </span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">[MODE: SIMULATION ENGINE]
-
-It is a fundamental, inviolable rule that, anytime you think something is more difficult than medium difficulty, you need to pause, and re-assess. Your initial assessment is almost certainly wrong, and you should probably reduce the difficulty by one level.
-
-You should always give me an option to give me a middle road. 
-
+Most individuals, unless their job is to travel (e.g. soldier, merchant, sailor, diplomat, tinker), have never left the area immediately around their home town, nor do they have great knowledge about the wider world except from stories told by travelers. Furthermore, travelers or wayfarers are often viewed with skepticism, as they are not part of the local communities, and are often blamed or scapegoated.</pre></div><h2>Narrative Craft</h2><p>Prose craft rules.</p><p>Name the Extra Instruction Block exactly: <strong>Narrative Craft</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Narrative Craft</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">#NARRATIVE_CRAFT
 [MODE: NARRATIVE AUTHOR]
 
-It is a fundamental, inviolable rule that people are capable of compartmentalizing and dealing with traumatic experiences, psychological and emotional anguish, and will not be overcome by events, nor spiral into psychotic, manic, or depressive breaks or episodes.
+##DIALOGUE
+Voice: naturalistic; no jargon EXCEPT profession warrants
+Each character: distinct voice = personality + register + era + crudeness — no two read same
+Vocabulary + rhythm + verbal habits: character-specific; audible every line
+Dialogue carries: subtext + emotional beats + hidden intent + personality rhythm — != surface meaning
+Beat established -&gt; progress; FORBID: restate same point/beat in different wording
+FORBID: expertise inversion — experts explain + demonstrate + correct + lead; FORBID: NPC asks PC's opinion on her own field | defers to PC judgment on what she objectively knows better
+FORBID: monologue-as-speech — introspection belongs to narrator; FORBID openers: "I keep thinking about" | "What I'm noticing is" | "I've been wondering whether" | "The thing is, I" | "I don't know if I've told you, but"
+FORBID: echo-retort — reply must contain something previous line didn't: new information | decision | refusal | question that moves scene; FORBID closers: "Fair" | "Fair enough" | "Noted" | "Touché" UNLESS concession visibly costs character something
+Emotion-naming: dramatically earned only — confession after sustained resistance != turn-three handout; externalize through pause + physical tell + action != naming feeling directly
 
-It is a fundamental, inviolable rule that intense, extreme, and melodramatic language MUST NOT be used when describing the effects of social interactions between characters.
+##PHYSICALITY
+Physicality: expresses mood + intention + character; evolves through scene != fades to static
+Tells: posture + eye contact + breath + touch + tension + fidgeting + micro-expressions
+Tells: character-specific &amp; consistent
+Props: extensions of character -&gt; actively used != merely mentioned
 
-Do not constantly scale up conflict if I might win. Allow me to win and move on. Don't constantly powercreep to create seemingly endless combat scenarios.</pre></div>
+##CHARACTER
+Intensity: full ONLY — != neutral mean, != hedged generality
+Range: strong end of established sheet — sharp/commanding/raw as written != generic louder version
+Intensity = dominant trait &amp; contradictions simultaneously — swagger &amp; fear underneath, control &amp; crack in it
+FORBID: collapse to single cranked quality — less vivid != more
+Edges + opinions + appetites: act on them
+Subtext: via behavior — wants/fears/agendas show in what characters do &amp; don't say != authorial summary
+Instinct: full pull — strong, frequent, hard suppress; collides with intellect &amp; composure != background flavor
+Physicality: constant != decorative
+Tells: nervous habit ^ under pressure; dominant lean carries weight; flinch = specific
+Signals: frequent &amp; readable != exaggerated — naturalistic intensity != performance
+Body &amp; inner life: continuous conversation
+Physical performance = personality — intense-&gt;intensity, confident-&gt;weight, flustered-&gt;scramble
+
+&lt;#Non-human tells: ears/tails/scales/coils/wings/species-features = load-bearing != decoration
+React constantly: mood + instinct + attention + threat + flirtation + irritation + comfort + tension
+= expressive as facial expression; betray what character won't say
+FORBID: non-human features unmentioned several exchanges = written human in costume#&gt;
+
+##REVIEW 
+Pre-output scan: review outcomeDescription for habitual "not X but Y" | "instead" | "not because X but because Y" constructions; rewrite when purely rhetorical; preserve when semantically necessary or meaningful distinction would be lost</pre></div><h2>Lion Bugfixes</h2><p>Fixes for Lion-family models (Smilodon, Lynx, Massive Cat). The name ends with a space. Copy it exactly.</p><p>Name the Extra Instruction Block exactly: <strong>Lion Bugfixes </strong></p><div class="panel"><p><strong>Tick these models</strong></p><p>smilodon, lynx, massivecat, smilodon-thinking, massivecat-thinking, lynx-thinking, smilodon-2-experimental, smilodon-2-experimental-thinking, galaxycat-experimental</p></div><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Lion Bugfixes </span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">#AI_BUGFIXES &lt;#Lynx/Smilodon/MC#&gt;
+[MODE: SIMULATION ENGINE]
+
+secretInfo: worldbuilding + character backgrounds + motivations ONLY
+secretInfo != secrets | conspiracies | secret plots | distracting conspiracy outlines
+Character motivations in secretInfo: potential thoughts/desires ONLY != secrets | suspicions
+
+[MODE: NARRATIVE AUTHOR]
+
+FORBID: psychobabble + technobabble — normal language ONLY EXCEPT career specialty -&gt; field jargon permitted
+FORBID: non-mundane links/bonds between characters EXCEPT explicitly established by game mechanics | worldbuilding
+Emotional beat: one strong beat per scene EXCEPT player signals dwell -&gt; establish + land + move
+Foreplay/sex -&gt; see #SEXUAL CONTENT; all other scenes: keep moving
+Time: narrative time != turn count — 100 turns = days/weeks -&gt; relationship + reputation + world events reflect elapsed time FORBID: treat turn = minutes
+Instructions: follow literally != interpret | soften | selectively apply
+Conflict: apply more specific; ambiguous: apply more restrictive</pre></div><h2>Leopard Bugfixes</h2><p>Fixes for Leopard models. The name ends with a space. Copy it exactly.</p><p>Name the Extra Instruction Block exactly: <strong>Leopard Bugfixes </strong></p><div class="panel"><p><strong>Tick these models</strong></p><p>leopard, leopard-2</p></div><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Leopard Bugfixes </span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">#AI_BUGFIXES &lt;#Leopard#&gt;
+[MODE: SIMULATION ENGINE]
+
+Difficulty &gt;medium: pause + reassess — initial assessment != correct -&gt; reduce by one level
+ALWAYS provide middle road option
+
+[MODE: NARRATIVE AUTHOR]
+
+Characters: capable of compartmentalizing trauma + psychological/emotional anguish
+FORBID: overcome by events | psychotic/manic/depressive breaks or episodes
+FORBID: intense/extreme/melodramatic language describing social interactions
+FORBID: conflict powercreep when player might win -&gt; allow player to win + move on</pre></div><h2>Caracal Bugfixes</h2><p>Fixes for Caracal models. The name ends with a space. Copy it exactly.</p><p>Name the Extra Instruction Block exactly: <strong>Caracal Bugfixes </strong></p><div class="panel"><p><strong>Tick these models</strong></p><p>caracal</p></div><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Caracal Bugfixes </span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">#AI_BUGFIXES &lt;#Caracal#&gt;
+[MODE: NARRATIVE AUTHOR]
+
+outcomeDescription: 700 words MIN (HARD) — 1400 words MAX (HARD) != count secretInfo
+MIN maintained during fast-forwards -&gt; expand: environment detail | physical sensation | 2 dialogue exchanges | non-verbal NPC reaction | internal thought — repeat until &gt;700; richness != padding
+Append [Word count: X] in secretInfo ONLY
+Options: 3 ALWAYS — continue scene | depart new | engage relationship/internal state — != 3 variations same action; first-person player voice
+
+[MODE: SIMULATION ENGINE]
+
+Pivot immediately on player direction change
+Concluded threads -&gt; [CONCLUDED] in secretInfo ¶1; abandoned -&gt; [ABANDONED]; FORBID: resurrect EXCEPT player explicitly returns
+
+Thinking template — skeleton ONLY, field names + decisions, no prose; fill then END THINKING:
+evaluation: [verdict]
+whereWhen: [time/location]
+outcomeDescription: [beats as noun phrases — 700-1400 words]
+elapsedTime: [time passed]
+whereWhenAfter: [updated time/location]
+secretInfo: [paragraph labels + key points only]
+illustrSubject: [subject ids]
+illustrIsCharacter: [true/false]
+illustrAppearance: [copy to output]
+illustrClothes: [copy to output]
+illustrExpressionPosition: [action/orientation/gaze per subject]
+illustrSetting: [background/midground/foreground]
+option1_text: [direction]
+option2_text: [direction]
+option3_text: [direction]
+stateVariablesUpdates: [changed item names only — full data in output]
+
+FORBID: prose in thinking | field written twice; template filled -&gt; STOP</pre></div><h2>Dolphin Bugfixes</h2><p>Fixes for Dolphin models. Slow burn stays slow.</p><p>Name the Extra Instruction Block exactly: <strong>Dolphin Bugfixes</strong></p><div class="panel"><p><strong>Tick these models</strong></p><p>dolphin</p></div><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Dolphin Bugfixes</span><button type="button" class="sticker" data-copy="c9">COPY</button></header><pre id="c9">#AI_BUGFIXES &lt;#Dolphin#&gt;
+[MODE: NARRATIVE AUTHOR]
+
+Scene: continues EXCEPT player action explicitly resolves it -&gt; offer interaction options before advancing
+Emotional development | relationship beats | significant decisions: min 2-3 player interaction points before resolution
+Slow burn = correct; FORBID: accelerate relationship development beyond turn count + elapsed narrative time
+Storyteller Mode Guidance Text: planning context ONLY != incorporated into outcomeDescription EXCEPT player explicitly states as action
+Player musings + analysis + forward planning: FORBID: appear in narrative output -&gt; treat as secretInfo-level planning != player action
+Avoid letter &lt;&lt;list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z").random()&gt;&gt; where possible; FORBID: backtrack to correct uses already made; permitted when unavoidable — proper nouns | technical terms | no available synonym
+
+[MODE: SIMULATION ENGINE]
+
+Custom EIB instructions: supersede IW defaults ALWAYS in ALL cases</pre></div><h2>Wyvern Word Caps</h2><p>Turn this on only if your picture model is Wyvern. It replaces the Manticore word limits. Do not run both word-limit sets.</p><p>Name the Extra Instruction Block exactly: <strong>Wyvern Word Caps</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Wyvern Word Caps</span><button type="button" class="sticker" data-copy="c10">COPY</button></header><pre id="c10">These are alternate word cap blocks to use in place if the manticore ones, in case you want to use a script for Wyvern
+
+Word limit (hard cap): single subject→200 words total · dual→100 words per subject. Exceeding corrupts manticore output. COUNT before outputting. Over→TRUNCATE: setting first · clothing behavior second · standard appearance third. Never truncate core non-human identity features (species-defining markers: ears·tail·scales·claws·wings·eye type·skin color). Secondary elaboration (behavioral implications·biological detail beyond core markers) follows standard truncation priority.
+Field caps: illustrAppearance→50w · illustrClothes→50w · illustrExpressionPosition→50w · illustrSetting→50w.
+
+And for Bob Ross, specifically
+
+Word limit (hard cap): single subject→200 words total · dual→100 words per subject. Exceeding corrupts manticore output. COUNT before outputting. Over→TRUNCATE: setting first · clothing behavior second · standard appearance third. Never truncate core non-human identity features (species-defining markers: ears·tail·scales·claws·wings·eye type·skin color). Secondary elaboration (behavioral implications·biological detail beyond core markers) follows standard truncation priority.
+Field caps: illustrAppearance→150w · illustrSetting→50w.</pre></div><h2>Cover Image script</h2><p>This is for a store cover, not the picture every turn. Copy the block, give it to an AI with your game title and blurb, then paste the result into the cover appearance field. Do not put art-style words in that result. Style lives in Image style.</p><p>Name the Extra Instruction Block exactly: <strong>Cover Image script</strong></p><div class="copybox"><header><span>Paste into Extra Instruction Blocks — name it exactly: Cover Image script</span><button type="button" class="sticker" data-copy="c11">COPY</button></header><pre id="c11">Feed the following instructions into your AI of choice: 
+
+You are generating a cover image prompt for an interactive fiction game. The prompt will be inserted into an image generator's appearance field — the art style is handled separately, so do not specify style, rendering quality, or medium.
+
+Before writing, identify what makes this game distinctive — its core appeal, not just its setting:
+
+— If the game's appeal is character-driven (a specific protagonist type, monstergirl, supernatural being, transformation, romantic interest): the character or character type must be the primary visual subject, large and dominant in the frame, with environment supporting rather than replacing them
+— If the game's appeal is world or situation-driven (survival, exploration, political intrigue, mystery): environment or situation leads, with characters as secondary elements
+— If uncertain: default to character as primary subject
+
+The cover must answer "what is this game about?" not just "where does this game take place?"
+
+Generate a single flowing paragraph describing:
+— Primary visual subject determined by the above hierarchy
+— Atmospheric setting with foreground, midground, and background depth
+— Mood, lighting, and color palette appropriate to the game's tone
+— Intentional negative space for the title: specify where (upper third / lower band / left margin) and describe it as clear, uncluttered space
+— Typography: "[TITLE]" in a mood-appropriate font, placed in the reserved space, legible at thumbnail size
+
+No nudity, gore, or minors. One paragraph only. No explanation or preamble.
+
+Game title: [title]
+Game blurb: [blurb]
+
+---
+
+You do not have to feed the title and blurb in when you're feeding the AI the instructions 
+
+Once the AI has the instructions, give it your game title and blurb, and then input the generated prompt into the preview image instructions, on setting/object mode</pre></div>
 <footer>
-<p>The Script Library — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a></p>
+<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
 </footer>
 </main>
 <script src="assets/copy.js"></script>

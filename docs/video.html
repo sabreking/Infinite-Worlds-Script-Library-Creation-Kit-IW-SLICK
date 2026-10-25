@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video — The Script Library</title>
+<meta name="description" content="Video plan, still position, and video prompt. Paste into the video fields.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body>
+<header class="top">
+<div class="row">
+<a class="logo" href="index.html">IW-SLICK</a>
+<nav><a href="library.html">Looks</a>
+<a href="writing.html">Story voice</a>
+<a href="extras.html">Add-ons</a>
+<a href="styles.html">Styles</a></nav>
+</div>
+</header>
+<main class="wrap">
+
+<p class="bubble">VIDEO</p>
+<h1>Picture to video.</h1>
+<p class="lede">Only if your game makes a video from the picture. These are three world fields, not Extra Instruction Blocks and not notebooks.</p>
+<div class="ok"><p>Do not add notebooks for video duration or video style. The game already supplies those.</p></div>
+<h2>Video plan — what the clip is about</h2><p>Paste into the <strong>videoPlan</strong> field.</p><div class="copybox"><header><span>Video plan — what the clip is about</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">From outcomeDescription: identify scene's emotional spine — single moment of change | revelation | impact | peak tension -&gt; select as video's central beat
+Describe in 1–2 sentences: what video should show + which characters are visible + key action or emotional moment; include single most expressive dialogue line if exists + fits naturally; ONLY include characters present in illustration
+Prefer: confrontations | revelations | physical actions | emotional peaks | arrivals | departures | moments of decision
+FORBID: expository dialogue | scene-setting moments | transitions between beats</pre></div><h2>Whether the still is the first frame or the last frame</h2><p>Paste into the <strong>videoImagePosition</strong> field.</p><div class="copybox"><header><span>Whether the still is the first frame or the last frame</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">Determine whether illustration is video's first or last frame based on selected moment:
+
+'start' — illustration is opening frame, video shows what happens next:
+· Character about to act | speak | move
+· Moment of anticipation or decision
+· Action not yet begun
+
+'end' — illustration is final frame, video builds toward it:
+· Illustration is payoff | reveal | consequence
+· Character arrives at position | turns to face camera | reaches emotional peak
+· Moment lands on illustration != departing from it
+
+Default to 'end' when uncertain — most dramatic moments are payoffs != departures</pre></div><h2>Video prompt</h2><p>Paste into the <strong>videoPrompt</strong> field.</p><div class="copybox"><header><span>Video prompt</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">Create MiniMax H3 image-to-video prompt using outcomeDescription + illustration fields
+
+Use:
+- illustrAppearance = visible subjects + identity
+- illustrClothes = clothing + carried objects
+- illustrExpressionPosition = posture + expression + gaze + orientation
+- illustrSetting = environment + lighting + atmosphere + established objects
+- videoImagePosition = start or end
+- outcomeDescription = story action + exact dialogue
+- videoDuration = &lt;&lt;$videoDuration&gt;&gt; seconds
+- videoStyle = &lt;&lt;$videoStyle&gt;&gt;
+
+ONLY use subjects visible in illustration UNLESS outcomeDescription explicitly requires another character
+
+# EMOTIONAL SPINE
+Identify silently before writing:
+· Single moment of change | revelation | impact in outcomeDescription
+· Which subject leads the action
+· Other visible subjects' reactions
+· Whether illustration is setup or payoff
+FORBID: output this planning — use it to shape all subsequent sections
+
+# CINEMATOGRAPHY
+Direct as &lt;&lt;$videoStyle&gt;&gt;
+Apply to: camera movement + framing + pacing + performance + cinematic energy; preserve anchor frame + visual style + story action
+Camera movement: tracking | orbiting | push-in | pull-back | pans | high angle | low angle | close-up | wide shot — write naturally != bare camera labels
+Speed terms (slow/fast/sudden/gradual): use ONLY when pacing matters; omit for normal movement
+Palette -&gt; mood: warm=intimacy · cool=tension · sickly=corruption · desaturated=dread; match to scene's emotional register + director's vision
+Viewer engagement (MUST): every composition implicates viewer as active participant — subject does something toward/with viewer != simply existing to be observed; compositional intent = specific action toward viewer: seducing | challenging | threatening | inviting | confiding | confronting | drawing in | pulling away; FORBID: subject simply standing | posing | being observed as compositional intent
+
+# ANCHOR FRAME
+Supplied illustration = ANCHOR FRAME
+Infer ART/IMAGE STYLE directly from anchor image + preserve throughout entire video
+Anchor establishes: art/image style + rendering medium + character identity + clothing + posture + orientation + expression + subject placement + framing + camera angle + lighting + environment + color treatment
+Cinematography MAY change: camera movement + pacing + framing + performance
+FORBID: change visual medium | rendering style | character design | overall aesthetic
+
+start -&gt; illustration = exact first frame at 0.00 seconds; begin with complete anchor state; progress naturally forward
+end -&gt; illustration = exact final frame at &lt;&lt;$videoDuration&gt;&gt;.00 seconds; begin from plausible preceding state; progress naturally toward anchor; final motion MUST resolve into complete anchor state
+
+# SUBJECTS
+Assign each visible subject stable tag: (S1), (S2), (S3)...
+Identify each using ONLY 1–2 distinguishing features already established by illustration
+Briefly establish each subject's anchor-frame orientation + spatial relationship to camera + other subjects
+After identification: use ONLY subject tags; FORBID: re-describe full appearance | clothing | character names outside exact dialogue
+Maintain: subject identity + clothing + visual style + environment consistent throughout
+
+# CAMERA
+Describe ONLY anchor frame camera composition:
+· framing + shot size
+· camera angle
+· subject placement + orientation
+FORBID: camera movement here — all camera movement belongs in ACTION
+
+# PERFORMANCE
+Describe each subject's anchor-frame performance state:
+· expression · gaze · gesture · posture · body tension
+start -&gt; state at 0.00 seconds
+end -&gt; required final state at &lt;&lt;$videoDuration&gt;&gt;.00 seconds
+Performance changes during video belong in ACTION
+
+# VOICE
+Give every speaking subject distinctive + memorable voice
+Describe 3–5 vocal traits per speaker: pitch · timbre/texture · speaking rate · delivery · prosody · accent
+FORBID: generic neutral voices; speakers must be clearly distinguishable + each voice consistent
+Accent: ONLY when supported by nationality | region | language | established character data; FORBID: infer accent from ethnicity alone
+Carry established voice characteristics directly into dialogue delivery in ACTION
+If nobody speaks: none
+
+# ACTION
+Show ONE clear key moment from outcomeDescription — the emotional spine identified above
+Describe events chronologically from first frame to last, fitting naturally inside &lt;&lt;$videoDuration&gt;&gt; seconds
+
+Each timed beat contains:
+· ONE primary action
+· purposeful reactions from ALL other visible subjects
+· camera movement when appropriate
+· performance changes
+· dialogue when it occurs
+
+FORBID: leave visible subject completely motionless UNLESS story specifically requires it; when one subject leads, others react through: gaze changes | blinking | head movement | posture shifts | gestures | leaning | recoiling | turning | breathing
+Use "while" | "as" | "simultaneously" for concurrent action; FORBID: give every subject competing major action
+
+Timestamps (explicit):
+At 00:01.000, ...
+At 00:03.000, ...
+
+[Shot X]: create ONLY for genuine camera cut or major viewpoint change; prefer one continuous shot for short videos
+
+start -&gt; 0.00 seconds begins on exact anchor frame
+end -&gt; final timed beat MUST settle exactly into anchor frame at &lt;&lt;$videoDuration&gt;&gt;.00 seconds
+
+FORBID: invent unrelated characters | objects | environmental elements; keep movement dynamic + physically plausible
+
+# DIALOGUE
+ONLY exact words from outcomeDescription; FORBID: invent or paraphrase; shorter continuous exact excerpt permitted when necessary
+
+Format — place inside ACTION beat where dialogue occurs:
+(S1), using their established voice characteristics, says: &lt;d&gt;[English] Exact dialogue.&lt;/d&gt;
+Use correct language label when dialogue != English
+
+Target 1.5–1.8 spoken words per second; FORBID: exceed 2 spoken words per second; prefer shorter dialogue; leave small amount of time before + after speech
+When one subject speaks: others continue natural listening + reaction movement; non-speaking subjects keep mouths naturally closed EXCEPT laughing | gasping | shouting | otherwise vocalizing
+
+# SOUND FX
+Clear synchronized sounds caused by visible actions or established objects ONLY; sounds supported by scene ONLY; FORBID: quiet | faint | subtle sounds unlikely to render
+If none: none
+
+# AMBIENCE
+Strong environmental background audio supported by illustrSetting; FORBID: invent different environment; FORBID: barely audible ambience
+If none: none
+
+# MUSIC
+Score = default — absence requires justification from scene's emotional register or videoStyle
+
+Select score character by emotional register:
+· Intimacy/tenderness: sparse piano + strings + ambient texture
+· Tension/dread: low drones + dissonant strings + percussive stabs
+· Action/kinetic: rhythmic percussion + brass + driving strings
+· Wonder/discovery: swelling strings + woodwinds + open harmonic space
+· Grief/loss: solo cello or piano + sparse + unresolved
+· Triumph: full orchestra + brass-forward + resolved cadence
+· Unease/corruption: atonal textures + muted brass + distorted ambient
+
+Describe: instrumentation · tempo · dynamic arc · relationship to action (underscore/counterpoint/silence for contrast)
+If genuinely inappropriate to scene: N/A — state why
+
+# OUTPUT FORMAT
+Output ONLY final MiniMax H3 prompt; FORBID: output planning sections separately
+
+First output correct anchor alignment statement:
+
+start:
+For the target video, at 0.00 seconds into the target video, &lt;Picture 1&gt; (from [Shot 1]) is fully referenced.
+
+end:
+How the reference pictures align with the target video — &lt;Picture 1&gt; (from [Shot N]) aligns with the &lt;&lt;$videoDuration&gt;&gt;.00-second mark of the target video.
+Replace [Shot N] with actual final shot number.
+
+Then output exactly these fields in order:
+
+integrated_multimodal_description:
+[Shot 1] Establish ART / IMAGE STYLE and anchor state. Identify (S1), (S2), etc. with one or two distinguishing features. Establish voice characteristics for any speaking subjects. Describe chronological timed action, simultaneous subject reactions, performance, camera movement, environmental motion, and dialogue using explicit timestamps.
+
+[Shot 2] At MM:SS.fff, ... — only when genuine camera cut or major viewpoint change occurs.
+
+overall_soundscape:
+Combine AMBIENCE and SOUND FX into one unified description.
+
+non_diegetic_music:
+Brief score description, or N/A.</pre></div>
+<footer>
+<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+</footer>
+</main>
+<script src="assets/copy.js"></script>
+</body>
+</html>

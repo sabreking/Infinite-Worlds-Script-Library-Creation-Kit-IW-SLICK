@@ -20,11 +20,11 @@ The goal is to keep useful modular material together in one place so creators ca
 
 The Script Library is the first contribution to IW-SLICK. It was added with permission from **@KaapstadMK**, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff.
 
-It contains picture scripts, story voice, and extras for Infinite Worlds. The hosted pages provide a convenient way to browse and copy these contributions into a game, but the project is intended to grow beyond this first collection.
+It contains picture scripts, story voice, notebooks, picture styles, and extras for Infinite Worlds. The hosted pages are the way to copy these into a game. The project is intended to grow beyond this first collection.
 
 **How to copy:** [https://mellow-truffle-5x34.here.now/library.html](https://mellow-truffle-5x34.here.now/library.html)
 
-Pick **one** picture look. The card shows the exact Extra Instruction Block name. Stay on that look’s page until pictures work (picture rules, notebooks, fill blanks, Image style). Then add story voice or extras if you want them.
+Pick **one** picture look. The card shows the exact Extra Instruction Block name. Stay on that look’s page until pictures work (picture rules, notebooks, fill blanks, Image style). Then add story voice, the update notebooks, a named picture style, or extras if you want them.
 
 The JSON is the source for rebuilding the Library pages and is available to contributors who prefer working directly with files.
 
@@ -32,10 +32,10 @@ The JSON is the source for rebuilding the Library pages and is available to cont
 |----------|--------|
 | Hosted look picker | [mellow-truffle-5x34.here.now/library.html](https://mellow-truffle-5x34.here.now/library.html) |
 | Rebuild Library pages | `python scripts/build_guide.py` (reads the JSON, writes `docs/`) |
-| Library JSON (v2.38 source) | [`library/The Script Library 2.38.json`](library/The%20Script%20Library%202.38.json) |
+| Library JSON (v3.29 source) | [`library/The Script Library 3.29.json`](library/The%20Script%20Library%203.29.json) |
 | Shared Infinite Worlds world | [infiniteworlds.app/shared/7zDKHR](https://infiniteworlds.app/shared/7zDKHR) |
 
-Old picture scripts and library-only Foolproofing / Terminate / Safeguard are not on the copy pages.
+Foolproofing, Terminate, and Safeguard (Library only) stay in the JSON. They are not paste boxes.
 
 ## Planned tooling
 

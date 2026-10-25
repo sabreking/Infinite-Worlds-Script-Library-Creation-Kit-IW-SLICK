@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notebooks — The Script Library</title>
+<meta name="description" content="Relationship, intimacy, and NPC appearance staging notebooks, with their triggers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body>
+<header class="top">
+<div class="row">
+<a class="logo" href="index.html">IW-SLICK</a>
+<nav><a href="library.html">Looks</a>
+<a href="writing.html">Story voice</a>
+<a href="extras.html">Add-ons</a>
+<a href="styles.html">Styles</a></nav>
+</div>
+</header>
+<main class="wrap">
+
+<p class="bubble">NOTEBOOKS</p>
+<h1>Notebooks that update themselves.</h1>
+<p class="lede">Your look page already has Player Appearance and one NPC Appearance list. This page is the other notebooks. Copy a set together: the real notebook, the Update notebook, and the trigger.</p>
+<p>The AI writes the Update notebook. The trigger copies that row onto the real notebook and clears the update row. A row is the whole record, so the Update notebook should hold the full row, not one changed field by itself.</p>
+<nav class="toc">
+<a href="#rel">Relationship</a>
+<a href="#intimacy">Intimacy</a>
+<a href="#npc">NPC appearance</a>
+</nav>
+<section class="step" id="rel">
+<h2>Relationship</h2>
+<p>Copy all three. Auto-update stays off on the real notebook and on on the Update notebook. That is how this set ships.</p>
+<h3>1. The real notebook</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c1">COPY</button></header><pre id="c1">Relationship Tracker</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only (the player does not see this notebook)</li><li>Auto-update: off</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c2">COPY</button></header><pre id="c2">&lt;#Relationship Tracker#&gt;
+Named characters, their relationship tier to the player, and their connection.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c3">COPY</button></header><pre id="c3">&lt;#Relationship Tracker#&gt;
+Add any named character upon first meaningful interaction with the player. 
+Update when a character's relationship with the player changes. 
+When updating an existing entry, ALWAYS match by name field and/or aliases field — never by list position. DO NOT rewrite other entries. NEVER update an entry whose name field and/or aliases field does not match the character being updated. Update ONLY changed fields.
+If two tracked characters are in a relationship with each other, note it in their respective connection fields. 
+Remove entries ONLY if the character permanently exits the narrative.
+
+If a character's name changes or aliases are revealed, append the new name to aliases. DO NOT update the name field. DO NOT generate a new entry under a new name
+
+Relationship tiers in ascending narrative significance:
+acquaintance · colleague · co-worker · friend · close friend · romantic interest · partner · co-parent · rival · mentor · family
+
+Mark significant: true for friend tier and above, plus rival, mentor, and family regardless of tier. Mark significant: false for acquaintance, colleague, and co-worker unless narrative circumstances warrant otherwise.
+
+connection: one-line description of relationship to player, 10 words maximum.</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c4">COPY</button></header><pre id="c4">- name: Mara Voss
+  aliases: 
+    - none
+  tier: close friend
+  significant: true
+  connection: captain of Probably Fine, earned trust through shared danger
+
+- name: Torsk
+  aliases: 
+    - none
+  tier: close friend
+  significant: true
+  connection: navigator, philosophical sparring partner, running from Zhaal
+
+- name: Pip
+  aliases: 
+    - Pipherazvn
+  tier: crew
+  significant: false
+  connection: communications officer, fiercely loyal, reads subspace frequencies
+
+- name: Dr Wen Azara
+  aliases: 
+    - none
+  tier: friend
+  significant: true
+  connection: ship medic and cook, hiding something, paternal presence
+
+- name: Kess
+  aliases: 
+    - Kestrel Stormhold
+  tier: friend
+  significant: true
+  connection: chief engineer, talks to the ship, brilliant and socially awkward
+
+- name: Overseer Zhaal
+  aliases: 
+    - Zhaal bhar-Azzign
+  tier: rival
+  significant: true
+  connection: crime lord hunting Torsk, threat to entire crew</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c5">COPY</button></header><pre id="c5">- name: text
+  aliases:
+    - text
+  tier: text
+  significant:
+  connection: text</pre></div>
+<h3>2. The Update notebook</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c6">COPY</button></header><pre id="c6">Relationship Update</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only, boring (the AI still gets this every turn; it is marked boring so it is not treated as story prose)</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c7">COPY</button></header><pre id="c7">&lt;#Relationship Tracker#&gt;
+Named characters, their relationship tier to the player, and their connection.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c8">COPY</button></header><pre id="c8">&lt;#Relationship Tracker#&gt;
+Add any named character on first meaningful interaction with player
+Update when relationship with player changes; update ONLY changed fields
+Match by name field AND/OR aliases field when updating — NEVER by list position; FORBID: rewrite other entries; FORBID: update entry whose name/aliases != character being updated
+Two tracked characters in relationship with each other: note in respective connection fields
+Remove entries ONLY if character permanently exits narrative
+Name change/alias revealed: append to aliases; FORBID: update name field; FORBID: generate new entry
+
+Relationship tiers (ascending): acquaintance · colleague · co-worker · friend · close friend · romantic interest · partner · co-parent · rival · mentor · family
+significant: true — friend tier+ | rival | mentor | family regardless of tier
+significant: false — acquaintance | colleague | co-worker UNLESS narrative warrants
+connection: one-line, 10 words maximum
+
+description of relationship to player, 10 words maximum.</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c9">COPY</button></header><pre id="c9">#Relationship Tracker
+- name: Mara Voss
+  aliases: 
+    - none
+  tier: close friend
+  significant: true
+  connection: captain of Probably Fine, earned trust through shared danger
+
+- name: Torsk
+  aliases: 
+    - none
+  tier: close friend
+  significant: true
+  connection: navigator, philosophical sparring partner, running from Zhaal
+
+- name: Pip
+  aliases: 
+    - Pipherazvn
+  tier: crew
+  significant: false
+  connection: communications officer, fiercely loyal, reads subspace frequencies
+
+- name: Dr Wen Azara
+  aliases: 
+    - none
+  tier: friend
+  significant: true
+  connection: ship medic and cook, hiding something, paternal presence
+
+- name: Kess
+  aliases: 
+    - Kestrel Stormhold
+  tier: friend
+  significant: true
+  connection: chief engineer, talks to the ship, brilliant and socially awkward
+
+- name: Overseer Zhaal
+  aliases: 
+    - Zhaal bhar-Azzign
+  tier: rival
+  significant: true
+  connection: crime lord hunting Torsk, threat to entire crew</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c10">COPY</button></header><pre id="c10">- name: text
+  aliases:
+    - text
+  tier: text
+  significant:
+  connection: text</pre></div>
+<h3>The trigger</h3>
+
+<p>Name the trigger exactly: <strong>Relationship Updater</strong></p>
+<div class="copybox"><header><span>Trigger name</span><button type="button" class="sticker" data-copy="c11">COPY</button></header><pre id="c11">Relationship Updater</pre></div>
+<p>Turn on “can trigger more than once.”</p>
+<p><strong>Condition.</strong> Type: PawScript. Paste this check.</p>
+<div class="copybox"><header><span>PawScript condition</span><button type="button" class="sticker" data-copy="c12">COPY</button></header><pre id="c12">$relationship_update.any(name.exists())</pre></div>
+<p><strong>Effect.</strong> Type: Run a script. Paste this script.</p>
+<div class="copybox"><header><span>Run a script</span><button type="button" class="sticker" data-copy="c13">COPY</button></header><pre id="c13">#Relationship Updater
+for each $char_update in $relationship_update
+  if $relationship_tracker.any(name.exists()) = false
+    $relationship_tracker = list()
+    $relationship_tracker.append($char_update)
+  else if $relationship_tracker.any(name = $char_update.name) or $relationship_tracker.any(aliases contains $char_update.name)
+    $relationship_tracker.where(name = $char_update.name or aliases contains $char_update.name) = $char_update
+  else
+    $relationship_tracker.append($char_update)
+  $relationship_update.remove($char_update)</pre></div>
+</section>
+<section class="step" id="intimacy">
+<h2>Intimacy</h2>
+<p>Same pattern. Copy the log, the Update notebook, and the trigger.</p>
+<h3>1. The real notebook</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c14">COPY</button></header><pre id="c14">Intimacy Log</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: off</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c15">COPY</button></header><pre id="c15">&lt;#Intimacy Log#&gt;
+A record of significant intimate encounters between the player character and other characters — emotional and physical milestones that the narrative should reference naturally going forward.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c16">COPY</button></header><pre id="c16">&lt;#Intimacy Log#&gt;
+One entry per named character or named group. Never create multiple entries for the same character or group. Update encounter_count and current_register after each subsequent encounter — do not append new entries for repeat encounters. For group encounters involving 3+ participants, create a single group entry listing all participants rather than individual entries per person.
+
+Add an entry only after a milestone has fully and completely occurred in narrative. Never log anticipated, imminent, or in-progress events.
+
+Milestone options (only these — do not create or subdivide categories):
+first emotional vulnerability / first kiss / first sexual encounter / first transformation-related intimate encounter / first explicit acknowledgment of feelings / first serious conflict and resolution / first morning after / first coven bonding
+
+Additional milestones may be logged only when an event represents a genuine first-time relationship shift not covered by the standard list.
+
+current_register: one line, 10 words maximum — current emotional and intimate register, updated to reflect most recent encounter.</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c17">COPY</button></header><pre id="c17">- name: Hermione Granger
+  first_encounter: Day 3, evening
+  encounter_count: 4
+  milestone: first sexual encounter
+  current_register: deeply bonded, coven resonance active, comfort and intensity both high
+- name: Full Coven — Hermione, Parvati, Daphne, Susan, Luna, Padma, Lavender
+  first_encounter: Day 7, September 6th
+  encounter_count: 2
+  milestone: first full coven bonding
+  current_register: magically resonant, power surge confirmed, bonds deepened collectively</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c18">COPY</button></header><pre id="c18">- name: text
+  first_encounter: text
+  encounter_count: number
+  milestone: text
+  current_register: text
+  ...:</pre></div>
+<h3>2. The Update notebook</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c19">COPY</button></header><pre id="c19">Intimacy Update</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: everyone</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c20">COPY</button></header><pre id="c20">&lt;#Intimacy Log#&gt;
+A record of significant intimate encounters between the player character and other characters — emotional and physical milestones that the narrative should reference naturally going forward.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c21">COPY</button></header><pre id="c21">&lt;#Intimacy Log#&gt;
+One entry per named character or named group; FORBID: multiple entries for same character/group
+Subsequent encounter: update encounter_count + current_register != append new entry; increment encounter_count by 1 != rewrite from scratch
+Group encounter 3+ participants: single group entry listing all participants
+Add entry ONLY after milestone fully + completely occurred in narrative; FORBID: log anticipated | imminent | in-progress events
+
+Milestones (ONLY these — FORBID: create or subdivide categories):
+first emotional vulnerability · first kiss · first sexual encounter · first transformation-related intimate encounter · first explicit acknowledgment of feelings · first serious conflict and resolution · first morning after · first coven bonding
+
+Additional milestones: ONLY when genuine first-time relationship shift != covered by standard list
+current_register: one line, 10 words maximum — current emotional + intimate register, updated to reflect most recent encounter</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c22">COPY</button></header><pre id="c22">- name: Hermione Granger
+  first_encounter: Day 3, evening
+  encounter_count: 4
+  milestone: first sexual encounter
+  current_register: deeply bonded, coven resonance active, comfort and intensity both high
+- name: Full Coven — Hermione, Parvati, Daphne, Susan, Luna, Padma, Lavender
+  first_encounter: Day 7, September 6th
+  encounter_count: 2
+  milestone: first full coven bonding
+  current_register: magically resonant, power surge confirmed, bonds deepened collectively</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c23">COPY</button></header><pre id="c23">- name: text
+  first_encounter: text
+  encounter_count: number
+  milestone: text
+  current_register: text
+  ...:</pre></div>
+<h3>The trigger</h3>
+<p><strong>The name ends with a space.</strong> Copy it exactly from the box.</p>
+<p>Name the trigger exactly: <strong>Intimacy Updater </strong></p>
+<div class="copybox"><header><span>Trigger name</span><button type="button" class="sticker" data-copy="c24">COPY</button></header><pre id="c24">Intimacy Updater </pre></div>
+<p>Turn on “can trigger more than once.”</p>
+<p><strong>Condition.</strong> Type: PawScript. Paste this check.</p>
+<div class="copybox"><header><span>PawScript condition</span><button type="button" class="sticker" data-copy="c25">COPY</button></header><pre id="c25">$intimacy_update.any(name.exists())</pre></div>
+<p><strong>Effect.</strong> Type: Run a script. Paste this script.</p>
+<div class="copybox"><header><span>Run a script</span><button type="button" class="sticker" data-copy="c26">COPY</button></header><pre id="c26">#Intimacy Updater
+for each $entry in $intimacy_update
+  if $intimacy_log.any(name.exists()) = false
+    $intimacy_log = list()
+    $intimacy_log.append($entry)
+  else if $intimacy_log.any(name = $entry.name)
+    $intimacy_log.where(name = $entry.name) = $entry
+  else
+    $intimacy_log.append($entry)
+  $intimacy_update.remove($entry)</pre></div>
+</section>
+<section class="step" id="npc">
+<h2>NPC appearance update</h2>
+<p>Optional. Use this when appearance edits should land through a staging list. You already pasted either the small-cast or the large-cast NPC Appearance notebook on your look page.</p>
+<p>This Update notebook’s rules are only a reminder. After you paste, replace those rules with the update rules from the notebook you already copied. Then set that NPC Appearance notebook to <strong>Auto-update: off</strong>. Leave this Update notebook on Auto-update: on.</p>
+<h3>1. The Update notebook</h3>
+<div class="copybox"><header><span>Name this item exactly</span><button type="button" class="sticker" data-copy="c27">COPY</button></header><pre id="c27">NPC Appearance Update</pre></div>
+<div class="ok"><p><strong>Settings on the Items to track screen</strong></p><ul><li>Type: YAML</li><li>Visible to: AI only, boring (the AI still gets this every turn; it is marked boring so it is not treated as story prose)</li><li>Auto-update: on</li></ul></div>
+<div class="copybox"><header><span>Description (what this notebook is for)</span><button type="button" class="sticker" data-copy="c28">COPY</button></header><pre id="c28">Structured appearance and clothing data for significant NPCs, stored as discrete fields for image generation reference. Updated whenever a character's physical appearance or clothing changes.</pre></div>
+<div class="copybox"><header><span>Update rules (when to change it)</span><button type="button" class="sticker" data-copy="c29">COPY</button></header><pre id="c29">&lt;#Copy in either large cast or small cast NPC Appearance update instructions, and turn automatically update off in NPC Appearance#&gt;</pre></div>
+<div class="copybox"><header><span>Example of how it should look</span><button type="button" class="sticker" data-copy="c30">COPY</button></header><pre id="c30">- name: Mara Voss
+  appearance: 
+    apparent_age: 42
+    ethnicity: German
+    sex: female
+    species: human
+    height: 5'9"
+    build: broad-shouldered, athletic, slightly thickened through the middle
+    hair: dark brown shot with grey, cropped close at sides, longer on top
+    skin: pale, weathered, deep lines around eyes and mouth
+    eyes: steel grey
+    face: strong jaw, fine lines around eyes and mouth
+    facial_hair: none
+    bust_chest: full bust larger than human average
+    waist: narrow defined waist
+    hips: softly flaring
+    rear: firm and rounded
+    distinguishing_features: cybernetic left arm, silver-grey from shoulder to fingertips
+    non_human_features: none
+  naked: false
+  clothing:
+    garments:
+      - black tactical trousers, reinforced knees
+      - dark grey henley, sleeves pushed up
+      - worn leather boots, knee height
+      - captain's coat, deep navy, brass buttons, rarely buttoned
+    permanent_marks:
+      - faded tattoo, anchor and rope, right forearm
+    state: clean but well-worn</pre></div>
+<div class="copybox"><header><span>The shape it should keep</span><button type="button" class="sticker" data-copy="c31">COPY</button></header><pre id="c31">- name: text
+  appearance:
+    apparent_age: number
+    ethnicity: text
+    sex: text
+    species: text
+    height: text
+    build: text
+    hair: text
+    skin: text
+    eyes: text
+    face: text
+    facial_hair: text
+    bust_chest: text
+    waist: text
+    hips: text
+    rear: text
+    distinguishing_features: text
+    non_human_features: text
+    ...:
+  naked:
+  clothing:
+    garments:
+      - text
+    permanent_marks:
+      - text
+    state: text
+    ...:
+  ...:</pre></div>
+<h3>Paste one of these over the reminder</h3>
+<p>Small-cast games use the first box. Many-people games use the second. Paste it into the Update notebook’s update rules, replacing the reminder.</p>
+<div class="copybox"><header><span>Small-cast update rules — paste over the reminder</span><button type="button" class="sticker" data-copy="c32">COPY</button></header><pre id="c32">&lt;#NPC Appearance — Small Cast#&gt;
+Create entry when named character has speaking role or direct physical interaction with player
+New entry: populate ALL fields immediately; incomplete entry (name field only) -&gt; populate immediately
+Update appearance fields ONLY on permanent physical changes — including transformative change to body/race/gender/physical features
+Appearance fields: permanent physical facts ONLY — FORBID: positional language | scene-specific descriptors | transitional language ("softening into" / "spilled across" / "pressed against")
+FORBID: repeat detail already described in a preceding field
+distinguishing_features: unique identifying characteristics not captured in preceding fields; FORBID: species-specific non-human features (-&gt; non_human_features)
+non_human_features: species-specific non-human characteristics not captured in preceding fields
+naked: field gates clothing block — update when naked status changes in outcomeDescription
+Update clothing fields whenever clothing changes in outcomeDescription
+garments: list of worn items ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning | undergarments | accessories
+undergarments: list of worn underwear + bra (if applicable) ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning
+accessories: list of worn accessories ONLY — name + basic description; FORBID: scene-specific positioning
+state: current clothing wear condition ONLY — FORBID: scene-specific positioning | pose-dependent descriptions | references to other characters
+FORBID: update expressions | emotions | demeanor
+Remove entries ONLY if character permanently exits narrative</pre></div>
+<div class="copybox"><header><span>Large-cast update rules — paste over the reminder</span><button type="button" class="sticker" data-copy="c33">COPY</button></header><pre id="c33">&lt;#NPC Appearance — Large Cast#&gt;
+Create entry ONLY when named character in Relationship Tracker marked significant: true; FORBID: create entry if Relationship Tracker empty
+Incomplete entry (name field only) -&gt; populate immediately; all entries: ALL fields created + populated
+Update appearance fields ONLY on permanent physical changes — including transformative change to body/race/gender/physical features
+Appearance fields: permanent physical facts ONLY — FORBID: positional language | scene-specific descriptors | transitional language ("softening into" / "spilled across" / "pressed against")
+FORBID: repeat detail already described in a preceding field
+distinguishing_features: unique identifying characteristics not captured in preceding fields; FORBID: species-specific non-human features (-&gt; non_human_features)
+non_human_features: species-specific non-human characteristics not captured in preceding fields
+naked: field gates clothing block — update when naked status changes in outcomeDescription
+Update clothing fields whenever clothing changes in outcomeDescription
+garments: list of worn items ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning | undergarments | accessories
+undergarments: list of worn underwear + bra (if applicable) ONLY — name of garment + basic description; FORBID: fit | fabric behavior | wear state | scene-specific positioning
+accessories: list of worn accessories ONLY — name + basic description; FORBID: scene-specific positioning
+state: current clothing wear condition ONLY — FORBID: scene-specific positioning | pose-dependent descriptions | references to other characters
+FORBID: update expressions | emotions | demeanor
+Remove entries ONLY if relationship becomes non-significant OR character permanently exits narrative</pre></div>
+<h3>The trigger</h3>
+<p><strong>The name ends with a space.</strong> Copy it exactly from the box.</p>
+<p>Name the trigger exactly: <strong>NPC Appearance Updater </strong></p>
+<div class="copybox"><header><span>Trigger name</span><button type="button" class="sticker" data-copy="c34">COPY</button></header><pre id="c34">NPC Appearance Updater </pre></div>
+<p>Turn on “can trigger more than once.”</p>
+<p><strong>Condition.</strong> Type: PawScript. Paste this check.</p>
+<div class="copybox"><header><span>PawScript condition</span><button type="button" class="sticker" data-copy="c35">COPY</button></header><pre id="c35">$npc_appearance_update.any(name.exists())</pre></div>
+<p><strong>Effect.</strong> Type: Run a script. Paste this script.</p>
+<div class="copybox"><header><span>Run a script</span><button type="button" class="sticker" data-copy="c36">COPY</button></header><pre id="c36">#NPC Appearance Updater
+for each $appear_update in $npc_appearance_update
+  if $npc_appearance.any(name.exists()) = false
+    $npc_appearance = list()
+    $npc_appearance.append($appear_update)
+  else if $npc_appearance.any(name = $appear_update.name)
+    $npc_appearance.where(name = $appear_update.name) = $appear_update
+  else
+    $npc_appearance.append($appear_update)
+  $npc_appearance_update.remove($appear_update)</pre></div>
+</section>
+
+<p class="quiet">After pictures work:
+<a href="writing.html">Story voice</a> ·
+<a href="extras.html">Add-ons</a> ·
+<a href="bodies.html">Bodies</a> ·
+<a href="creatures.html">Creatures</a> ·
+<a href="notebooks.html">Notebooks</a> ·
+<a href="styles.html">Styles</a> ·
+<a href="video.html">Video</a> ·
+<a href="dont.html">Never mix these</a></p>
+
+
+<footer>
+<p>The Script Library 3.29 — copy from these pages into Infinite Worlds. A contribution from <strong>KaapstadMK, with pieces from Xyphrax, Thyr, TWNT, Tori, Funky Munky, MrDrunkinDragon, WolfishGrimm, and SpacemanSpiff</strong>.</p><p>Shared world: <a href="https://infiniteworlds.app/shared/7zDKHR">infiniteworlds.app/shared/7zDKHR</a> · <a href="index.html">IW-SLICK home</a> · <a href="dont.html">Never mix these</a></p>
+</footer>
+</main>
+<script src="assets/copy.js"></script>
+</body>
+</html>
